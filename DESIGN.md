@@ -76,8 +76,7 @@ sans-serif fallback stack, so the site is still fully legible offline or if the 
 ## Information architecture
 
 ```
-/                                Homepage — Start Here entrances + 2 featured resources + taxonomy
-/resources.html                  Full resource library (search + filter, client-side only)
+/                                Homepage — 2 featured resources + Agent Academy callout + latest feed
 /resources/skill-framework.html  Flagship resource #1
 /resources/cowork-masterclass.html  Flagship resource #2 (folded in from copilot-cowork-masterclass)
 /updates.html                    "Watch & read" — auto-synced YouTube videos + blog posts (v3)
@@ -85,79 +84,78 @@ sans-serif fallback stack, so the site is still fully legible offline or if the 
 /404.html                        Not-found page (absolute /ai-with-april/ paths — see below)
 ```
 
-Deliberately flat. No `/paths/professional.html` etc. — role-based entrances are framed as entry
-points into the same library (via `resources.html?role=X` / `?topic=X` query params and anchored
-callouts on each resource page), not separate content trees to maintain in parallel. Add a real
-per-role landing page only once there are enough resources that a shared library page stops being
-the fastest way to a "first useful resource."
+Deliberately flat. No `/paths/professional.html` etc. Add a real per-role landing page or a
+resource library page only once there are enough resources that a simple flat list of them stops
+being the fastest way to a "first useful resource" (see "v4: removed resource library" below).
 
 **v2 addition:** `resources/cowork-masterclass.html` was added by folding in the
 `copilot-cowork-masterclass` repository's content (overview, glossary/FAQ, prompt bank, 7 labs and
 challenges, skills starter kit, cheat sheet, slide deck) rather than keeping it as a second public
 repo. Source markdown lives in `content/cowork-masterclass/` for provenance, matching the
 `content/skill-framework-source.md` precedent. Both flagship resource pages get a direct nav link
-(alongside Home / Resource library / About) — the nav lists actual pages, not a resource-count-scaling
+(alongside Home / Watch & read / About) — the nav lists actual pages, not a resource-count-scaling
 list, so this stays flat as long as there are only a couple of flagship pages.
+
+**v4: removed the resource library.** `resources.html` (client-side search/filter over
+`assets/js/resources-data.js`) and its role/topic taxonomy are gone. With only two real flagship
+resources plus the live feed, a filterable library added scaffolding without enough content to
+browse or filter — and its data file carried four fabricated "coming soon" placeholders that no
+longer matched the reduced scope. If a future contributor re-introduces a resource library, bring
+back `resources-data.js`'s shape (`id`/`title`/`description`/`status`) rather than reinventing it,
+and only do so once there are enough real resources that a shared list/filter page is faster than
+scanning the homepage directly.
 
 ## Content model: adding a resource
 
-Everything the library page renders comes from one array:
-`assets/js/resources-data.js` → `window.AI_WITH_APRIL_RESOURCES`.
+There's no data file or taxonomy anymore — each resource is its own page under `resources/`,
+linked directly from `index.html`'s two `.featured` sections and the site nav. To add a new
+flagship resource:
 
-To add a resource:
+1. Build its page under `resources/` following the existing `skill-framework.html` /
+   `cowork-masterclass.html` structure (hero, guide body, downloads &amp; credits, footer).
+2. Add a new `.featured` (or `.featured--pink`, alternating identity color) section for it on
+   `index.html`.
+3. Add it to the nav and footer nav on every page.
 
-1. Add an object with `id`, `title`, `description`, `roles[]`, `topics[]`, `formats[]`, `status`.
-2. If it's real and written, set `status: "available"` and `url` to its page, and it appears in
-   search/filter and is clickable immediately.
-3. If it's planned but not written, set `status: "coming-soon"` and omit `url`. It renders with a
-   gold "Coming soon" badge, is not a link, and cannot be clicked — this is how the non-fabrication
-   rule from `PRODUCT.md` is enforced in code, not just by convention.
+Only add a page when it's real and written. Per `PRODUCT.md`'s non-fabrication rules, don't add
+placeholder entries for resources that don't exist yet — mention them in prose as "coming soon"
+only if truly necessary, and never as a clickable link.
 
-Role keys (`professional`, `maker`, `builder`) and topic keys must exist in
-`window.AI_WITH_APRIL_TAXONOMY` in the same file — that object is the single place labels are
-defined, so a label change never requires touching more than one file.
+## Homepage pattern (v4: simplified)
 
-To add a genuinely new topic or role to the taxonomy, add it to `AI_WITH_APRIL_TAXONOMY` **and**
-add a matching filter chip button in `resources.html` (`data-role-filter` / `data-topic-filter`)
-and, if it should be discoverable from the homepage, a `.topic-card` in `index.html`.
+**v4 removed the three-role "Start Here" pattern entirely** (previously `.start-grid` /
+`.start-card`, and before that a v1 "learning map" with a dashed connector line). With only two
+flagship resources and a live feed, a role-selection step added a click before a visitor could
+reach real content — the opposite of the "land on one useful resource fast" goal.
 
-## Start Here pattern (homepage)
+The homepage is now a direct, linear stack: hero → S.K.I.L.L. framework (`.featured`) → Cowork
+Masterclass (`.featured--pink`) → Agent Academy callout (`.spotlight`) → "Fresh from April" live
+feed teaser. No role self-selection, no topic browsing — every visitor sees the same two
+resources first, because there are only two.
 
-**v2 replaced the "learning map" pattern.** v1 rendered role entrances as stops along a dashed
-connector line (`.map::before`), evoking a literal sequential path. On reflection this implied an
-order that doesn't exist — a visitor picks *one* of the three, they don't progress through all
-three — and the connector/numbering read as a gimmick rather than a genuine wayfinding aid.
-
-v2's `.start-grid` keeps everything that made the pattern work (three full-card links, each one
-click from a real resource, no "read more" pattern) and drops only the sequence implication:
-
-- No connector line between cards.
-- Badges are role-initial letters (`P` / `M` / `B`) in a bordered circle, not numbers — a visual
-  identity mark per role, not a step count.
-- A visible "browse by topic instead" link sits below the grid, pointing to `#topics` on the same
-  page, for visitors who'd rather self-select by subject than by role.
-- The section has its own `eyebrow` + `h2` ("Start here" / "Three ways in — pick the one that's
-  you"), rather than being folded silently into the hero, so it reads as a first-class homepage
-  section like the featured-resource and topic-taxonomy sections below it.
-
-When adding a 4th role or a 2nd row in the future, keep the "parallel entrances, no implied order"
-principle — reintroducing a connector line or numeric badges would re-introduce the sequencing
-problem this change fixed.
+If a future version reintroduces role- or topic-based framing, do it once there are enough
+resources that a flat list stops being the fastest path to a first useful resource (same threshold
+noted in "Information architecture" above) — and keep entrances parallel (no implied order, no
+connector line/numbering), per the reasoning in `PRODUCT.md`'s v2 framing note.
 
 ## Component conventions
 
-- **Cards that are entirely links** (`.start-card`, `.topic-card`, `.resource-card` when
-  `status: available`) must explicitly reset `text-decoration: none` and `color` at the card
-  level — don't rely on resetting anchors globally, since inline text links elsewhere in prose
-  should keep their underline for accessibility.
+- **Cards that are entirely links** (`.featured`, `.update-card`) must explicitly reset
+  `text-decoration: none` and `color` at the card level — don't rely on resetting anchors
+  globally, since inline text links elsewhere in prose should keep their underline for
+  accessibility.
 - **Accent placement:** avoid thick single-side "tab" borders on cards (a common AI-generated-UI
-  tell). Role differentiation uses a bordered circular badge (`.start-card__badge`, a role-initial
-  letter) or a small inline dot (`.role-callout__dot`), never a left-border stripe.
-- **Badges** (`.badge`, `.badge--soon`, `.badge--pink`, `.tag`) are pill-shaped with a tinted
-  background + border in the accent color, never solid-fill, to stay legible.
+  tell). Role differentiation (where it appears, inside guide pages) uses a small inline dot
+  (`.role-callout__dot`), never a left-border stripe.
+- **Badges** (`.badge`, `.badge--pink`, `.tag`) are pill-shaped with a tinted background + border
+  in the accent color, never solid-fill, to stay legible.
 - **A second "featured" resource block** (`.featured--pink`) exists specifically so a 2nd flagship
   resource (Cowork Masterclass) reads as visually distinct from the 1st (S.K.I.L.L. framework, plain
   `.featured`) via accent color alone — same layout, same actions pattern, different identity color.
+- **`.spotlight`** (v4, added for the Agent Academy callout) is a single-column blue-gradient
+  banner using `--color-blue-light` / `--color-blue-border`, deliberately distinct from `.featured`
+  (which is two-column with media) — it reads as an external pointer, not a "third resource," since
+  there's no accompanying image for it.
 
 ## Accessibility & motion
 
@@ -167,7 +165,7 @@ problem this change fixed.
   scrolling, handled once globally in `style.css` — don't add page-specific motion that bypasses
   this query.
 - Mobile nav is a real `<button>` with `aria-expanded`/`aria-controls`, toggled via `assets/js/main.js`.
-- All images have descriptive `alt` text; decorative icons (search glyph, role-badge letters) use
+- All images have descriptive `alt` text; decorative icons (the `.role-callout__dot` marker) use
   `aria-hidden="true"`.
 
 ## 404 page path convention
@@ -181,9 +179,10 @@ whole site can be spot-checked locally by serving the repo root directly.
 ## Live feed sync (v3): YouTube + blog
 
 `updates.html` and the homepage's "Fresh from April" teaser show April's real, recent YouTube
-uploads and blog posts. This is a separate system from the curated resource library — it is
-explicitly labeled "a live feed, not part of the curated resource library" wherever it appears, so
-the two are never confused.
+uploads and blog posts. It's a live, auto-refreshed feed — distinct in tone from the two hand-built
+flagship guides, since it updates daily without review. (v4 dropped the earlier "not part of the
+curated resource library" framing along with the library page itself; there's no separate curated
+library to distinguish it from anymore.)
 
 **Why this shape (no API keys, no backend, no build step):** the two obvious alternatives were
 rejected for concrete reasons, not just preference:
