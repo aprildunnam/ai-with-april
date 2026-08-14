@@ -41,6 +41,12 @@ three. v2 keeps the same three entrances and the same one-click-to-a-real-resour
 presents them as parallel "Start here" options with no implied order, alongside an equally visible
 "browse by topic instead" alternative for visitors who don't want to self-identify by role.
 
+**v4 note on framing:** with only two flagship resources plus a live feed, role-based entrances
+and a topic-browse alternative added a layer of choice the content didn't yet need. v4 drops the
+three-role homepage entrances and the resource library; the audience mix above is still the real,
+confirmed audience, but the "one minute" success bar is now simpler — land on the homepage, see
+the S.K.I.L.L. framework and Cowork Masterclass immediately, and start reading or watching.
+
 ## Purpose
 
 Approachable, practical AI education that makes the following make sense for real work:
@@ -117,6 +123,38 @@ playlist once one is supplied.
 
 Non-fabrication rule applied here: every video/post title, date, and thumbnail shown is pulled
 verbatim from April's real feeds — none of it is invented, curated-sounding copy, or backfilled.
+
+## Scope for v4
+
+In scope (this update):
+
+- **Dropped the role-based homepage framing and the standalone resource library page**
+  (`resources.html`). With only two flagship guides plus the auto-synced feed, a separate
+  filter/search library and three parallel "Start here" role cards added navigational
+  scaffolding without enough content to justify it. The homepage now leads directly with the two
+  real resources (S.K.I.L.L. framework, Cowork Masterclass), the Agent Academy callout, and the
+  live "Fresh from April" teaser.
+- **Removed the four fabricated "coming soon" placeholder resources** (Copilot Studio Quickstart,
+  Power Platform for Makers, Prompting Basics, Agent Architecture Deep Dive) that lived only in
+  `resources.html`'s data file — they no longer fit the reduced, honest-content scope and were
+  never linked to real material.
+- **Added an "Agent Academy" callout** (homepage + a supporting mention inside the S.K.I.L.L.
+  framework and Cowork Masterclass pages where Copilot Studio comes up naturally), pointing to
+  [aka.ms/agent-academy](https://aka.ms/agent-academy). This is real and non-fabricated: April
+  helps build and maintain Agent Academy, and it is the natural next stop for anyone who wants to
+  go from reading about agents to actually building one in Copilot Studio, including with the new
+  GitHub Copilot harness.
+- `role-callout` blocks *within* the S.K.I.L.L. framework and Cowork Masterclass pages ("If you're
+  a Curious Professional / Microsoft Maker / Technical Builder") are **kept** — they are
+  contextual framing inside an existing guide, not a separate navigation/journey mechanism, so
+  they don't conflict with this simplification.
+
+Out of scope for v4 (explicitly deferred, not silently dropped):
+
+- Re-introducing a resource library/taxonomy — revisit once there are enough real resources that
+  browsing/filtering adds value over simply listing them.
+- A dedicated Agent Academy content page on this site — Agent Academy already has its own site;
+  this hub only links out to it.
 
 ## Scope for v2
 
