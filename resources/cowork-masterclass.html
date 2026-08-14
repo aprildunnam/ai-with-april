@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Copilot Cowork Masterclass — AI with April</title>
+  <meta name="description" content="The full lab manual for Copilot Cowork: a copy-paste prompt bank, 7 hands-on labs and challenges, a skills starter kit, and a printable cheat sheet, plus the original slide deck.">
+
+  <link rel="canonical" href="https://aprildunnam.github.io/ai-with-april/resources/cowork-masterclass.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Copilot Cowork Masterclass — AI with April">
+  <meta property="og:description" content="The full lab manual for Copilot Cowork: prompt bank, hands-on labs, a skills starter kit, and a printable cheat sheet.">
+  <meta property="og:image" content="../assets/img/cowork-cheat-sheet.png">
+  <meta property="og:url" content="https://aprildunnam.github.io/ai-with-april/resources/cowork-masterclass.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Bricolage+Grotesque:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="../index.html">
+        <img src="../assets/img/favicon.svg" alt="" width="30" height="30">
+        AI with April
+      </a>
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="main-nav">
+        Menu
+      </button>
+      <nav aria-label="Primary">
+        <ul class="main-nav" id="main-nav">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../resources.html">Resource library</a></li>
+          <li><a href="skill-framework.html">S.K.I.L.L. framework</a></li>
+          <li><a href="cowork-masterclass.html" aria-current="page">Cowork Masterclass</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section--tight">
+      <div class="wrap">
+        <p class="eyebrow">Flagship resource &middot; Guide, prompt bank &amp; labs</p>
+        <h1>Copilot Cowork Masterclass</h1>
+        <p class="hero__lede">
+          The slides are the textbook and the recording is the lecture — this page is the lab
+          manual. Everything from the live Copilot Cowork Masterclass session, in one place:
+          what Cowork actually is, a copy-paste prompt bank, 7 self-paced labs and challenges,
+          a skills starter kit, and a one-page cheat sheet worth pinning.
+        </p>
+        <div class="featured__actions" style="margin-bottom: var(--space-4);">
+          <a class="btn btn-primary" href="../assets/downloads/cowork-masterclass-slides.pdf">Download the slide deck (.pdf)</a>
+          <a class="btn btn-secondary" href="#labs">Jump to the labs</a>
+        </div>
+
+        <img src="../assets/img/cowork-cheat-sheet.png" alt="Copilot Cowork cheat sheet: which tool to use (M365 Copilot, Cowork, or Scout), model and cost guidance, the four parts of a great prompt, steal-these prompts, and how to stay in control." style="border-radius: var(--radius-lg); border: 1px solid var(--color-border); box-shadow: var(--shadow-card); margin-bottom: var(--space-4);">
+
+        <div class="role-callouts" aria-label="Why this matters for each role">
+          <div class="role-callout" id="for-professionals">
+            <h3><span class="role-callout__dot" aria-hidden="true"></span>If you're a Curious Professional</h3>
+            <p>
+              Cowork is the closest thing to an actual AI coworker: describe an outcome — not a
+              step — and it plans and works across your inbox, calendar, and files. Start with
+              the <a href="#challenges">first challenge</a>, no setup required.
+            </p>
+          </div>
+          <div class="role-callout" id="for-makers">
+            <h3><span class="role-callout__dot" aria-hidden="true"></span>If you're a Microsoft Maker</h3>
+            <p>
+              The delegation habits here — goal, context, sources, format — carry directly into
+              Copilot Studio and Power Automate, where you're building the same kind of workflow
+              for other people instead of running it yourself.
+            </p>
+          </div>
+          <div class="role-callout" id="for-builders">
+            <h3><span class="role-callout__dot" aria-hidden="true"></span>If you're a Technical Builder</h3>
+            <p>
+              The <a href="#skills-starter-kit">Skills Starter Kit</a> below is the same
+              <code>SKILL.md</code> format covered in the
+              <a href="skill-framework.html">S.K.I.L.L. framework</a> — one more surface where the
+              identical file runs unchanged.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section--tight prose">
+      <div class="wrap prose">
+        <h2>What is Copilot Cowork?</h2>
+        <p>
+          <strong>Microsoft Copilot</strong> is the AI assistant built into Word, Excel,
+          PowerPoint, Outlook, and Teams, grounded in your organization's own data through the
+          Microsoft Graph. <strong>Copilot Cowork</strong> is the collaborative, delegated way of
+          working that sits on top of it: instead of prompting one app at a time, you describe a
+          whole outcome and Cowork plans and acts across apps — previewing anything it wants to
+          send, post, or schedule before it happens.
+        </p>
+
+        <h3>Three ways to get AI help — and when to use which</h3>
+        <table>
+          <thead><tr><th>Tool</th><th>Use it for</th></tr></thead>
+          <tbody>
+            <tr><td><strong>M365 Copilot</strong></td><td>A quick answer or edit, in the flow of one app, right now.</td></tr>
+            <tr><td><strong>Copilot Cowork</strong></td><td>A whole multi-step job you delegate in plain language, across apps.</td></tr>
+            <tr><td><strong>Microsoft Scout</strong></td><td>Ongoing, proactive help that comes to you — no prompt each time.</td></tr>
+          </tbody>
+        </table>
+        <p>
+          Team-scale automation for many people at once is a different layer entirely —
+          <strong>Copilot Studio</strong> and <strong>Power Automate</strong>, built once and run
+          for a whole organization.
+        </p>
+
+        <h3>Key concepts</h3>
+        <dl>
+          <dt><strong>Grounding</strong></dt>
+          <dd>Cowork's answers are based on your actual emails, documents, meetings, and chats via the Microsoft Graph — not just general internet knowledge.</dd>
+          <dt><strong>A good prompt</strong></dt>
+          <dd>Has a <strong>goal</strong> (the outcome), <strong>context</strong> (who/why), <strong>sources</strong> (which files or people), and a <strong>format</strong> (brief, table, email). "Prep me for my 2pm" beats "help with my meeting."</dd>
+          <dt><strong>Iteration</strong></dt>
+          <dd>Treat the first response as a draft. Refine it in the same thread rather than starting over.</dd>
+          <dt><strong>Skill</strong></dt>
+          <dd>A saved, reusable playbook Cowork loads on demand, so you stop re-prompting and cut credits. See the <a href="#skills-starter-kit">Skills Starter Kit</a>.</dd>
+          <dt><strong>Credits</strong></dt>
+          <dd>Usage-based Copilot Credits (~$0.01 each) that Cowork spends per task on top of your Copilot license. Start on <strong>Auto</strong>, drop to a lighter model for routine work, and type <code>/cost</code> to check spend.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section--tight prose">
+      <div class="wrap prose">
+        <h2>Glossary &amp; FAQ</h2>
+        <dl>
+          <dt><strong>Cowork vs. M365 Copilot vs. Scout</strong></dt>
+          <dd>M365 Copilot = a quick edit, in the flow. Cowork = a whole job you delegate. Scout = ongoing, proactive help that comes to you.</dd>
+          <dt><strong>Plugin</strong></dt>
+          <dd>An installable package that adds domain skills plus live data connectors, deployed and governed by your admin.</dd>
+          <dt><strong>MCP (Model Context Protocol)</strong></dt>
+          <dd>The open "USB-C for AI" standard that lets plugins connect Cowork to live data and APIs.</dd>
+          <dt><strong>Browser Use</strong></dt>
+          <dd>Cowork driving Microsoft Edge to complete web tasks — it hands you the tab for logins, MFA, or CAPTCHAs.</dd>
+          <dt><strong>Work IQ</strong></dt>
+          <dd>Cowork's grounding in your Microsoft Graph (people, files, meetings, org) for more accurate, context-aware results.</dd>
+        </dl>
+
+        <h3>Common questions</h3>
+        <p><strong>Is my data safe? What about my permissions?</strong><br>
+          Cowork works within your existing Microsoft 365 boundary and only ever sees what you
+          already have access to. It runs under your organization's identity, DLP, and compliance
+          policies.</p>
+        <p><strong>Does it take actions without asking?</strong><br>
+          No — it previews actions and asks you to approve before it sends, posts, or schedules
+          anything. You stay in control.</p>
+        <p><strong>Where do the files it creates go?</strong><br>
+          <strong>OneDrive &#9656; Documents &#9656; Cowork.</strong> You can always ask "where did
+          you save that?"</p>
+        <p><strong>Which model should I use?</strong><br>
+          Start on <strong>Auto</strong>. Use a lighter model for everyday, high-volume work; reach
+          for a heavier model only when the stakes justify the extra credits.</p>
+        <p><strong>How do I get Browser Use?</strong><br>
+          It's admin-enabled in Microsoft Edge. If you don't see it, ask your IT admin.</p>
+      </div>
+    </section>
+
+    <section class="section--tight prose">
+      <div class="wrap prose">
+        <h2 id="prompt-bank">Prompt bank</h2>
+        <p>Copy these and make them yours — replace anything in <code>[brackets]</code>. Start on <strong>Auto</strong>; drop to a lighter model for simple, high-volume work to save credits.</p>
+
+        <h3>&#9728;&#65039; Start your day</h3>
+        <pre><code>Run my daily brief: what's on my calendar, the emails that need me, and my top 3 priorities.</code></pre>
+        <pre><code>What changed since yesterday across my email, Teams, and calendar? Just the things I need to act on.</code></pre>
+
+        <h3>&#128229; Inbox &amp; email</h3>
+        <pre><code>Triage my unread mail by priority and separate "needs action from me" from newsletters.</code></pre>
+        <pre><code>Draft short replies to the emails that need a response. Flag anything that needs a decision instead.</code></pre>
+
+        <h3>&#128197; Meetings</h3>
+        <pre><code>Prep me for my [time] meeting: check the invite, pull attendee context, find related emails and docs, and give me a briefing.</code></pre>
+        <pre><code>Turn this meeting transcript into decisions, action items with owners, and follow-up emails.</code></pre>
+
+        <h3>&#128269; Research &amp; documents</h3>
+        <pre><code>Research [topic/3 competitors], write a one-page brief with sources, and build a 5-slide deck.</code></pre>
+        <pre><code>Take [document/deck] and turn the key points into a [1-pager / email / FAQ].</code></pre>
+
+        <h3>&#128193; Files &amp; organization</h3>
+        <pre><code>Read the contracts in [folder] and table each vendor, renewal date, and auto-renew clause.</code></pre>
+        <pre><code>Analyze [OneDrive folder] and give me a structured catalog: what's here, duplicates, and what to archive.</code></pre>
+
+        <h3>&#129513; Skills (create &amp; use)</h3>
+        <pre><code>Save this as a skill called "[name]". Trigger it when I say "[phrase]". Keep this exact format and rules.</code></pre>
+
+        <h3>&#9203; Scheduled tasks</h3>
+        <pre><code>Every weekday at 8am, run my daily brief and send it to me.</code></pre>
+
+        <h3>&#127760; Browser use (Edge)</h3>
+        <pre><code>Find my recent receipts and start an expense report on [expense site], filling vendor, date, and amount.</code></pre>
+
+        <h3>&#128179; Cost &amp; control</h3>
+        <pre><code>/cost</code></pre>
+        <pre><code>Before you send or post anything, show me a preview first.</code></pre>
+      </div>
+    </section>
+
+    <section class="section--tight prose" id="labs">
+      <div class="wrap prose">
+        <h2>Labs &amp; challenges</h2>
+        <p>
+          Self-paced, step-by-step. Do them in order or jump to what you need — every prompt is
+          copy-paste ready. Before any exercise: open Copilot Cowork, leave the model on
+          <strong>Auto</strong>.
+        </p>
+
+        <h3 id="challenges">Challenges (quick reps, ~5&ndash;12 min each)</h3>
+
+        <details>
+          <summary><strong>Challenge 1 &mdash; Your First Cowork Conversation</strong> (~8 min, needs nothing but your own inbox &amp; calendar)</summary>
+          <p><strong>Goal:</strong> feel the difference between a single-shot prompt and a multi-step, cross-app conversation with an AI coworker.</p>
+          <ol>
+            <li>Open Copilot Cowork. Leave the model on Auto.</li>
+            <li>Try: <code>What's on my calendar today and what should I prioritize?</code></li>
+            <li>Watch the plan unfold across more than one app — not just a one-line answer.</li>
+            <li>When it offers to send/post/schedule anything, read the preview before you approve.</li>
+            <li>Keep going in the same thread: <code>Now turn that into a 3-bullet summary I can paste into Teams.</code></li>
+          </ol>
+          <p><strong>Stretch:</strong> <code>Check my calendar for today, then draft prep notes for my first meeting.</code></p>
+        </details>
+
+        <details>
+          <summary><strong>Challenge 2 &mdash; The Morning Kickstart</strong> (~10 min)</summary>
+          <p><strong>Goal:</strong> chain several tasks in one conversation, the way you'd brief a real coworker on a Monday.</p>
+          <pre><code>It's Monday morning. Get me fully prepped for the week:
+1) brief me on today — meetings, key emails, and priorities
+2) prep me for my first meeting
+3) find and summarize a document relevant to my work this week
+4) draft a status update email to my manager</code></pre>
+          <p>Approve or edit each action as it goes. Refine in-thread: <code>Make the status email shorter and add a "blockers" line.</code></p>
+          <p><strong>Stretch:</strong> <code>Now schedule this same briefing to run every weekday at 8am.</code></p>
+        </details>
+
+        <details>
+          <summary><strong>Challenge 3 &mdash; Build Your Own Skill</strong> (~12 min)</summary>
+          <p><strong>Goal:</strong> turn a task you repeat into a reusable Skill, so you stop re-prompting and cut credits.</p>
+          <ol>
+            <li>Pick a task you do often (weekly report, meeting prep, a standard email).</li>
+            <li>Get a good result the manual way first.</li>
+            <li>Save it: <code>Save this as a skill called "weekly-status-report". Trigger it when I say "run my weekly status". Keep this exact format and only use the status labels On Track, At Risk, Blocked, Complete, Not Started.</code></li>
+            <li>Name it clearly with a good trigger-phrase description — that's what makes it fire.</li>
+            <li>Test it in a fresh chat with the trigger phrase, then check the cost with <code>/cost</code>.</li>
+          </ol>
+          <p>See the finished example in the <a href="#skills-starter-kit">Skills Starter Kit</a> below.</p>
+        </details>
+
+        <details>
+          <summary><strong>Challenge 4 &mdash; Let Cowork Drive the Browser</strong> (~8 min, needs Edge with Browser Use enabled)</summary>
+          <p><strong>Goal:</strong> watch Cowork act on the open web, and feel exactly where it hands control back to you.</p>
+          <pre><code>Go to [internal portal], pull this week's status into a short summary, and paste it back to me.</code></pre>
+          <p>When it hits a login, MFA, or CAPTCHA, it hands you the tab — complete that step, then let it resume. Review the final result before anything is submitted.</p>
+          <p><strong>No Browser Use?</strong> It's admin-gated — note it for your IT team.</p>
+        </details>
+
+        <h3>Labs (end-to-end scenarios, ~25 min each, teams of 3&ndash;4)</h3>
+
+        <details>
+          <summary><strong>Lab A &mdash; The New Project Kickoff</strong></summary>
+          <p><strong>Scenario:</strong> you've just been handed a new cross-functional project. Go from a pile of context to organized and ready to lead.</p>
+          <ol>
+            <li>Upload the project brief and kickoff email.</li>
+            <li><code>Read the brief and kickoff email. Give me a one-page summary: objective, scope (in/out), timeline, team, and the top 3 risks.</code></li>
+            <li><code>Draft a 30-minute kickoff meeting agenda that closes the two open decisions, and a stakeholder email inviting the team with what to bring.</code></li>
+            <li><code>What's missing or unclear in this plan? List the questions I should resolve before we start.</code></li>
+          </ol>
+          <p><strong>Deliverable:</strong> a one-page project summary plus a ready-to-send kickoff email and agenda.</p>
+        </details>
+
+        <details>
+          <summary><strong>Lab B &mdash; The Executive Update</strong></summary>
+          <p><strong>Scenario:</strong> your VP needs a status update by end of day — sharp, on-brand, and grounded in real numbers.</p>
+          <ol>
+            <li>Upload status data, quarterly results, and a brand style guide.</li>
+            <li><code>Read the status data and quarterly results. What are the 3 things a VP needs to know, and what's the single biggest risk?</code></li>
+            <li><code>Write a one-page executive update following our brand style guide: overall status, key metrics vs last quarter, risks with owners, and decisions needed. Keep the tone plain and direct.</code></li>
+            <li>If there's time: <code>Turn that into a 3-slide summary I could drop into a leadership deck.</code></li>
+          </ol>
+          <p><strong>Deliverable:</strong> a leadership-ready status summary, bonus 2&ndash;3 slides.</p>
+        </details>
+
+        <details>
+          <summary><strong>Lab C &mdash; The Inbox Zero Sprint</strong></summary>
+          <p><strong>Scenario:</strong> your inbox is out of control. Regain order, and draft your way back to zero.</p>
+          <ol>
+            <li><code>Triage these emails by priority. Separate "needs action from me" from newsletters/noise, and tell me what's time-sensitive.</code></li>
+            <li><code>Draft short, appropriate replies to the action-needed items. Flag anything that needs a decision rather than a reply.</code></li>
+            <li><code>Summarize what's left and suggest what I can archive or unsubscribe from.</code></li>
+          </ol>
+          <p><strong>Deliverable:</strong> a triaged inbox plan plus 2&ndash;3 drafted replies.</p>
+          <p><strong>Stretch:</strong> <code>Create a skill called "inbox triage" that does this every morning and shows me only what needs me.</code></p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section--tight prose" id="skills-starter-kit">
+      <div class="wrap prose">
+        <h2>Skills starter kit</h2>
+        <p>
+          A skill is a saved playbook — plain-language instructions Cowork loads on demand, so you
+          stop re-prompting and cut credits. Fastest way to make one: get a great result manually,
+          then say <code>Save this as a skill called "[name]". Trigger it when I say "[phrase]".</code>
+          Or author the file yourself from the template below and drop it in
+          <strong>OneDrive &#9656; Documents &#9656; Cowork &#9656; skills &#9656; your-skill-name &#9656; SKILL.md</strong>.
+        </p>
+        <p>What makes a skill fire: a precise kebab-case name, a description with the <em>exact</em> trigger phrases you'll actually say, and one scenario per skill.</p>
+
+        <h3>Template</h3>
+        <pre><code>---
+name: your-skill-name
+description: Use when I say "[trigger phrase]" or "[another phrase]". [One sentence: what it does.]
+---
+
+# Your Skill Title
+
+## When to use
+Trigger on: "[phrase 1]", "[phrase 2]".
+
+## Steps
+1. [First thing to do — which files/sources to read]
+2. [Next step]
+3. [Produce the output in the format below]
+
+## Output format
+[Exactly what you want back — headings, length, tone.]
+
+## Rules
+- [Formatting or label constraints]
+- Never invent data — if something's missing, say so.</code></pre>
+
+        <h3>Worked example: meeting-prep</h3>
+        <pre><code>---
+name: meeting-prep
+description: Use when I say "prep me for my [time] meeting" or "prep my next meeting". Builds a briefing from the invite, attendees, and related email/docs.
+---
+
+## Steps
+1. Find the meeting on my calendar and read the invite + agenda.
+2. Pull attendee context and any related emails or documents from the last 2 weeks.
+3. Produce the briefing: purpose &amp; desired outcome, who's there, what you need to know
+   (3-5 bullets), likely questions/decisions, your talking points.
+
+## Rules
+- Keep it to one screen.
+- Flag anything unresolved from the last related thread.</code></pre>
+
+        <h3>Worked example: weekly-status-report</h3>
+        <pre><code>---
+name: weekly-status-report
+description: Use when I say "run my weekly status" or "Friday wrap-up". Compiles a project status from the status data and recent emails into our standard one-page format.
+---
+
+## Output format
+- **Overall:** On Track / At Risk / Blocked
+- **Done this week:** 3 bullets
+- **Up next:** 3 bullets
+- **Risks / blockers:** owner + mitigation
+- **Decisions needed:** who + by when
+
+## Rules
+- Use only these labels: On Track, At Risk, Blocked, Complete, Not Started.
+- If any milestone is Blocked, put &#9888; at the top and list the blocker first.
+- Never invent numbers — if data is missing, say "data not available."</code></pre>
+      </div>
+    </section>
+
+    <section class="section--tight prose">
+      <div class="wrap prose">
+        <h2>Downloads &amp; credits</h2>
+        <div class="featured__actions">
+          <a class="btn btn-primary" href="../assets/downloads/cowork-masterclass-slides.pdf">Slide deck (.pdf)</a>
+          <a class="btn btn-secondary" href="../assets/downloads/cowork-cheat-sheet.pdf">Cheat sheet (.pdf)</a>
+          <a class="btn btn-secondary" href="../assets/img/cowork-cheat-sheet.png">Cheat sheet (.png)</a>
+          <a class="btn btn-secondary" href="../resources.html">Back to the resource library</a>
+        </div>
+
+        <h3>Official Microsoft docs</h3>
+        <ul>
+          <li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/" target="_blank" rel="noopener">Copilot Cowork — overview</a></li>
+          <li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/get-started" target="_blank" rel="noopener">Get started with Copilot Cowork</a></li>
+          <li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-faq" target="_blank" rel="noopener">Copilot Cowork — common questions (FAQ)</a></li>
+          <li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-admin-governance" target="_blank" rel="noopener">Manage Copilot Cowork for your organization (admin &amp; governance)</a></li>
+        </ul>
+
+        <hr>
+        <p style="color: var(--color-text-faint); font-size: 0.9rem;">
+          This page is original material from April Dunnam, built for the live Copilot Cowork
+          Masterclass session and folded into AI with April so it has one home. Sample exercise
+          data referenced in the labs is fictional ("Northwind Traders / Project Atlas"). Skill
+          files use the open <a href="https://agentskills.io" target="_blank" rel="noopener">agentskills.io</a>
+          format, also covered in the <a href="skill-framework.html">S.K.I.L.L. framework</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p>&copy; <span data-current-year>2026</span> April Dunnam. Built for AI with April.</p>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="../resources.html">Resource library</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="https://aprildunnam.com">aprildunnam.com</a></li>
+          <li><a href="https://github.com/aprildunnam/ai-with-april">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resource library — AI with April</title>
+  <meta name="description" content="Search and filter practical AI, Copilot, Copilot Studio, Cowork, and Power Platform resources by role and topic.">
+
+  <link rel="canonical" href="https://aprildunnam.github.io/ai-with-april/resources.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Resource library — AI with April">
+  <meta property="og:description" content="Search and filter practical AI, Copilot, Copilot Studio, Cowork, and Power Platform resources by role and topic.">
+  <meta property="og:image" content="assets/img/og-cover.png">
+  <meta property="og:url" content="https://aprildunnam.github.io/ai-with-april/resources.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Bricolage+Grotesque:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html">
+        <img src="assets/img/favicon.svg" alt="" width="30" height="30">
+        AI with April
+      </a>
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="main-nav">
+        Menu
+      </button>
+      <nav aria-label="Primary">
+        <ul class="main-nav" id="main-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="resources.html" aria-current="page">Resource library</a></li>
+          <li><a href="resources/skill-framework.html">S.K.I.L.L. framework</a></li>
+          <li><a href="resources/cowork-masterclass.html">Cowork Masterclass</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section--tight">
+      <div class="wrap">
+        <p class="eyebrow">Resource library</p>
+        <h1>Everything on AI with April, in one place</h1>
+        <p class="hero__lede">
+          Filter by who you are or what you're trying to do. Future resources are labeled
+          "Coming soon" and aren't clickable yet — nothing here pretends to exist before it does.
+        </p>
+
+        <form class="library-toolbar" role="search" aria-label="Filter resources" onsubmit="return false;">
+          <label class="search-field">
+            <span class="visually-hidden">Search resources</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+              <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <input type="search" id="resource-search" placeholder="Search resources, e.g. &quot;agent&quot; or &quot;prompting&quot;">
+          </label>
+
+          <div class="filter-group" role="group" aria-label="Filter by role">
+            <span class="filter-group__label">Role</span>
+            <button type="button" class="chip" data-role-filter="all" aria-pressed="true">All roles</button>
+            <button type="button" class="chip" data-role-filter="professional" aria-pressed="false">Curious Professional</button>
+            <button type="button" class="chip" data-role-filter="maker" aria-pressed="false">Microsoft Maker</button>
+            <button type="button" class="chip" data-role-filter="builder" aria-pressed="false">Technical Builder</button>
+          </div>
+
+          <div class="filter-group" role="group" aria-label="Filter by topic">
+            <span class="filter-group__label">Topic</span>
+            <button type="button" class="chip" data-topic-filter="all" aria-pressed="true">All topics</button>
+            <button type="button" class="chip" data-topic-filter="ai-fundamentals" aria-pressed="false">AI Fundamentals</button>
+            <button type="button" class="chip" data-topic-filter="agents-copilot" aria-pressed="false">Agents &amp; Copilot</button>
+            <button type="button" class="chip" data-topic-filter="copilot-studio" aria-pressed="false">Copilot Studio</button>
+            <button type="button" class="chip" data-topic-filter="power-platform" aria-pressed="false">Power Platform</button>
+            <button type="button" class="chip" data-topic-filter="cowork" aria-pressed="false">Cowork</button>
+            <button type="button" class="chip" data-topic-filter="prompting-skills" aria-pressed="false">Prompting &amp; Skills</button>
+          </div>
+
+          <div>
+            <button type="button" class="btn-ghost" id="clear-filters">Clear filters</button>
+          </div>
+        </form>
+
+        <p class="results-meta" id="results-meta" role="status" aria-live="polite">Loading resources&hellip;</p>
+
+        <div class="resource-grid" id="resource-grid"></div>
+
+        <p class="empty-state" id="empty-state">
+          Nothing matches those filters yet. Try clearing them, or
+          <a href="resources/skill-framework.html">start with the S.K.I.L.L. framework</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p>&copy; <span data-current-year>2026</span> April Dunnam. Built for AI with April.</p>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="resources.html">Resource library</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="https://aprildunnam.com">aprildunnam.com</a></li>
+          <li><a href="https://github.com/aprildunnam/ai-with-april">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/resources-data.js"></script>
+  <script src="assets/js/resources.js"></script>
+</body>
+</html>

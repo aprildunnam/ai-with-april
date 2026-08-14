@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The S.K.I.L.L. Framework — AI with April</title>
+  <meta name="description" content="Five rules for writing agent skills that actually fire, plus working examples for M365 Copilot, Copilot Studio, Cowork, and Power Platform.">
+
+  <link rel="canonical" href="https://aprildunnam.github.io/ai-with-april/resources/skill-framework.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="The S.K.I.L.L. Framework — AI with April">
+  <meta property="og:description" content="Five rules for writing agent skills that actually fire, plus working examples.">
+  <meta property="og:image" content="../assets/img/skill-framework.png">
+  <meta property="og:url" content="https://aprildunnam.github.io/ai-with-april/resources/skill-framework.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Bricolage+Grotesque:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="../index.html">
+        <img src="../assets/img/favicon.svg" alt="" width="30" height="30">
+        AI with April
+      </a>
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="main-nav">
+        Menu
+      </button>
+      <nav aria-label="Primary">
+        <ul class="main-nav" id="main-nav">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../resources.html">Resource library</a></li>
+          <li><a href="skill-framework.html" aria-current="page">S.K.I.L.L. framework</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section--tight">
+      <div class="wrap">
+        <p class="eyebrow">Launch resource &middot; Guide &amp; slide deck</p>
+        <h1>Build it to S.K.I.L.L.</h1>
+        <p class="hero__lede">
+          Five rules for writing agent skills that actually fire, plus working examples for
+          M365&nbsp;Copilot, Copilot&nbsp;Studio, Cowork, and Power&nbsp;Platform.
+        </p>
+        <div class="featured__actions" style="margin-bottom: var(--space-4);">
+          <a class="btn btn-primary" href="../assets/downloads/skills-explained-deck.pptx">Download the companion deck (.pptx)</a>
+          <a class="btn btn-secondary" href="#framework">Jump to the framework</a>
+        </div>
+
+        <img src="../assets/img/skill-framework.png" alt="The S.K.I.L.L. framework: Scope it to one job, Keywords in the description, Instructions not explanations, Lean body, Live test and iterate." style="border-radius: var(--radius-lg); border: 1px solid var(--color-border); box-shadow: var(--shadow-card); margin-bottom: var(--space-4);">
+
+        <h2 style="margin-top:0;">Why this, why now</h2>
+        <p class="prose">
+          Most skills that "don't work" never actually ran. The agent reads only your
+          <code>name</code> and <code>description</code> before deciding whether to open the file,
+          so a perfect 4,000-word body is invisible if the description never matches. These five
+          rules are what closes that gap.
+        </p>
+
+        <div class="role-callouts" aria-label="Why this matters for each role">
+          <div class="role-callout" id="for-professionals">
+            <h3><span class="role-callout__dot" aria-hidden="true"></span>If you're a Curious Professional</h3>
+            <p>
+              You don't need to write skills yourself to benefit from this. Understanding the
+              difference between a one-off prompt and a written-down skill explains why some AI
+              tools at work feel reliable and others feel like a coin flip.
+            </p>
+          </div>
+          <div class="role-callout" id="for-makers">
+            <h3><span class="role-callout__dot" aria-hidden="true"></span>If you're a Microsoft Maker</h3>
+            <p>
+              This is directly applicable in Copilot Studio, Cowork, and Power Platform today.
+              The framework below is the difference between an agent that fires reliably and one
+              you keep re-explaining things to.
+            </p>
+          </div>
+          <div class="role-callout" id="for-builders">
+            <h3><span class="role-callout__dot" aria-hidden="true"></span>If you're a Technical Builder</h3>
+            <p>
+              Skills are an open standard (see "Where skills run" below). The mental model —
+              instructions vs. knowledge vs. tools vs. skills — generalizes past any one vendor's
+              implementation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section--tight prose">
+      <div class="wrap prose">
+        <h2>A prompt is something you say. A skill is something you decide.</h2>
+        <p>
+          A prompt lives in one conversation. It's different every time you type it, nobody else
+          has it, and there's no version or owner. A skill lives in a file, on a shelf. It's
+          identical every time it runs, shared with the whole team, versioned, and reviewable.
+          Same words, completely different thing.
+        </p>
+
+        <h2 id="framework">The framework</h2>
+
+        <ol class="letter-list">
+          <li class="letter-item">
+            <span class="letter-item__glyph" aria-hidden="true">S</span>
+            <div>
+              <h3>Scope it to one job</h3>
+              <p>
+                One skill, one procedure. If it does two things, it is two skills. If you cannot
+                describe what your skill does in one sentence without using "and," split it.
+              </p>
+            </div>
+          </li>
+          <li class="letter-item">
+            <span class="letter-item__glyph" aria-hidden="true">K</span>
+            <div>
+              <h3>Keywords in the description</h3>
+              <p>
+                The description is the only part read before the skill opens. Load it with the
+                words a real person would type, not the tidy internal name for the process. Third
+                person, start with "Use when," one to three sentences, under about 500 characters.
+              </p>
+            </div>
+          </li>
+          <li class="letter-item">
+            <span class="letter-item__glyph" aria-hidden="true">I</span>
+            <div>
+              <h3>Instructions, not explanations</h3>
+              <p>
+                Write a runbook, not an essay. The agent is not being persuaded, it is being told.
+                Count the hedges in your draft — every "generally," "usually," and "use your
+                judgment" is a decision you pushed back onto the model.
+              </p>
+            </div>
+          </li>
+          <li class="letter-item">
+            <span class="letter-item__glyph" aria-hidden="true">L</span>
+            <div>
+              <h3>Lean body</h3>
+              <p>
+                Under about 500 lines, roughly 5,000 tokens — the whole body loads when the skill
+                activates. Anything longer goes in <code>references/</code> (background it might
+                look up), <code>assets/</code> (templates it builds from), or <code>scripts/</code>
+                (the same answer every time). Cheap to have, expensive to load — bias toward the
+                subfolders.
+              </p>
+            </div>
+          </li>
+          <li class="letter-item">
+            <span class="letter-item__glyph" aria-hidden="true">L</span>
+            <div>
+              <h3>Live test and iterate</h3>
+              <p>
+                Skills are rarely one and done. Test the trigger before you test the output — ask
+                for the thing five different ways and confirm it actually activates each time.
+                Half of all skill debugging is discovering it never fired at all.
+              </p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="callout-box">
+          <p>
+            <strong>The one that isn't a letter:</strong> the folder name must exactly match the
+            <code>name</code> in your frontmatter — kebab-case, lowercase, hyphens, max 64
+            characters. If they differ, some runtimes skip the skill silently. No error, no
+            warning, nothing in the logs.
+          </p>
+        </div>
+
+        <h2>What's actually in a skill</h2>
+        <p>Only <code>SKILL.md</code> is required. The other three folders are optional, and that's where the leverage is.</p>
+        <pre><code>client-qbr/
+├── SKILL.md
+├── references/
+│   ├── account-health-definitions.md
+│   └── qbr-writing-guide.md
+├── assets/
+│   ├── qbr-outline-template.md
+│   └── risk-register-table.md
+└── scripts/
+    ├── calculate_burn.py
+    └── validate_qbr.py</code></pre>
+
+        <table>
+          <thead>
+            <tr><th>Folder</th><th>The question</th><th>What goes there</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>references/</code></td><td>Is this background it might look up?</td><td>Policies, playbooks, style guides, thresholds</td></tr>
+            <tr><td><code>assets/</code></td><td>Is this something it builds the output FROM?</td><td>Templates, boilerplate, layouts</td></tr>
+            <tr><td><code>scripts/</code></td><td>Does this need the same answer every time?</td><td>Math, validation, parsing</td></tr>
+          </tbody>
+        </table>
+
+        <h2>How much do you actually need?</h2>
+        <p>Start at level 1. Climb only when the job forces you to.</p>
+        <table>
+          <thead><tr><th>Level</th><th>Adds</th><th>When</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td><code>SKILL.md</code> only</td><td>You already know the process, you just don't want to retype it.</td></tr>
+            <tr><td>2</td><td>+ <code>references/</code></td><td>The process needs knowledge attached: a policy, a playbook, a style guide.</td></tr>
+            <tr><td>3</td><td>+ <code>assets/</code></td><td>The output has to look like something: a branded deck, a template.</td></tr>
+            <tr><td>4</td><td>+ <code>scripts/</code></td><td>A step has to be right every time: math, thresholds, validation.</td></tr>
+          </tbody>
+        </table>
+        <p>
+          Most skills never leave level 1. That is not a failure, that is the point. A 500-line
+          reference doc nobody updates is worse than no reference doc, because the agent is
+          confidently following a stale policy.
+        </p>
+
+        <h2>Where skills run</h2>
+        <p>
+          Skills are an open standard. The format came out of Anthropic and is published at
+          <a href="https://agentskills.io" target="_blank" rel="noopener">agentskills.io</a>. The
+          same folder runs unchanged across Microsoft&nbsp;365 Copilot, Copilot Studio, Copilot
+          Cowork, Copilot in the Office apps, SharePoint, GitHub Copilot, VS Code, Claude, Cursor,
+          and 20-odd other agents. What differs is <strong>scope</strong>:
+        </p>
+        <table>
+          <thead><tr><th>Surface</th><th>Scope</th></tr></thead>
+          <tbody>
+            <tr><td>Copilot Cowork, Copilot in Excel</td><td>Personal</td></tr>
+            <tr><td>Copilot in SharePoint</td><td>Site</td></tr>
+            <tr><td>Copilot Studio</td><td>Agent</td></tr>
+            <tr><td>Dataverse business skills</td><td>Organization</td></tr>
+            <tr><td>GitHub Copilot, VS Code</td><td>Repo or personal</td></tr>
+          </tbody>
+        </table>
+        <p><em>Exact paths and limits move. Check current docs.</em></p>
+
+        <h2>When <em>not</em> to use a skill</h2>
+        <table>
+          <thead><tr><th>If it&hellip;</th><th>It's actually a&hellip;</th></tr></thead>
+          <tbody>
+            <tr><td>Needs to call a system</td><td>Tool. Skills are instructions — they can't hit your API.</td></tr>
+            <tr><td>Is a one-off request</td><td>Prompt. The whole value of a skill is repetition.</td></tr>
+            <tr><td>Is reference material</td><td>Knowledge. A skill is a procedure, not a product catalog.</td></tr>
+            <tr><td>Defines who the agent is</td><td>Instructions. Tone and persona belong in the always-on box.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Before you install someone else's</h2>
+        <p>A skill is a dependency. Treat it like one:</p>
+        <ul>
+          <li><strong>Review before use</strong> — read the <code>SKILL.md</code>, the scripts, and the resources. Confirm the script does what it says.</li>
+          <li><strong>Trust the source</strong> — skill instructions go straight into the agent's context. Watch for typosquatted names.</li>
+          <li><strong>Sandbox execution</strong> — anything with <code>scripts/</code> should run isolated, with filesystem and network limits.</li>
+          <li><strong>Log what loaded</strong> — which skills, which resources, which scripts. That's your audit trail.</li>
+        </ul>
+
+        <h2>The takeaway</h2>
+        <p>
+          Stop re-prompting. Write your process down once, in a file. Picked up when it's
+          relevant, ignored when it isn't. Portable across products. Versioned like code.
+          Governed if you need it to be.
+        </p>
+
+        <div class="featured__actions">
+          <a class="btn btn-primary" href="../assets/downloads/skills-explained-deck.pptx">Download the companion deck (.pptx)</a>
+          <a class="btn btn-secondary" href="../resources.html">Back to the resource library</a>
+        </div>
+
+        <hr>
+        <p style="color: var(--color-text-faint); font-size: 0.9rem;">
+          The S.K.I.L.L. framework and companion deck are original material from April Dunnam.
+          The underlying skills file format is an open standard published at
+          <a href="https://agentskills.io" target="_blank" rel="noopener">agentskills.io</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p>&copy; <span data-current-year>2026</span> April Dunnam. Built for AI with April.</p>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="../resources.html">Resource library</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="https://aprildunnam.com">aprildunnam.com</a></li>
+          <li><a href="https://github.com/aprildunnam/ai-with-april">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
