@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Watch &amp; read — AI with April</title>
+  <meta name="description" content="April Dunnam's latest YouTube videos and blog posts, synced automatically — practical AI, Copilot, and Power Platform content as it's published.">
+
+  <link rel="canonical" href="https://aprildunnam.github.io/ai-with-april/updates.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Watch & read — AI with April">
+  <meta property="og:description" content="April's latest YouTube videos and blog posts, synced automatically.">
+  <meta property="og:image" content="assets/img/og-cover.png">
+  <meta property="og:url" content="https://aprildunnam.github.io/ai-with-april/updates.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Bricolage+Grotesque:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html">
+        <img src="assets/img/favicon.svg" alt="" width="30" height="30">
+        AI with April
+      </a>
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="main-nav">
+        Menu
+      </button>
+      <nav aria-label="Primary">
+        <ul class="main-nav" id="main-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="resources.html">Resource library</a></li>
+          <li><a href="resources/skill-framework.html">S.K.I.L.L. framework</a></li>
+          <li><a href="resources/cowork-masterclass.html">Cowork Masterclass</a></li>
+          <li><a href="updates.html" aria-current="page">Watch &amp; read</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section--tight">
+      <div class="wrap">
+        <p class="eyebrow">Fresh from April</p>
+        <h1>Watch &amp; read</h1>
+        <p class="hero__lede">
+          April's latest YouTube videos and blog posts, pulled in automatically once a day —
+          nobody has to remember to update this page by hand. These are a live feed, not part of
+          the curated <a href="resources.html">resource library</a>: shorter-lived, more
+          in-the-moment, and not necessarily reviewed for this hub's role/topic taxonomy.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="update-section-head">
+          <h2>Latest videos</h2>
+          <a class="btn-ghost" href="https://www.youtube.com/@AprilDunnam" target="_blank" rel="noopener noreferrer">
+            All videos on YouTube &rarr;<span class="visually-hidden"> (opens in a new tab)</span>
+          </a>
+        </div>
+        <div class="update-grid" data-feed="videos" aria-live="polite">
+          <p class="update-empty">Loading latest videos&hellip;</p>
+        </div>
+        <p class="update-synced" data-feed-updated="videos"></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="update-section-head">
+          <h2>Latest from the blog</h2>
+          <a class="btn-ghost" href="https://aprildunnam.com/blog/" target="_blank" rel="noopener noreferrer">
+            All posts on aprildunnam.com &rarr;<span class="visually-hidden"> (opens in a new tab)</span>
+          </a>
+        </div>
+        <div class="update-grid" data-feed="posts" aria-live="polite">
+          <p class="update-empty">Loading latest posts&hellip;</p>
+        </div>
+        <p class="update-synced" data-feed-updated="posts"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p>&copy; <span data-current-year>2026</span> April Dunnam. Built for AI with April.</p>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="resources.html">Resource library</a></li>
+          <li><a href="updates.html">Watch &amp; read</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="https://aprildunnam.com">aprildunnam.com</a></li>
+          <li><a href="https://github.com/aprildunnam/ai-with-april">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/feeds.js"></script>
+</body>
+</html>

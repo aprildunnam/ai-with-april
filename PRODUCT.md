@@ -94,6 +94,30 @@ not a bare file download:
 - Future resources may be listed as placeholders **only when honestly labeled** (e.g. "Coming
   soon") — never presented as available when they are not.
 
+## Scope for v3
+
+In scope (this update):
+
+- A new **"Watch & read"** page (`updates.html`) plus a "Fresh from April" teaser on the homepage,
+  showing April's real, live YouTube uploads and blog posts — refreshed automatically once a day by
+  a scheduled GitHub Action, with zero API keys and zero backend (a Node script reads April's public
+  WordPress RSS feed and YouTube's public Atom feed, both keyless, and commits the result as static
+  JSON that the deployed site fetches same-origin).
+- This is explicitly **not** the curated resource library. It is labeled "a live feed, not part of
+  the curated resource library" everywhere it appears, so visitors don't mistake unreviewed,
+  shorter-lived content for the hub's reviewed role/topic taxonomy.
+
+**Known limitation, flagged rather than hidden:** the user asked for "a playlist I curate," implying
+a specific hand-picked YouTube playlist. No playlist ID/URL was available at build time, so this
+ships against April's full channel-uploads feed instead — real, verifiable content, not fabricated,
+but broader than a curated playlist would be (it includes shorts, promos, and announcements
+alongside long-form videos). `scripts/fetch-feeds.mjs` documents, at the top of the file, the
+one-line change (swap `YOUTUBE_FEED_URL` to a `playlist_id=` URL) needed to point this at a specific
+playlist once one is supplied.
+
+Non-fabrication rule applied here: every video/post title, date, and thumbnail shown is pulled
+verbatim from April's real feeds — none of it is invented, curated-sounding copy, or backfilled.
+
 ## Scope for v2
 
 In scope (this update):

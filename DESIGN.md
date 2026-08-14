@@ -80,6 +80,7 @@ sans-serif fallback stack, so the site is still fully legible offline or if the 
 /resources.html                  Full resource library (search + filter, client-side only)
 /resources/skill-framework.html  Flagship resource #1
 /resources/cowork-masterclass.html  Flagship resource #2 (folded in from copilot-cowork-masterclass)
+/updates.html                    "Watch & read" — auto-synced YouTube videos + blog posts (v3)
 /about.html                      About April
 /404.html                        Not-found page (absolute /ai-with-april/ paths — see below)
 ```
@@ -176,6 +177,78 @@ problem this change fixed.
 for any unmatched URL at any depth, so a relative path would resolve incorrectly depending on
 where the visitor "was" when they 404'd. Every other page uses relative paths deliberately, so the
 whole site can be spot-checked locally by serving the repo root directly.
+
+## Live feed sync (v3): YouTube + blog
+
+`updates.html` and the homepage's "Fresh from April" teaser show April's real, recent YouTube
+uploads and blog posts. This is a separate system from the curated resource library — it is
+explicitly labeled "a live feed, not part of the curated resource library" wherever it appears, so
+the two are never confused.
+
+**Why this shape (no API keys, no backend, no build step):** the two obvious alternatives were
+rejected for concrete reasons, not just preference:
+
+- Client-side calls to the YouTube Data API need an API key. Any key usable from a static site's
+  JS is public by definition — locking it to an HTTP referrer reduces but doesn't eliminate misuse,
+  and it adds a quota to manage. Not worth it for a "show my last few videos" feature.
+- Client-side `fetch()` of the WordPress RSS feed fails outright — `aprildunnam.com/feed/` doesn't
+  send CORS headers, so a browser blocks the cross-origin request. There's no key to add; it simply
+  doesn't work from client JS.
+
+Instead, both sources are fetched **server-side, on a schedule**, using endpoints that require no
+key at all:
+
+- Blog: `https://aprildunnam.com/feed/` — WordPress's built-in RSS feed.
+- Video: `https://www.youtube.com/feeds/videos.xml?channel_id=UCz_x76EBX5UXsV27drGNh6w` — YouTube's
+  built-in, public, keyless Atom feed for a channel (or, with `playlist_id=` instead of
+  `channel_id=`, for a specific playlist — see limitation below).
+
+### Pipeline
+
+```
+.github/workflows/fetch-feeds.yml   Daily cron (+ manual dispatch) →
+scripts/fetch-feeds.mjs             fetches both feeds, parses via regex (no deps), writes →
+assets/data/blog-posts.json         ← capped at 6 items, decoded entities, boilerplate stripped
+assets/data/youtube-videos.json     ← capped at 6 items
+                                     Workflow commits changed JSON to main, which triggers the
+                                     existing deploy.yml (it runs on every push to main) →
+assets/js/feeds.js                  Client runtime: reads [data-feed="videos"/"posts"] containers,
+                                     fetches the matching JSON same-origin, renders cards.
+```
+
+`scripts/fetch-feeds.mjs` has no npm dependencies (uses global `fetch`, matching the rest of the
+site's zero-build-step convention) and parses both feed formats with regex, since both are simple,
+predictable XML shapes (RSS `<item>` blocks; Atom `<entry>` blocks with a nested `<media:group>`).
+It decodes the small set of numeric entities WordPress emits, strips the "The post X appeared first
+on Y." boilerplate WordPress appends to `<description>`, and truncates excerpts to 180 characters.
+If a fetch fails, that feed's existing JSON file is left untouched (last-known-good) rather than
+overwritten with empty data, and the script exits non-zero so the workflow run shows as failed.
+
+`assets/js/feeds.js` is a small reusable renderer, not a page-specific script: any container with
+`data-feed="videos"` or `data-feed="posts"` gets populated from the matching JSON file, optionally
+capped with `data-feed-limit="N"` (used for the homepage's 3-item teaser vs. `updates.html`'s full
+6-item grids), and any element with `data-feed-updated="videos"/"posts"` gets a "Last synced &lt;date&gt;"
+note. Empty and error states render honest placeholder copy ("New videos will appear here once the
+daily sync runs") rather than hiding silently or showing a stale/fake state.
+
+**`.update-card` CSS** (in `style.css`, alongside the other card components) follows the existing
+accent convention: blue for videos, `.update-card--post` (pink) for blog posts — matching
+`.featured` / `.featured--pink`'s existing blue=primary/pink=secondary pattern. All colors reference
+existing `--color-*` tokens; no new hex values were introduced for this feature.
+
+### Known limitation: channel uploads, not a curated playlist
+
+The request was for "a playlist I curate" — a specific, hand-picked YouTube playlist. No playlist
+ID/URL was available at build time, so this ships against April's **full channel uploads feed**
+instead: real, verifiable, unfabricated content, but broader than a curated playlist (it includes
+shorts, promos, and "coming up" announcements alongside long-form videos). This is a genuine
+placeholder, not a design choice — reconfigure it the moment a playlist ID exists:
+
+1. Open `scripts/fetch-feeds.mjs`.
+2. Change `YOUTUBE_FEED_URL` from `...?channel_id=UCz_x76EBX5UXsV27drGNh6w` to
+   `...?playlist_id=PLxxxxxxxxxxxxxxxx` (the target playlist's ID).
+3. Commit — the next scheduled run (or a manual `workflow_dispatch`) picks it up automatically. No
+   other file needs to change.
 
 ## Non-fabrication enforcement
 

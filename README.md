@@ -20,6 +20,8 @@ resource in under a minute.
   Copilot Cowork: a copy-paste prompt bank, 7 hands-on labs and challenges, a skills starter kit,
   and a printable cheat sheet, plus the original slide deck. Folded in from April's
   `copilot-cowork-masterclass` repository so it has one public home.
+- **Watch & read** (`updates.html`) — April's latest YouTube videos and blog posts, synced
+  automatically once a day (see below). A live feed, separate from the curated resource library.
 - **About** (`about.html`) — who this is from and why it exists.
 
 ## Local preview
@@ -44,6 +46,22 @@ Add an entry to the `window.AI_WITH_APRIL_RESOURCES` array in
 with working search/filter. Mark anything not yet written as `status: "coming-soon"`; those
 entries render as honestly labeled and are not linked anywhere.
 
+## Watch & read: auto-synced videos and blog posts
+
+`updates.html` and the homepage's "Fresh from April" teaser show April's real YouTube uploads and
+blog posts, refreshed once a day with no API keys and no backend:
+
+- `.github/workflows/fetch-feeds.yml` runs daily (and on manual dispatch), executing
+  `scripts/fetch-feeds.mjs`, which reads April's public WordPress RSS feed and YouTube's public,
+  keyless Atom feed, and writes the result to `assets/data/*.json`. Changes are committed straight
+  to `main`, which triggers the existing deploy workflow.
+- `assets/js/feeds.js` renders that JSON into cards on any page via `data-feed="videos"` /
+  `data-feed="posts"` containers.
+- **This currently shows April's full channel uploads, not a specific curated playlist** — no
+  playlist ID was available at build time. To point it at a real curated playlist instead, change
+  `YOUTUBE_FEED_URL` in `scripts/fetch-feeds.mjs` from `channel_id=...` to `playlist_id=...`; no
+  other file needs to change. See `DESIGN.md` for the full pipeline diagram.
+
 ## Structure
 
 ```
@@ -51,13 +69,16 @@ index.html                       Homepage — Start Here entrances + featured re
 resources.html                   Filterable resource library
 resources/skill-framework.html   Full S.K.I.L.L. framework resource page
 resources/cowork-masterclass.html Full Copilot Cowork Masterclass resource page
+updates.html                     Watch & read — auto-synced YouTube videos + blog posts
 about.html                       About April
 404.html                         Custom not-found page
 assets/css/style.css             All site styles (design tokens at the top)
-assets/js/                       main.js (nav/behavior), resources-data.js, resources.js (filter/search)
+assets/js/                       main.js (nav/behavior), resources-data.js, resources.js (filter/search), feeds.js (Watch & read renderer)
 assets/img/                      Site imagery, favicon, OG cover
 assets/downloads/                Downloadable companion decks and cheat sheets
+assets/data/                     Auto-synced JSON (blog-posts.json, youtube-videos.json) — do not hand-edit, regenerated daily
 content/                         Source content kept for reference/attribution
+scripts/fetch-feeds.mjs          Feed-sync script (see "Watch & read" above)
 PRODUCT.md                       Confirmed product scope and non-fabrication rules
 DESIGN.md                        Brand tokens, IA, and content conventions
 ```

@@ -1006,6 +1006,115 @@ a.resource-card:focus-visible {
 }
 
 /* =========================================================================
+   "Fresh from April" — auto-synced videos & blog posts
+   (assets/js/feeds.js renders into these from assets/data/*.json)
+   ========================================================================= */
+
+.update-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-3);
+}
+
+.update-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: border-color var(--transition-med), transform var(--transition-med);
+}
+
+.update-card:hover,
+.update-card:focus-visible {
+  border-color: var(--color-blue);
+  transform: translateY(-3px);
+  color: var(--color-text);
+}
+
+.update-card--post:hover,
+.update-card--post:focus-visible {
+  border-color: var(--color-pink);
+}
+
+.update-card__media {
+  display: block;
+  aspect-ratio: 16 / 9;
+  background: var(--color-bg-alt);
+}
+
+.update-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.update-card__body {
+  padding: var(--space-2) var(--space-3) var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.update-card h3 {
+  font-size: 1.02rem;
+  margin: 0;
+}
+
+.update-card__body p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.update-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.update-card__meta {
+  margin-top: auto;
+  padding-top: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-blue-strong);
+}
+
+.update-card--post .update-card__meta {
+  color: var(--color-pink-strong);
+}
+
+.update-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--space-4) var(--space-2);
+  color: var(--color-text-muted);
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-md);
+}
+
+.update-synced {
+  font-size: 0.85rem;
+  color: var(--color-text-faint);
+  margin-top: var(--space-1);
+}
+
+.update-section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-1);
+  margin-bottom: var(--space-2);
+}
+
+/* =========================================================================
    404 page
    ========================================================================= */
 
