@@ -1,0 +1,45 @@
+name: Sync latest videos & blog posts
+
+# Keeps assets/data/*.json fresh from April's public YouTube channel feed
+# and blog RSS feed (see scripts/fetch-feeds.mjs — both are free, keyless
+# endpoints, no API keys or secrets involved). A commit here to main
+# triggers the existing Pages deploy workflow automatically.
+
+on:
+  schedule:
+    - cron: "0 13 * * *" # once a day
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-feeds
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch latest videos & posts
+        run: node scripts/fetch-feeds.mjs
+
+      - name: Commit updated data if changed
+        run: |
+          if git diff --quiet -- assets/data/; then
+            echo "No changes to feed data."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/data/
+          git commit -m "chore: sync latest videos & blog posts"
+          git push

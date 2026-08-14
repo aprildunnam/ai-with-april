@@ -1,0 +1,78 @@
+{
+  "source": "https://aprildunnam.com/feed/",
+  "generatedAt": "2026-08-14T18:59:06.046Z",
+  "items": [
+    {
+      "title": "Which Microsoft AI Tool Should You Use: Scout, Copilot Cowork, Microsoft 365 Copilot, or Copilot Studio?",
+      "url": "https://aprildunnam.com/2026/06/microsoft-scout-copilot-cowork-m365-copilot-copilot-studio/",
+      "date": "2026-06-10T15:33:17.000Z",
+      "excerpt": "Microsoft’s AI ecosystem is growing fast and becoming more confusing by the minute. We now have Microsoft 365 Copilot, Copilot Studio agents, Copilot Cowork, Microsoft Scout, and…",
+      "categories": [
+        "Copilot",
+        "Copilot Cowork",
+        "Copilot Studio",
+        "copilot"
+      ]
+    },
+    {
+      "title": "What Is Copilot Cowork? A New Way to Work with Microsoft 365 Copilot",
+      "url": "https://aprildunnam.com/2026/05/what-is-copilot-cowork-a-new-way-to-work-with-microsoft-365-copilot/",
+      "date": "2026-05-06T18:13:49.000Z",
+      "excerpt": "Microsoft recently introduced something new that changes how you interact with Copilot. It’s called Copilot Cowork, and it shifts Copilot from being a conversational assistant to…",
+      "categories": [
+        "Copilot",
+        "Copilot Cowork",
+        "AI",
+        "AI Agent"
+      ]
+    },
+    {
+      "title": "Power Apps’ Biggest Shift in Years: Vibe.PowerApps.Com",
+      "url": "https://aprildunnam.com/2026/02/power-apps-biggest-shift-in-years-vibe-powerapps-com/",
+      "date": "2026-02-13T14:00:00.000Z",
+      "excerpt": "For years, there’s been two main choices when it comes to building Power Apps: Are you going to build a Canvas app?Or a Model-driven app?(Or sometimes a hybrid of the […]",
+      "categories": [
+        "PowerApps",
+        "Code Apps",
+        "Power Apps",
+        "Vibe Coding"
+      ]
+    },
+    {
+      "title": "If I Were Starting with the Power Platform Today, Here’s What I’d Actually Do",
+      "url": "https://aprildunnam.com/2026/02/learning-power-platform-2026/",
+      "date": "2026-02-02T08:45:00.000Z",
+      "excerpt": "If I were starting with the Power Platform today, with all the AI hype, agents everywhere, and “vibe coding” dominating the conversation, I wouldn’t do what most people expect me…",
+      "categories": [
+        "Career",
+        "Power Platform",
+        "Agents",
+        "Copilot Studio"
+      ]
+    },
+    {
+      "title": "Smart Paste in Power Apps: A Hidden Gem You Need to Try",
+      "url": "https://aprildunnam.com/2025/04/smart-paste-in-power-apps-a-hidden-gem-you-need-to-try/",
+      "date": "2025-04-28T17:10:53.000Z",
+      "excerpt": "Have you ever found yourself copying data manually from emails, notes, or spreadsheets into your Power Apps forms and thinking, “There’s got to be a better way”?Good news: there…",
+      "categories": [
+        "PowerApps",
+        "AI",
+        "Model Driven Apps",
+        "Power Apps"
+      ]
+    },
+    {
+      "title": "Build Your FIRST Copilot Studio Agent in Minutes",
+      "url": "https://aprildunnam.com/2025/03/build-your-first-copilot-studio-agent-in-minutes/",
+      "date": "2025-03-26T09:15:00.000Z",
+      "excerpt": "Conversational AI is no longer a futuristic concept—it’s an expectation. Businesses and users alike now anticipate seamless, intelligent interactions powered by AI-driven agents.…",
+      "categories": [
+        "Copilot Studio",
+        "Agents",
+        "Chatbots",
+        "Conversational Agent"
+      ]
+    }
+  ]
+}
