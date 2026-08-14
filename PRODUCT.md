@@ -27,12 +27,19 @@ funnel:
 
 Within **one minute** of landing on the site, a visitor should be able to:
 
-1. Recognize which of the three roles fits them.
-2. Pick that role-based path.
+1. Recognize which of the three roles fits them (or opt straight into browsing by topic instead).
+2. Pick that entry point.
 3. Land on and start one genuinely useful resource — not another menu.
 
 This is the primary usability bar for the homepage. If a visitor is still deciding where to click
 after a minute, the homepage has failed.
+
+**v2 note on framing:** v1 rendered the three role entrances as literal "stops" on a dashed
+connector line (a "learning map/journey" metaphor implying sequence). On review, that implied an
+order that doesn't exist — a visitor is exactly one of the three, not progressing through all
+three. v2 keeps the same three entrances and the same one-click-to-a-real-resource guarantee, but
+presents them as parallel "Start here" options with no implied order, alongside an equally visible
+"browse by topic instead" alternative for visitors who don't want to self-identify by role.
 
 ## Purpose
 
@@ -52,19 +59,31 @@ someday."
 
 - **Reference site:** [aprildunnam.com](https://aprildunnam.com) — "Making Microsoft AI make
   sense." Principal Cloud Advocate, Microsoft. 10+ years on SharePoint, M365, and Power Platform.
-- **Preserve:** April's direct, practical, human teaching voice; confident sans-serif typography;
-  dark/navy hero energy; blue brand family (`#046bd2` / `#045cb4` primary blues, `#1e293b` /
-  `#334155` slate); a recognizable personal presence (not an anonymous brand).
+- **Preserve:** April's direct, practical, human teaching voice; confident sans-serif typography; a
+  recognizable personal presence (not an anonymous brand).
+- **Palette (confirmed v2):** a light, editorial pink/blue system — white/light-gray surfaces, dark
+  ink body text, blue (`#29ABE2` family, text-safe `#185FA5`) as the primary/structural accent, and
+  pink (`#E8327A` family, text-safe `#993556`) as the secondary/interactive accent. Sourced from
+  April's own attached brand palette and confirmed against the Cowork Masterclass's existing
+  `cheat-sheet.html`, which already uses this exact pink as its accent color — this is April's real,
+  already-in-use brand system, not a hypothetical. Superseded an earlier dark/navy hero direction
+  from v1, which had been inferred from one slide deck's styling rather than confirmed brand truth.
 - **Do not copy:** the WordPress/Astra site structure, layout, or theme. This is a new build with
   its own information architecture, purpose-built for a learning hub rather than a personal blog.
 
-## Launch proof point
+## Launch proof points
 
-The **S.K.I.L.L. framework** (five rules for writing agent skills that actually fire, plus working
-examples) is the first real resource and the proof that this hub delivers substance. It must be
-integrated as a **rich, first-class resource page** — not a bare file download. Supporting assets:
-a working slide deck (`Skills-Explained-Deck.pptx`) and a diagram (`skill-framework.png`), both
-sourced from April's existing material.
+Two rich, first-class resource pages anchor the launch — proof that this hub delivers substance,
+not a bare file download:
+
+- **The S.K.I.L.L. framework** — five rules for writing agent skills that actually fire, plus
+  working examples. Supporting assets: a working slide deck (`Skills-Explained-Deck.pptx`) and a
+  diagram (`skill-framework.png`), sourced from April's existing material.
+- **Copilot Cowork Masterclass** — the full lab manual for Copilot Cowork: a copy-paste prompt
+  bank, 7 hands-on labs and challenges, a skills starter kit, and a printable cheat sheet, plus the
+  original slide deck. Folded in from April's `copilot-cowork-masterclass` repository so the
+  content has one public home instead of living in a second repo.
+
 
 ## Non-fabrication rules (hard constraints)
 
@@ -75,7 +94,27 @@ sourced from April's existing material.
 - Future resources may be listed as placeholders **only when honestly labeled** (e.g. "Coming
   soon") — never presented as available when they are not.
 
-## Scope for v1 launch
+## Scope for v2
+
+In scope (this update):
+
+- Fold the `copilot-cowork-masterclass` repository's content into this hub as a second flagship
+  resource page, so April maintains one public repo instead of two.
+- Reframe the homepage's role entrances away from the "learning map/journey" sequential metaphor
+  toward parallel "Start here" options, plus a topic-browse alternative (see First-time success
+  criteria above).
+- Re-theme the site to April's confirmed light pink/blue brand palette (see Brand reference above),
+  replacing v1's inferred dark/navy direction.
+
+Out of scope for v2 (explicitly deferred, not silently dropped):
+
+- Copying the Cowork Masterclass's fictional "Northwind Traders" sample exercise data files onto
+  the public site — they're private-tenant hands-on lab fixtures with no standalone public value;
+  the labs that reference them explain what each file is for instead.
+- A dedicated per-role landing page tree — still deferred per the flat information architecture in
+  `DESIGN.md`.
+
+## Scope for v1 launch (original)
 
 In scope:
 

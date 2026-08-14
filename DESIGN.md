@@ -13,29 +13,56 @@ than it needs component reuse tooling. Every page is a self-contained `.html` fi
 
 ## Brand tokens
 
-Sourced directly from two references, sampled/extracted rather than guessed:
+Sourced directly from three references, sampled/extracted rather than guessed:
 
 - **aprildunnam.com** (Astra/WordPress CSS custom properties): blue family
   `#046bd2` / `#045cb4`, slate `#1e293b` / `#334155`.
-- **The S.K.I.L.L. framework artwork** (`assets/img/skill-framework.png`), sampled with PIL:
-  navy base `#15181e`, card surfaces `#21262f` / `#2b313c`, near-white text `#f2f5f9`, mint accent
-  `#2ee6a8`, gold accent `#ffc24b`.
+- **April's confirmed brand palette** (attached directly, v2): light editorial system — pink
+  `#E8327A` / `#993556` (text-safe), blue `#29ABE2` / `#185FA5` (text-safe), dark ink `#111111`,
+  white/light-gray surfaces.
+- **The Cowork Masterclass's own `cheat-sheet.html`** (folded into this repo, v2): uses the exact
+  same `#E8327A` pink as its accent — independent confirmation that the attached palette is
+  April's real, already-in-use brand system, not a hypothetical.
+- **The S.K.I.L.L. framework artwork** (`assets/img/skill-framework.png`, v1): sampled with PIL for
+  the original dark/navy direction — superseded in v2 (see below), but kept here as a record of
+  where v1's now-retired tokens came from.
 
-These were blended into the token set at the top of `assets/css/style.css`:
+These were blended into the token set at the top of `assets/css/style.css`. **v2 replaced the
+entire palette** (light, not dark) — the table below reflects the current, live tokens:
 
 | Token | Value | Use |
 |---|---|---|
-| `--color-bg` | `#10141c` | Page background (navy, not pure black) |
-| `--color-surface` / `--color-surface-2` | `#1c2330` / `#242c3b` | Cards, toolbars |
-| `--color-text` / `--color-text-muted` / `--color-text-faint` | `#f2f5f9` / `#b7c0cf` / `#7c879b` | Body text hierarchy |
-| `--color-blue-strong` / `--color-blue-hover` | `#046bd2` / `#5aa4f2` | Primary actions, links |
-| `--color-mint` | `#2ee6a8` | Success/active accent, role 2 |
-| `--color-gold` | `#ffc24b` | Role 3 accent, "coming soon" badges |
+| `--color-bg` | `#ffffff` | Page background |
+| `--color-surface` / `--color-surface-2` | light grays | Cards, toolbars |
+| `--color-text` / `--color-text-muted` / `--color-text-faint` | dark ink hierarchy (`#111111` down to `#6b6b6b`) | Body text hierarchy |
+| `--color-blue-strong` / `--color-blue-hover` | `#185FA5` / `#29ABE2`-derived | Primary actions, links, role 1 accent |
+| `--color-pink` / `--color-pink-strong` | `#E8327A` (bg only) / `#993556` (text) | Role 2 accent, Cowork Masterclass identity color, interactive/hover accent |
+| `--color-text` (dark ink) | `#111111` | Role 3 accent (3rd differentiator; the palette only supplies 2 saturated accents) |
 
-All contrast pairs were checked against WCAG AA (see QA notes below); everything is 5:1 or better.
+**Why `--color-pink-strong` exists as a separate token:** raw `--color-pink` (#E8327A) on white is
+4.06:1 contrast — passes for large/bold text (glyphs, backgrounds) but fails AA for normal body
+text (needs 4.5:1). `--color-pink-strong` (#993556, April's own "pink-text" value) is 7.00:1 and is
+used for every pink *text* use (links, eyebrow, hover states); raw `--color-pink` is reserved for
+backgrounds and large bold glyphs only. The same logic applies to blue: raw `--color-blue` is
+decorative-only, `--color-blue-strong` is the text/link-safe value.
+
+Two other tokens deliberately deviate from a literal reading of the source palette, each with a
+brand-sourced justification:
+
+- `--color-text-faint` is `#6b6b6b`, not a straight `#888888` — the latter fails AA (3.54:1). The
+  chosen value is 5.33:1 **and** is the exact gray already used by the Cowork Masterclass's own
+  `.sub` class in `cheat-sheet.html`, so it's not an arbitrary invention.
+- `--color-border-strong` is `#949494` (not a plain mid-gray) for better non-text contrast on
+  interactive borders (buttons, inputs, chips) per WCAG 1.4.11, while the plain decorative
+  `--color-border` divider color stays exactly `#e5e5e5`.
+
+All contrast pairs were checked against WCAG AA using a standalone luminance/contrast script;
+everything used for text passes 4.5:1 (7:1 for `-strong` variants), and decorative/large-text-only
+uses are documented inline in `style.css` where they intentionally sit below that bar.
 
 **Do not hardcode hex colors in new markup or CSS.** Reference the `--color-*` custom properties
 so a future palette adjustment is a one-file change.
+
 
 ## Typography
 
@@ -49,18 +76,27 @@ sans-serif fallback stack, so the site is still fully legible offline or if the 
 ## Information architecture
 
 ```
-/                                Homepage — learning map + featured resource + taxonomy
+/                                Homepage — Start Here entrances + 2 featured resources + taxonomy
 /resources.html                  Full resource library (search + filter, client-side only)
-/resources/skill-framework.html  The one full resource page today
+/resources/skill-framework.html  Flagship resource #1
+/resources/cowork-masterclass.html  Flagship resource #2 (folded in from copilot-cowork-masterclass)
 /about.html                      About April
 /404.html                        Not-found page (absolute /ai-with-april/ paths — see below)
 ```
 
-Deliberately flat. No `/paths/professional.html` etc. — role-based "paths" are framed as entry
-points into the same library (via `resources.html?role=X` query params and anchored callouts on
-the S.K.I.L.L. page), not separate content trees to maintain in parallel. Add a real per-role
-landing page only once there are enough resources that a shared library page stops being the
-fastest way to a "first useful resource."
+Deliberately flat. No `/paths/professional.html` etc. — role-based entrances are framed as entry
+points into the same library (via `resources.html?role=X` / `?topic=X` query params and anchored
+callouts on each resource page), not separate content trees to maintain in parallel. Add a real
+per-role landing page only once there are enough resources that a shared library page stops being
+the fastest way to a "first useful resource."
+
+**v2 addition:** `resources/cowork-masterclass.html` was added by folding in the
+`copilot-cowork-masterclass` repository's content (overview, glossary/FAQ, prompt bank, 7 labs and
+challenges, skills starter kit, cheat sheet, slide deck) rather than keeping it as a second public
+repo. Source markdown lives in `content/cowork-masterclass/` for provenance, matching the
+`content/skill-framework-source.md` precedent. Both flagship resource pages get a direct nav link
+(alongside Home / Resource library / About) — the nav lists actual pages, not a resource-count-scaling
+list, so this stays flat as long as there are only a couple of flagship pages.
 
 ## Content model: adding a resource
 
@@ -84,29 +120,43 @@ To add a genuinely new topic or role to the taxonomy, add it to `AI_WITH_APRIL_T
 add a matching filter chip button in `resources.html` (`data-role-filter` / `data-topic-filter`)
 and, if it should be discoverable from the homepage, a `.topic-card` in `index.html`.
 
-## Learning map pattern (homepage)
+## Start Here pattern (homepage)
 
-The homepage intentionally avoids a generic "hero + 3 feature cards" SaaS layout. The `.map`
-component renders role entrances as stops along a dashed connector line (`.map::before`), evoking
-a literal path rather than a features grid. Each `.map-stop` is a full-card link (not a "read
-more" pattern) so the one-minute-to-first-resource goal in `PRODUCT.md` holds: one click from
-homepage to a real resource, always.
+**v2 replaced the "learning map" pattern.** v1 rendered role entrances as stops along a dashed
+connector line (`.map::before`), evoking a literal sequential path. On reflection this implied an
+order that doesn't exist — a visitor picks *one* of the three, they don't progress through all
+three — and the connector/numbering read as a gimmick rather than a genuine wayfinding aid.
 
-When adding a 4th role or a 2nd map row in the future, keep the connector-line treatment — that
-visual metaphor is what distinguishes this from a stock template, and losing it re-generic-izes
-the page.
+v2's `.start-grid` keeps everything that made the pattern work (three full-card links, each one
+click from a real resource, no "read more" pattern) and drops only the sequence implication:
+
+- No connector line between cards.
+- Badges are role-initial letters (`P` / `M` / `B`) in a bordered circle, not numbers — a visual
+  identity mark per role, not a step count.
+- A visible "browse by topic instead" link sits below the grid, pointing to `#topics` on the same
+  page, for visitors who'd rather self-select by subject than by role.
+- The section has its own `eyebrow` + `h2` ("Start here" / "Three ways in — pick the one that's
+  you"), rather than being folded silently into the hero, so it reads as a first-class homepage
+  section like the featured-resource and topic-taxonomy sections below it.
+
+When adding a 4th role or a 2nd row in the future, keep the "parallel entrances, no implied order"
+principle — reintroducing a connector line or numeric badges would re-introduce the sequencing
+problem this change fixed.
 
 ## Component conventions
 
-- **Cards that are entirely links** (`.map-stop`, `.topic-card`, `.resource-card` when
+- **Cards that are entirely links** (`.start-card`, `.topic-card`, `.resource-card` when
   `status: available`) must explicitly reset `text-decoration: none` and `color` at the card
   level — don't rely on resetting anchors globally, since inline text links elsewhere in prose
   should keep their underline for accessibility.
 - **Accent placement:** avoid thick single-side "tab" borders on cards (a common AI-generated-UI
-  tell). Role/step differentiation uses either a bordered circular index (`.map-stop__index`) or
-  a small inline dot (`.role-callout__dot`), never a left-border stripe.
-- **Badges** (`.badge`, `.badge--soon`, `.tag`) are pill-shaped with a tinted background + border
-  in the accent color, never solid-fill, to stay legible against the dark surfaces.
+  tell). Role differentiation uses a bordered circular badge (`.start-card__badge`, a role-initial
+  letter) or a small inline dot (`.role-callout__dot`), never a left-border stripe.
+- **Badges** (`.badge`, `.badge--soon`, `.badge--pink`, `.tag`) are pill-shaped with a tinted
+  background + border in the accent color, never solid-fill, to stay legible.
+- **A second "featured" resource block** (`.featured--pink`) exists specifically so a 2nd flagship
+  resource (Cowork Masterclass) reads as visually distinct from the 1st (S.K.I.L.L. framework, plain
+  `.featured`) via accent color alone — same layout, same actions pattern, different identity color.
 
 ## Accessibility & motion
 
@@ -116,7 +166,7 @@ the page.
   scrolling, handled once globally in `style.css` — don't add page-specific motion that bypasses
   this query.
 - Mobile nav is a real `<button>` with `aria-expanded`/`aria-controls`, toggled via `assets/js/main.js`.
-- All images have descriptive `alt` text; decorative icons (search glyph, index numbers) use
+- All images have descriptive `alt` text; decorative icons (search glyph, role-badge letters) use
   `aria-hidden="true"`.
 
 ## 404 page path convention

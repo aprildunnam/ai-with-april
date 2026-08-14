@@ -38,6 +38,7 @@
           <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="resources.html">Resource library</a></li>
           <li><a href="resources/skill-framework.html">S.K.I.L.L. framework</a></li>
+          <li><a href="resources/cowork-masterclass.html">Cowork Masterclass</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
       </nav>
@@ -55,42 +56,57 @@
           reading something useful in under a minute.
         </p>
         <div class="hero__actions">
-          <a class="btn btn-primary" href="#learning-map">Find my path</a>
+          <a class="btn btn-primary" href="#start-here">Start here</a>
           <a class="btn btn-secondary" href="resources.html">Browse the full library</a>
         </div>
+      </div>
+    </section>
 
-        <div class="map" id="learning-map" aria-label="Choose a role-based learning path">
-          <a class="map-stop" href="resources/skill-framework.html#for-professionals">
-            <span class="map-stop__index" aria-hidden="true">1</span>
+    <section class="section" id="start-here">
+      <div class="wrap">
+        <p class="eyebrow">Start here</p>
+        <h2>Three ways in — pick the one that's you</h2>
+        <p class="hero__lede" style="margin-bottom: var(--space-3);">
+          Same material, different entry point. There's no required order — each card is one
+          click from a real resource, not a "read more" teaser.
+        </p>
+
+        <div class="start-grid" aria-label="Choose a role-based starting point">
+          <a class="start-card" href="resources/skill-framework.html#for-professionals">
+            <span class="start-card__badge" aria-hidden="true">P</span>
             <h3>Curious Professional</h3>
             <p>New to AI and want it to make sense for your actual job, not the hype cycle.</p>
-            <span class="map-stop__tags">
+            <span class="start-card__tags">
               <span class="tag">AI Fundamentals</span>
             </span>
-            <span class="map-stop__cta">Start with the S.K.I.L.L. framework &rarr;</span>
+            <span class="start-card__cta">Start with the S.K.I.L.L. framework &rarr;</span>
           </a>
 
-          <a class="map-stop" href="resources/skill-framework.html#for-makers">
-            <span class="map-stop__index" aria-hidden="true">2</span>
+          <a class="start-card" href="resources/cowork-masterclass.html">
+            <span class="start-card__badge" aria-hidden="true">M</span>
             <h3>Microsoft Maker</h3>
             <p>Building with Copilot Studio, Power Platform, or Cowork and want it to hold up.</p>
-            <span class="map-stop__tags">
-              <span class="tag">Copilot Studio</span>
+            <span class="start-card__tags">
+              <span class="tag">Cowork</span>
               <span class="tag">Power Platform</span>
             </span>
-            <span class="map-stop__cta">Start with the S.K.I.L.L. framework &rarr;</span>
+            <span class="start-card__cta">Start with the Cowork Masterclass &rarr;</span>
           </a>
 
-          <a class="map-stop" href="resources/skill-framework.html#for-builders">
-            <span class="map-stop__index" aria-hidden="true">3</span>
+          <a class="start-card" href="resources/skill-framework.html#for-builders">
+            <span class="start-card__badge" aria-hidden="true">B</span>
             <h3>Technical Builder</h3>
             <p>Want the mechanics: agents, skills, prompting, and where each one belongs.</p>
-            <span class="map-stop__tags">
+            <span class="start-card__tags">
               <span class="tag">Agents &amp; Copilot</span>
             </span>
-            <span class="map-stop__cta">Start with the S.K.I.L.L. framework &rarr;</span>
+            <span class="start-card__cta">Start with the S.K.I.L.L. framework &rarr;</span>
           </a>
         </div>
+
+        <p style="margin-top: var(--space-3);">
+          Not sure which one's you? <a href="#topics">Browse by topic instead &rarr;</a>
+        </p>
       </div>
     </section>
 
@@ -119,7 +135,32 @@
       </div>
     </section>
 
-    <section class="section section--tight">
+    <section class="section">
+      <div class="wrap">
+        <p class="eyebrow">Flagship resource</p>
+        <h2>Copilot Cowork Masterclass</h2>
+        <div class="featured featured--pink">
+          <div class="featured__body">
+            <span class="badge badge--pink">Guide, prompt bank &amp; labs</span>
+            <h3 style="margin-top: 0.6rem;">Your lab manual for Copilot Cowork</h3>
+            <p>
+              A copy-paste prompt bank, 7 hands-on labs and challenges, a skills starter kit, and
+              a printable cheat sheet — everything from the live Cowork Masterclass session, in
+              one place.
+            </p>
+            <div class="featured__actions">
+              <a class="btn btn-primary" href="resources/cowork-masterclass.html">Read the guide</a>
+              <a class="btn btn-secondary" href="assets/downloads/cowork-masterclass-slides.pdf">Download the deck (.pdf)</a>
+            </div>
+          </div>
+          <div class="featured__media">
+            <img src="assets/img/cowork-cheat-sheet.png" alt="Copilot Cowork cheat sheet: which tool to use, model and cost guidance, the four parts of a great prompt, and steal-these prompts.">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="topics">
       <div class="wrap">
         <p class="eyebrow">Browse by topic</p>
         <h2>Find something specific</h2>

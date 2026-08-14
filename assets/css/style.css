@@ -1,30 +1,43 @@
 /* =========================================================================
    AI with April — design tokens & base styles
-   Brand tokens sourced from aprildunnam.com (blue family) and the S.K.I.L.L.
-   framework artwork (navy base + mint/gold accents). See DESIGN.md for the
-   full rationale before changing any of these.
+   Light brand system: white/near-white surfaces, dark ink text, and a
+   two-accent palette (pink + blue) shared with April's other learning
+   assets (the Cowork Masterclass cheat sheet uses this exact pink). See
+   DESIGN.md for the full rationale before changing any of these.
    ========================================================================= */
 
 :root {
-  /* Core palette */
-  --color-bg: #10141c;
-  --color-bg-alt: #171d29;
-  --color-surface: #1c2330;
-  --color-surface-2: #242c3b;
-  --color-border: #313b4d;
-  --color-border-strong: #47526a;
+  /* Core palette (light) */
+  --color-bg: #ffffff;
+  --color-bg-alt: #f5f5f5;
+  --color-surface: #ffffff;
+  --color-surface-2: #f5f5f5;
+  --color-border: #e5e5e5;
+  --color-border-strong: #949494;
 
-  --color-text: #f2f5f9;
-  --color-text-muted: #b7c0cf;
-  --color-text-faint: #7c879b;
+  --color-text: #111111;
+  --color-text-muted: #444444;
+  /* Deviates slightly from the raw --muted (#888888) swatch: darkened to #6b6b6b (matching the
+     "sub" gray already used in the Cowork Masterclass cheat sheet) so small metadata text keeps
+     WCAG AA contrast (5.33:1) on a white background. */
+  --color-text-faint: #6b6b6b;
 
-  --color-blue: #2f8bef;
-  --color-blue-strong: #046bd2;
-  --color-blue-hover: #5aa4f2;
-  --color-mint: #2ee6a8;
-  --color-gold: #ffc24b;
+  /* Blue accent — primary brand actions */
+  --color-blue: #29abe2;
+  --color-blue-strong: #185fa5;
+  --color-blue-hover: #124a80;
+  --color-blue-light: #f0f8ff;
+  --color-blue-border: #b5d4f4;
 
-  --color-focus: #7fc4ff;
+  /* Pink accent — interactive/secondary accent, and the Cowork Masterclass identity color.
+     --color-pink is for decorative/background use (icons, dots, badges); --color-pink-strong
+     is the accessible text-safe variant (7:1 on white) for links, headings, and hover states. */
+  --color-pink: #e8327a;
+  --color-pink-strong: #993556;
+  --color-pink-light: #fff0f5;
+  --color-pink-border: #f4c0d1;
+
+  --color-focus: #124a80;
 
   /* Typography */
   --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
@@ -42,7 +55,7 @@
   --space-5: 4rem;
   --space-6: 6rem;
 
-  --shadow-card: 0 12px 30px -14px rgba(0, 0, 0, 0.55);
+  --shadow-card: 0 12px 30px -14px rgba(17, 17, 17, 0.22);
   --transition-fast: 150ms ease;
   --transition-med: 260ms ease;
 }
@@ -95,7 +108,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-mint);
+  color: var(--color-pink-strong);
 }
 
 ul, ol {
@@ -195,7 +208,7 @@ hr {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-mint);
+  color: var(--color-pink-strong);
   margin-bottom: var(--space-2);
 }
 
@@ -217,7 +230,7 @@ hr {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(16, 20, 28, 0.92);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: saturate(160%) blur(10px);
   border-bottom: 1px solid var(--color-border);
 }
@@ -346,8 +359,8 @@ hr {
 }
 
 .btn-secondary:hover {
-  border-color: var(--color-mint);
-  color: var(--color-mint);
+  border-color: var(--color-pink-strong);
+  color: var(--color-pink-strong);
 }
 
 .btn-ghost {
@@ -358,7 +371,7 @@ hr {
 }
 
 .btn-ghost:hover {
-  color: var(--color-mint);
+  color: var(--color-pink-strong);
 }
 
 /* =========================================================================
@@ -368,8 +381,8 @@ hr {
 .hero {
   padding: var(--space-6) 0 var(--space-5);
   background:
-    radial-gradient(1100px 480px at 15% -10%, rgba(4, 107, 210, 0.25), transparent 60%),
-    radial-gradient(900px 420px at 100% 0%, rgba(46, 230, 168, 0.14), transparent 55%);
+    radial-gradient(1100px 480px at 15% -10%, rgba(41, 171, 226, 0.16), transparent 60%),
+    radial-gradient(900px 420px at 100% 0%, rgba(232, 50, 122, 0.12), transparent 55%);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -391,55 +404,22 @@ hr {
   margin-top: var(--space-3);
 }
 
-/* Learning map: a connected path of role stops rather than a card grid */
-.map {
+/* Start here: parallel role entrances (not a sequential path) */
+.start-grid {
   position: relative;
   margin-top: var(--space-5);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-3);
-  counter-reset: mapstep;
-}
-
-.map::before {
-  content: "";
-  position: absolute;
-  top: 34px;
-  left: 8%;
-  right: 8%;
-  height: 2px;
-  background: repeating-linear-gradient(
-    to right,
-    var(--color-border-strong) 0,
-    var(--color-border-strong) 10px,
-    transparent 10px,
-    transparent 20px
-  );
-  z-index: 0;
 }
 
 @media (max-width: 860px) {
-  .map {
+  .start-grid {
     grid-template-columns: 1fr;
-  }
-  .map::before {
-    top: 8%;
-    bottom: 8%;
-    left: 34px;
-    right: auto;
-    width: 2px;
-    height: auto;
-    background: repeating-linear-gradient(
-      to bottom,
-      var(--color-border-strong) 0,
-      var(--color-border-strong) 10px,
-      transparent 10px,
-      transparent 20px
-    );
   }
 }
 
-.map-stop {
+.start-card {
   position: relative;
   z-index: 1;
   background: var(--color-surface);
@@ -454,15 +434,14 @@ hr {
   color: var(--color-text);
 }
 
-.map-stop:hover,
-.map-stop:focus-visible {
-  border-color: var(--color-mint);
+.start-card:hover,
+.start-card:focus-visible {
+  border-color: var(--color-pink);
   transform: translateY(-4px);
   color: var(--color-text);
 }
 
-.map-stop__index {
-  counter-increment: mapstep;
+.start-card__badge {
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -477,21 +456,21 @@ hr {
   color: var(--color-text);
 }
 
-.map-stop:nth-child(2) .map-stop__index { border-color: var(--color-mint); }
-.map-stop:nth-child(3) .map-stop__index { border-color: var(--color-gold); }
+.start-card:nth-child(2) .start-card__badge { border-color: var(--color-pink); }
+.start-card:nth-child(3) .start-card__badge { border-color: var(--color-text); }
 
-.map-stop h3 {
+.start-card h3 {
   font-size: 1.2rem;
   margin-bottom: 0.15rem;
 }
 
-.map-stop p {
+.start-card p {
   color: var(--color-text-muted);
   font-size: 0.95rem;
   margin-bottom: 0.5rem;
 }
 
-.map-stop__cta {
+.start-card__cta {
   margin-top: auto;
   font-family: var(--font-display);
   font-weight: 700;
@@ -502,12 +481,12 @@ hr {
   gap: 0.35em;
 }
 
-.map-stop:hover .map-stop__cta,
-.map-stop:focus-visible .map-stop__cta {
-  color: var(--color-mint);
+.start-card:hover .start-card__cta,
+.start-card:focus-visible .start-card__cta {
+  color: var(--color-pink-strong);
 }
 
-.map-stop__tags {
+.start-card__tags {
   display: flex;
   gap: 0.4rem;
   flex-wrap: wrap;
@@ -551,15 +530,26 @@ hr {
   text-transform: uppercase;
   padding: 0.35em 0.8em;
   border-radius: 999px;
-  background: rgba(46, 230, 168, 0.14);
-  color: var(--color-mint);
-  border: 1px solid rgba(46, 230, 168, 0.35);
+  background: var(--color-blue-light);
+  color: var(--color-blue-strong);
+  border: 1px solid var(--color-blue-border);
 }
 
 .badge--soon {
-  background: rgba(255, 194, 75, 0.12);
-  color: var(--color-gold);
-  border-color: rgba(255, 194, 75, 0.35);
+  background: var(--color-bg-alt);
+  color: var(--color-text-faint);
+  border-color: var(--color-border-strong);
+}
+
+.badge--pink {
+  background: var(--color-pink-light);
+  color: var(--color-pink-strong);
+  border-color: var(--color-pink-border);
+}
+
+.featured--pink {
+  background: linear-gradient(135deg, var(--color-pink-light) 0%, var(--color-surface) 60%);
+  border-color: var(--color-pink-border);
 }
 
 .featured__actions {
@@ -718,7 +708,7 @@ hr {
 
 a.resource-card:hover,
 a.resource-card:focus-visible {
-  border-color: var(--color-mint);
+  border-color: var(--color-pink);
   transform: translateY(-3px);
   color: var(--color-text);
 }
@@ -808,8 +798,8 @@ a.resource-card:focus-visible {
   margin-right: 0.5em;
 }
 
-.role-callout:nth-of-type(2) .role-callout__dot { background: var(--color-mint); }
-.role-callout:nth-of-type(3) .role-callout__dot { background: var(--color-gold); }
+.role-callout:nth-of-type(2) .role-callout__dot { background: var(--color-pink); }
+.role-callout:nth-of-type(3) .role-callout__dot { background: var(--color-text); }
 
 .role-callout h3 {
   font-size: 1rem;
@@ -840,7 +830,7 @@ a.resource-card:focus-visible {
 .prose h3 {
   font-size: 1.2rem;
   margin-top: var(--space-3);
-  color: var(--color-mint);
+  color: var(--color-pink-strong);
 }
 
 .prose table {
@@ -872,6 +862,53 @@ a.resource-card:focus-visible {
   letter-spacing: 0.06em;
 }
 
+.prose dl {
+  margin: var(--space-2) 0 var(--space-3);
+}
+
+.prose dt {
+  margin-top: var(--space-2);
+  color: var(--color-text);
+}
+
+.prose dt:first-child {
+  margin-top: 0;
+}
+
+.prose dd {
+  margin: 0.2em 0 0;
+  color: var(--color-text-muted);
+}
+
+.prose details {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+  margin: 0 0 var(--space-2);
+}
+
+.prose details[open] {
+  padding-bottom: var(--space-3);
+}
+
+.prose summary {
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 600;
+  padding: 0.3em 0;
+  list-style: revert;
+}
+
+.prose summary:focus-visible {
+  outline: 3px solid var(--color-blue-strong);
+  outline-offset: 3px;
+}
+
+.prose details > *:not(summary):first-of-type {
+  margin-top: var(--space-2);
+}
+
 .letter-list {
   list-style: none;
   padding: 0;
@@ -901,12 +938,16 @@ a.resource-card:focus-visible {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.3rem;
-  background: var(--color-mint);
-  color: #0c1712;
+  background: var(--color-blue-strong);
+  color: #fff;
+}
+
+.letter-item:nth-child(even) .letter-item__glyph {
+  background: var(--color-pink);
 }
 
 .letter-item:nth-child(5) .letter-item__glyph {
-  background: var(--color-gold);
+  background: var(--color-text);
 }
 
 .letter-item h3 {
@@ -921,8 +962,8 @@ a.resource-card:focus-visible {
 }
 
 .callout-box {
-  background: rgba(4, 107, 210, 0.12);
-  border: 1px solid rgba(4, 107, 210, 0.35);
+  background: var(--color-blue-light);
+  border: 1px solid var(--color-blue-border);
   border-radius: var(--radius-md);
   padding: var(--space-3);
   margin: var(--space-3) 0;

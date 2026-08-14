@@ -53,14 +53,16 @@ window.AI_WITH_APRIL_RESOURCES = [
     status: "coming-soon"
   },
   {
-    id: "cowork-field-guide",
-    title: "Cowork Field Guide",
+    id: "cowork-masterclass",
+    title: "Copilot Cowork Masterclass",
     description:
-      "How Copilot Cowork fits into a real workday: personal skills, delegation, and what to hand off versus keep.",
-    roles: ["professional", "maker"],
-    topics: ["cowork"],
-    formats: ["guide"],
-    status: "coming-soon"
+      "The full lab manual for Copilot Cowork: what it is, a copy-paste prompt bank, 7 hands-on labs and challenges, a skills starter kit, and a printable cheat sheet — plus the original slide deck.",
+    url: "resources/cowork-masterclass.html",
+    roles: ["professional", "maker", "builder"],
+    topics: ["cowork", "prompting-skills"],
+    formats: ["guide", "deck", "template"],
+    status: "available",
+    featured: true
   },
   {
     id: "agent-architecture-deep-dive",
@@ -91,6 +93,7 @@ window.AI_WITH_APRIL_TAXONOMY = {
   },
   formats: {
     guide: "Guide",
-    deck: "Slide deck"
+    deck: "Slide deck",
+    template: "Templates"
   }
 };
