@@ -1,7 +1,14 @@
 {
   "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCz_x76EBX5UXsV27drGNh6w",
-  "generatedAt": "2026-08-14T18:59:06.046Z",
+  "generatedAt": "2026-08-15T13:20:53.076Z",
   "items": [
+    {
+      "title": "The S.K.I.L.L. Framework for Better AI Skills",
+      "url": "https://www.youtube.com/shorts/kFa8PsHaq5w",
+      "videoId": "kFa8PsHaq5w",
+      "thumbnail": "https://i4.ytimg.com/vi/kFa8PsHaq5w/hqdefault.jpg",
+      "date": "2026-08-15T02:15:07.000Z"
+    },
     {
       "title": "Copilot Cowork Master Class Coming Up",
       "url": "https://www.youtube.com/shorts/tYQkztM9uLY",
@@ -36,13 +43,6 @@
       "videoId": "7TUS0r0PgpY",
       "thumbnail": "https://i4.ytimg.com/vi/7TUS0r0PgpY/hqdefault.jpg",
       "date": "2026-05-20T15:49:20.000Z"
-    },
-    {
-      "title": "Can Copilot Cowork Actually Redesign a Presentation in Minutes?",
-      "url": "https://www.youtube.com/watch?v=osjHPVfNF3w",
-      "videoId": "osjHPVfNF3w",
-      "thumbnail": "https://i4.ytimg.com/vi/osjHPVfNF3w/hqdefault.jpg",
-      "date": "2026-04-30T13:15:06.000Z"
     }
   ]
 }
