@@ -151,6 +151,8 @@ The session pages use:
 
 - `.session-grid` / `.session-card` for the two-session index and homepage teaser.
 - `.demo-grid` / `.demo-card` for the numbered live-demo sequence.
+- `.demo-runbook` / `.demo-step` for detailed flows, `.reference-files` for per-demo downloads,
+  and `.prompt-block` for copyable prompts.
 - A lightweight ZIP under `assets/downloads/` containing setup guides, prompts, skills, sample
   documents, and seeded data.
 - Optimized PowerPoint decks under `assets/downloads/` for direct download.

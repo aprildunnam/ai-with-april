@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Delegating Real Work to Copilot Cowork — AI with April</title>
-  <meta name="description" content="Prompts, setup instructions, and demo files for April Dunnam's practical Copilot Cowork session.">
+  <meta name="description" content="A reusable Copilot Cowork demo runbook with copyable prompts and direct reference-file downloads.">
   <link rel="canonical" href="https://aprildunnam.github.io/ai-with-april/resources/vibe-cowork.html">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Delegating Real Work to Copilot Cowork — AI with April">
@@ -42,22 +42,22 @@
         <p class="eyebrow">Vibe session &middot; Copilot Cowork</p>
         <h1>Delegating Real Work to Copilot Cowork</h1>
         <p class="hero__lede">
-          Stop prompting and start handing off. This session shows where Cowork fits in the
-          Copilot family, how it plans cross-app work, and how to turn one successful task into
-          an app, automation, skill, or plugin.
+          Stop prompting and start handing off. Follow the complete demo flow, download each
+          reference file, and copy every prompt directly from this page. The session shows how
+          to turn one successful Cowork task into an app, automation, skill, or plugin.
         </p>
         <div class="featured__actions" style="margin-bottom: var(--space-4);">
           <a class="btn btn-primary" href="../assets/downloads/delegating-real-work-to-copilot-cowork.pptx">Download the slide deck (.pptx)</a>
           <a class="btn btn-secondary" href="../assets/downloads/vibe-cowork-demo-pack.zip">Download the demo pack (.zip)</a>
-          <a class="btn btn-secondary" href="../assets/downloads/vibe-cowork-prompts.txt">Open the prompt sheet (.txt)</a>
+          <a class="btn btn-secondary" href="../assets/downloads/vibe-cowork/setup-guide.docx">Download the setup guide (.docx)</a>
         </div>
         <img class="resource-cover" src="../assets/img/vibe-cowork.svg" alt="Delegating Real Work to Copilot Cowork session cover">
         <div class="callout-box">
           <p>
-            <strong>What's in the 436 KB download:</strong> the setup guide, copy-paste prompts,
-            seeded Outlook data, a Teams chat script, vendor and festival files, SharePoint list
-            CSVs, and fallback artifacts. The optimized 6.6 MB slide deck is available directly
-            above. The large demo recordings remain prepared for distribution through
+            <strong>Want everything at once?</strong> The 436 KB demo pack contains the setup
+            guide, seeded Outlook data, a Teams chat script, vendor and festival files, SharePoint
+            list CSVs, and fallback artifacts. You can also download only the files needed for
+            each demo below. The large demo recordings remain available through
             <a href="https://github.com/aprildunnam/ai-with-april/releases">GitHub Releases</a>.
           </p>
         </div>
@@ -65,34 +65,140 @@
     </section>
     <section class="section--tight prose">
       <div class="wrap prose">
-        <h2>The six demos</h2>
-        <div class="demo-grid demo-grid--pink">
-          <article class="demo-card"><span>1</span><h3>Hand it your inbox</h3><p>Triage unread festival mail, draft quick replies, and keep approval before anything sends.</p></article>
-          <article class="demo-card"><span>2</span><h3>Prep a vendor meeting</h3><p>Combine six months of email, Teams chat, and order history into a one-page Word brief.</p></article>
-          <article class="demo-card"><span>3</span><h3>Build a volunteer app</h3><p>Use <code>/app</code> to create a mobile check-in experience from a SharePoint list.</p></article>
-          <article class="demo-card"><span>4</span><h3>Create an event-triggered automation</h3><p>React to a label's email, check order history, draft a response, and update a list.</p></article>
-          <article class="demo-card"><span>5</span><h3>Save the task as a skill</h3><p>Generalize the vendor briefing workflow and reuse it for another label.</p></article>
-          <article class="demo-card"><span>6</span><h3>Put a plugin to work</h3><p>Turn the festival plan into a visual run of show in Miro or a monday.com board.</p></article>
+        <h2>The demo runbook</h2>
+        <p>Work through these in order. Each demo includes its setup, reference files, exact prompt, and expected outcome.</p>
+
+        <div class="demo-runbook demo-runbook--pink">
+          <article class="demo-step" id="cowork-demo-1">
+            <div class="demo-step__head">
+              <span class="demo-step__number">1</span>
+              <div><h3>Cowork 101: hand it your inbox</h3><p>Delegate a real outcome instead of asking for one isolated summary.</p></div>
+            </div>
+            <h4>Reference files</h4>
+            <ul class="reference-files">
+              <li><a href="../assets/downloads/vibe-cowork/outlook-demo-mail.zip">Complete Outlook demo mail</a></li>
+              <li><a href="../assets/downloads/vibe-cowork/seed-mailbox.ps1">Seed-Mailbox.ps1</a></li>
+            </ul>
+            <h4>Demo flow</h4>
+            <ol>
+              <li>Run the mailbox seed script as the demo user at least once during setup.</li>
+              <li>Keep the 15 festival messages unread and dated within the current week.</li>
+              <li>Open Cowork, leave the model on Auto, and paste the prompt.</li>
+              <li>Show the visible plan and let Cowork separate urgent work, quick replies, and noise.</li>
+              <li>Pause on the approval step before any response is sent.</li>
+            </ol>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy prompt</button><pre><code>Go through my unread email from this week. Flag anything about Analog Fest that needs me, sort it into a short list by urgency, and draft replies to the quick ones. Show me the drafts before sending anything.</code></pre></div>
+            <p class="demo-notes"><strong>Expected result:</strong> Cowork should identify the sound quote, permit document, volunteer gaps, poster proofs, and press interview as actionable while separating newsletters and notices.</p>
+          </article>
+
+          <article class="demo-step" id="cowork-demo-2">
+            <div class="demo-step__head">
+              <span class="demo-step__number">2</span>
+              <div><h3>Prep a vendor meeting</h3><p>Build one briefing from email, Teams, and an Excel order history.</p></div>
+            </div>
+            <h4>Reference files</h4>
+            <ul class="reference-files">
+              <li><a href="../assets/downloads/vibe-cowork/outlook-demo-mail.zip">Crate &amp; Needle email thread</a></li>
+              <li><a href="../assets/downloads/vibe-cowork/teams-chat-script-crate-needle.docx">Teams chat script</a></li>
+              <li><a href="../assets/downloads/vibe-cowork/vendor-pipeline.xlsx">Vendor_Pipeline.xlsx</a></li>
+              <li><a href="../assets/downloads/vibe-cowork/fallback-crate-needle-meeting-brief.docx">Fallback finished brief</a></li>
+            </ul>
+            <h4>Demo flow</h4>
+            <ol>
+              <li>Seed the Crate &amp; Needle email thread and post the supplied messages in a Teams chat.</li>
+              <li>Upload Vendor_Pipeline.xlsx to OneDrive and create <strong>Analog Fest/Meetings</strong>.</li>
+              <li>Create a 10:00 AM calendar meeting with Crate &amp; Needle for the following day.</li>
+              <li>Paste the prompt and watch Cowork gather context across the three sources.</li>
+              <li>Review the preview before allowing it to create the Word briefing, then run <code>/cost</code>.</li>
+            </ol>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy prompt</button><pre><code>Prep me for tomorrow's 10am with Crate &amp; Needle Records. Pull our last 6 months of email with them, the pop-up request, any Teams chats about them, and their past orders from Vendor_Pipeline.xlsx. Build a one-page Word briefing with 3 talking points and save it to /Analog Fest/Meetings/. Preview before you create anything.</code></pre></div>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy cost check</button><pre><code>/cost</code></pre></div>
+          </article>
+
+          <article class="demo-step" id="cowork-demo-3">
+            <div class="demo-step__head">
+              <span class="demo-step__number">3</span>
+              <div><h3>Build a volunteer check-in app</h3><p>Create a mobile app from a live SharePoint list without leaving Cowork.</p></div>
+            </div>
+            <h4>Reference file</h4>
+            <ul class="reference-files">
+              <li><a href="../assets/downloads/vibe-cowork/volunteers.csv">Volunteers.csv</a></li>
+            </ul>
+            <h4>Demo flow</h4>
+            <ol>
+              <li>Create an <strong>Analog Fest</strong> SharePoint site and import Volunteers.csv as a list named Volunteers.</li>
+              <li>Set the <strong>CheckedIn</strong> column to Yes/No.</li>
+              <li>In Cowork, paste the <code>/app</code> prompt and answer its scoping questions.</li>
+              <li>Preview and test the first version, then paste the refinement.</li>
+              <li>Show how publishing hands the app into Copilot Studio for continued development.</li>
+            </ol>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy app prompt</button><pre><code>/app Build an Analog Fest volunteer check-in app. Volunteers pick their name and shift and tap Check in. The shift lead sees who's checked in and who's missing for the current shift. Use the Volunteers list in the Analog Fest SharePoint site. Keep it simple and mobile-friendly.</code></pre></div>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy refinement</button><pre><code>Add a no-show count by shift at the top.</code></pre></div>
+          </article>
+
+          <article class="demo-step" id="cowork-demo-4">
+            <div class="demo-step__head">
+              <span class="demo-step__number">4</span>
+              <div><h3>Create an event-triggered automation</h3><p>Turn a repeatable inbox decision into a governed draft-and-approve workflow.</p></div>
+            </div>
+            <h4>Reference files</h4>
+            <ul class="reference-files">
+              <li><a href="../assets/downloads/vibe-cowork/vendor-pipeline.xlsx">Vendor_Pipeline.xlsx</a></li>
+              <li><a href="../assets/downloads/vibe-cowork/pop-up-list.csv">PopUp_List.csv</a></li>
+              <li><a href="../assets/downloads/vibe-cowork/tape-hiss-test-email.txt">Tape Hiss test email</a></li>
+            </ul>
+            <h4>Demo flow</h4>
+            <ol>
+              <li>Import PopUp_List.csv into the Analog Fest SharePoint site and keep Vendor_Pipeline.xlsx in OneDrive.</li>
+              <li>Paste the automation request in Cowork and keep its autonomy set to draft-and-approve.</li>
+              <li>From a second mailbox, send the supplied Tape Hiss test email to the demo user.</li>
+              <li>Show Cowork check the August 20 order, draft a “yes” response, and prepare the list update.</li>
+              <li>Review each proposed action before approving it.</li>
+            </ol>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy automation prompt</button><pre><code>Whenever an indie label emails me asking about an Analog Fest pop-up table, summarize the request, check Vendor_Pipeline.xlsx for their past orders, draft a friendly reply (yes if they've ordered in the last 6 months, otherwise waitlist), and add them to the pop-up list. Draft everything and wait for my approval.</code></pre></div>
+          </article>
+
+          <article class="demo-step" id="cowork-demo-5">
+            <div class="demo-step__head">
+              <span class="demo-step__number">5</span>
+              <div><h3>Turn a finished task into a shared skill</h3><p>Start with a successful result, then capture the process as reusable instructions.</p></div>
+            </div>
+            <h4>Reference file</h4>
+            <ul class="reference-files">
+              <li><a href="../assets/downloads/vibe-cowork/vendor-brief-skill.zip">Fallback vendor-brief skill</a></li>
+            </ul>
+            <h4>Demo flow</h4>
+            <ol>
+              <li>Return to the completed Crate &amp; Needle meeting-brief conversation from demo 2.</li>
+              <li>Ask Cowork to save the successful workflow as a generalized skill.</li>
+              <li>Inspect the generated <code>SKILL.md</code> and confirm the folder and skill names match.</li>
+              <li>Start a fresh conversation and test the skill with Tape Hiss Records.</li>
+              <li>Use the downloadable fallback only if live skill creation fails during rehearsal.</li>
+            </ol>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy skill prompt</button><pre><code>Save this as a skill called vendor-brief. Make it work for any vendor or label, not just Crate &amp; Needle.</code></pre></div>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy test prompt</button><pre><code>Prep me for my call with Tape Hiss Records.</code></pre></div>
+          </article>
+
+          <article class="demo-step" id="cowork-demo-6">
+            <div class="demo-step__head">
+              <span class="demo-step__number">6</span>
+              <div><h3>Put a plugin to work</h3><p>Send the same festival source into a connected visual-work tool.</p></div>
+            </div>
+            <h4>Reference file</h4>
+            <ul class="reference-files">
+              <li><a href="../assets/downloads/vibe-cowork/fest-plan.docx">Fest_Plan.docx</a></li>
+            </ul>
+            <h4>Demo flow</h4>
+            <ol>
+              <li>Upload Fest_Plan.docx to OneDrive and install the Miro plugin in the demo tenant.</li>
+              <li>Paste the Miro prompt and show the connected plugin create a visual artifact.</li>
+              <li>If Miro is unavailable, use the monday.com backup prompt instead.</li>
+            </ol>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy Miro prompt</button><pre><code>Take Fest_Plan.docx and turn the three nights into a visual run of show in Miro: one frame per night, sets as cards in order, changeovers flagged in pink. Share the board with the shop manager.</code></pre></div>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy monday.com backup</button><pre><code>Create a board for Analog Fest from Fest_Plan.docx with one group per night and a task per set.</code></pre></div>
+          </article>
         </div>
-        <h2>Prompts to try first</h2>
-        <h3>Clear the festival inbox</h3>
-        <pre><code>Go through my unread email from this week. Flag anything about
-Analog Fest that needs me, sort it into a short list by urgency,
-and draft replies to the quick ones. Show me the drafts before
-sending anything.</code></pre>
-        <h3>Prepare the vendor meeting</h3>
-        <pre><code>Prep me for tomorrow's 10am with Crate &amp; Needle Records.
-Pull our last 6 months of email with them, the pop-up request,
-any Teams chats about them, and their past orders from
-Vendor_Pipeline.xlsx. Build a one-page Word briefing with
-3 talking points and save it to /Analog Fest/Meetings/.
-Preview before you create anything.</code></pre>
-        <h3>Build the check-in app</h3>
-        <pre><code>/app Build an Analog Fest volunteer check-in app. Volunteers pick
-their name and shift and tap Check in. The shift lead sees who's
-checked in and who's missing for the current shift. Use the
-Volunteers list in the Analog Fest SharePoint site. Keep it simple
-and mobile-friendly.</code></pre>
+
         <h2>The delegation model</h2>
         <table>
           <thead><tr><th>Part</th><th>What to specify</th></tr></thead>
@@ -103,23 +209,6 @@ and mobile-friendly.</code></pre>
             <tr><td><strong>Boundary</strong></td><td>What it may do, what it must preview, and when it should ask.</td></tr>
           </tbody>
         </table>
-        <h2>Setup at a glance</h2>
-        <ol>
-          <li>Seed the demo mailbox with the supplied PowerShell script and keep the unread messages current.</li>
-          <li>Post the supplied messages in a one-to-one Teams chat.</li>
-          <li>Upload the vendor pipeline and festival plan, then create the meetings folder.</li>
-          <li>Create the Volunteers and Pop-up SharePoint lists from the supplied CSV files.</li>
-          <li>Enable Cowork, Copilot Credits, <code>/app</code>, and the Miro plugin or monday.com backup.</li>
-          <li>Build the volunteer app once in rehearsal and follow the reset checklist before presenting.</li>
-        </ol>
-        <h2>What the sample data is designed to reveal</h2>
-        <ul>
-          <li>The unread inbox separates urgent approvals, quick replies, and low-value noise.</li>
-          <li>Crate &amp; Needle has a six-month relationship, two orders, one late shipment, and a pending pop-up request.</li>
-          <li>Tape Hiss Records ordered recently enough to qualify for an automatic “yes” response.</li>
-          <li>The volunteer list has 40 people across six shifts, with Sunday late intentionally understaffed.</li>
-          <li>The fallback skill demonstrates the same open <code>SKILL.md</code> format used across Cowork, PowerPoint, Excel, and Agent Builder.</li>
-        </ul>
       </div>
     </section>
   </main>

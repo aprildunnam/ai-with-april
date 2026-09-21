@@ -164,6 +164,9 @@ In scope (this update):
   **I Didn't Know Copilot Could Do That** and **Delegating Real Work to Copilot Cowork**.
 - Give each session its own page with the real demo sequence, copy-paste prompts, setup summary,
   sample-data expectations, and a downloadable lightweight demo pack.
+- Present every demo as a reusable runbook with direct reference-file links and copy buttons.
+  The Connectors segment is omitted from the Copilot countdown because it is not part of the
+  reusable live-demo flow.
 - Include optimized PowerPoint decks as direct site downloads. Keep the much larger MP4 recordings
   out of normal Git history; a repository script publishes those files as GitHub Release assets.
 - Add a Sessions entry to global navigation and surface both sessions on the homepage.

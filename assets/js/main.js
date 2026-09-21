@@ -29,4 +29,27 @@
   if (yearEl) {
     yearEl.textContent = String(new Date().getFullYear());
   }
+
+  // Copy buttons for reusable prompt blocks
+  document.querySelectorAll("[data-copy-prompt]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      var block = button.closest(".prompt-block");
+      var code = block && block.querySelector("code");
+
+      if (!code || !navigator.clipboard) {
+        button.textContent = "Copy unavailable";
+        return;
+      }
+
+      navigator.clipboard.writeText(code.textContent).then(function () {
+        var original = button.textContent;
+        button.textContent = "Copied";
+        window.setTimeout(function () {
+          button.textContent = original;
+        }, 1800);
+      }).catch(function () {
+        button.textContent = "Copy failed";
+      });
+    });
+  });
 })();

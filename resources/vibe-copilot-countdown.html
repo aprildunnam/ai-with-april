@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>I Didn't Know Copilot Could Do That — AI with April</title>
-  <meta name="description" content="Prompts, setup instructions, and demo files for April Dunnam's ten-part Microsoft 365 Copilot countdown session.">
+  <meta name="description" content="A reusable Microsoft 365 Copilot demo runbook with copyable prompts and direct reference-file downloads.">
   <link rel="canonical" href="https://aprildunnam.github.io/ai-with-april/resources/vibe-copilot-countdown.html">
   <meta property="og:type" content="article">
   <meta property="og:title" content="I Didn't Know Copilot Could Do That — AI with April">
-  <meta property="og:description" content="A ten-part Microsoft 365 Copilot countdown with prompts, setup instructions, and demo files.">
+  <meta property="og:description" content="A Microsoft 365 Copilot countdown with copyable prompts, demo flow, and direct reference files.">
   <meta property="og:image" content="../assets/img/vibe-copilot-countdown.svg">
   <meta property="og:url" content="https://aprildunnam.github.io/ai-with-april/resources/vibe-copilot-countdown.html">
   <meta name="twitter:card" content="summary_large_image">
@@ -42,23 +42,24 @@
         <p class="eyebrow">Vibe session &middot; Microsoft 365 Copilot</p>
         <h1>I Didn't Know Copilot Could Do That</h1>
         <p class="hero__lede">
-          A ten-to-one countdown of Microsoft 365 Copilot features people already have but often
-          miss. Every demo happens inside April's Analog, a fictional record shop preparing for
-          a three-night music festival.
+          A reusable countdown of Microsoft 365 Copilot features people already have but often
+          miss. Follow the demo flow, download each reference file, and copy the prompts directly
+          from this page. Every demo happens inside April's Analog, a fictional record shop
+          preparing for a three-night music festival.
         </p>
         <div class="featured__actions" style="margin-bottom: var(--space-4);">
           <a class="btn btn-primary" href="../assets/downloads/i-didnt-know-copilot-could-do-that.pptx">Download the slide deck (.pptx)</a>
           <a class="btn btn-secondary" href="../assets/downloads/vibe-copilot-countdown-demo-pack.zip">Download the demo pack (.zip)</a>
-          <a class="btn btn-secondary" href="../assets/downloads/vibe-copilot-countdown-prompts.txt">Open the prompt sheet (.txt)</a>
+          <a class="btn btn-secondary" href="../assets/downloads/vibe-copilot-countdown/setup-guide.docx">Download the setup guide (.docx)</a>
         </div>
         <img class="resource-cover" src="../assets/img/vibe-copilot-countdown.svg" alt="I Didn't Know Copilot Could Do That session cover">
         <div class="callout-box">
           <p>
-            <strong>What's in the 1.6 MB download:</strong> the setup guide, copy-paste prompts,
-            Excel and Word samples, SharePoint and Teams files, skills, seeded Outlook messages,
-            Jira and Confluence data, the April's Analog brand kit, and stage props. The optimized
-            27 MB slide deck is available directly above. The large demo recordings remain
-            prepared for distribution through
+            <strong>Want everything at once?</strong> The 1.6 MB demo pack contains the setup
+            guide, Excel and Word samples, SharePoint and Teams files, skills, seeded Outlook
+            messages, the April's Analog brand kit, and stage props. You can also download only
+            the files needed for each demo below. The large demo recordings remain available
+            through
             <a href="https://github.com/aprildunnam/ai-with-april/releases">GitHub Releases</a>.
           </p>
         </div>
@@ -66,48 +67,215 @@
     </section>
     <section class="section--tight prose">
       <div class="wrap prose">
-        <h2>The countdown</h2>
-        <div class="demo-grid">
-          <article class="demo-card"><span>10</span><h3>Never build a PivotTable again</h3><p>Describe the summary, chart, and slow-stock flags you want in Excel.</p></article>
-          <article class="demo-card"><span>9</span><h3>Let Word and PowerPoint do the work</h3><p>Apply reviewer comments in Word and build a sponsor deck from a SharePoint folder.</p></article>
-          <article class="demo-card"><span>8</span><h3>Teach PowerPoint and Excel a skill</h3><p>Run reusable event-recap, brand-kit, and weekly-sales skills with an @mention.</p></article>
-          <article class="demo-card"><span>7</span><h3>Show Copilot your screen</h3><p>Use Vision with a phone camera or shared desktop to reason over what it sees.</p></article>
-          <article class="demo-card"><span>6</span><h3>Use the power of Notebooks</h3><p>Ground a short-lived project in files, email, and meetings, then create a live Page.</p></article>
-          <article class="demo-card"><span>5</span><h3>Bring your other data in</h3><p>Answer across Microsoft 365, Confluence, and Jira with Copilot connectors.</p></article>
-          <article class="demo-card"><span>4</span><h3>Make it remember and forget</h3><p>Compare saved memory, chat history, and temporary chat.</p></article>
-          <article class="demo-card"><span>3</span><h3>Make Copilot sound like you</h3><p>Combine custom instructions with real writing samples and a brand kit.</p></article>
-          <article class="demo-card"><span>2</span><h3>Let two models check the work</h3><p>Use Researcher Critique and Model Council for a subscription-box decision.</p></article>
-          <article class="demo-card"><span>1</span><h3>Teach an agent a skill</h3><p>Upload a packaged voice skill to Agent Builder and use it in a real task.</p></article>
-        </div>
-        <h2>Prompts to try first</h2>
-        <h3>Excel inventory analysis</h3>
-        <pre><code>Show stock value by genre and format as a PivotTable with a chart,
-and flag anything in stock over 90 days.
+        <h2>The demo runbook</h2>
+        <p>
+          Run the demos in countdown order. Each section tells you what to prepare, what to open,
+          and exactly what to paste. Number 5 has intentionally been removed from this version.
+        </p>
 
-Show it as % of total.</code></pre>
-        <h3>Researcher model comparison</h3>
-        <pre><code>Should April's Analog launch a monthly vinyl subscription box?
-Market size, three competitors, pricing, and risks for a small
-independent shop. Cite sources.</code></pre>
-        <h3>Agent Builder</h3>
-        <pre><code>Write the intro for this month's newsletter announcing Analog Fest.</code></pre>
-        <h2>Setup at a glance</h2>
-        <ol>
-          <li>Create the Analog Fest SharePoint site and upload the supplied plan, recap, and notes.</li>
-          <li>Upload the inventory, weekend sales, chart, writing samples, and skills to OneDrive.</li>
-          <li>Seed Outlook with the supplied PowerShell script or import the individual EML files.</li>
-          <li>Create the Teams meeting, Confluence Stage Ops space, and Jira SHOP project.</li>
-          <li>Enable the required Copilot features, connect the data sources, and build the Analog Fest Notebook.</li>
-          <li>Rehearse with the night-before and morning-of checklists in the included setup guide.</li>
-        </ol>
-        <h2>What the sample data is designed to reveal</h2>
-        <ul>
-          <li>The inventory has 2,000 records and plenty of stock older than 90 days.</li>
-          <li>Jazz and Blues sales are down week over week, while Soul spikes during a DJ night.</li>
-          <li>The festival documents intentionally disagree so Copilot has changes and conflicts to find.</li>
-          <li>The Jira project contains a high-priority checkout bug that threatens weekend-pass sales.</li>
-          <li>The Confluence pages contain the stage checklist, load-in rules, band deal, and stage plot.</li>
-        </ul>
+        <div class="demo-runbook">
+          <article class="demo-step" id="demo-10">
+            <div class="demo-step__head">
+              <span class="demo-step__number">10</span>
+              <div><h3>Never build a PivotTable again</h3><p>Excel turns a natural-language request into a PivotTable, chart, and slow-stock analysis.</p></div>
+            </div>
+            <h4>Reference file</h4>
+            <ul class="reference-files">
+              <li><a href="../assets/downloads/vibe-copilot-countdown/inventory.xlsx">Inventory.xlsx</a></li>
+            </ul>
+            <h4>Demo flow</h4>
+            <ol>
+              <li>Download <strong>Inventory.xlsx</strong>, upload it to OneDrive, and open it in Excel.</li>
+              <li>Open Copilot and paste the first prompt.</li>
+              <li>After the PivotTable and chart appear, paste the follow-up prompt.</li>
+              <li>Point out the records older than 90 days and how quickly the view can be refined.</li>
+            </ol>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy prompt</button><pre><code>Show stock value by genre and format as a PivotTable with a chart, and flag anything in stock over 90 days.</code></pre></div>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy follow-up</button><pre><code>Show it as % of total.</code></pre></div>
+            <p class="demo-notes"><strong>Expected result:</strong> the workbook contains 2,000 inventory records, with roughly two-thirds of the stock older than 90 days.</p>
+          </article>
+
+          <article class="demo-step" id="demo-9">
+            <div class="demo-step__head">
+              <span class="demo-step__number">9</span>
+              <div><h3>Let Word and PowerPoint do the work</h3><p>Apply review comments in Word, then create a sponsor deck from a folder of source material.</p></div>
+            </div>
+            <h4>Reference files</h4>
+            <ul class="reference-files">
+              <li><a href="../assets/downloads/vibe-copilot-countdown/fest-plan.docx">Fest_Plan.docx</a></li>
+              <li><a href="../assets/downloads/vibe-copilot-countdown/last-fest-recap.pptx">Last_Fest_Recap.pptx</a></li>
+              <li><a href="../assets/downloads/vibe-copilot-countdown/last-fest-notes.docx">Last_Fest_Notes.docx</a></li>
+              <li><a href="../assets/downloads/vibe-copilot-countdown/brand-kit-guide.docx">Brand kit setup guide</a></li>
+            </ul>
+            <h4>Demo flow</h4>
+            <ol>
+              <li>Upload the three festival files to an <strong>Analog Fest</strong> SharePoint folder.</li>
+              <li>Open Fest_Plan.docx in Word, select <strong>Copilot &gt; Catch up</strong>, and review what changed.</li>
+              <li>Paste the Word prompt and let Copilot apply the three reviewer comments.</li>
+              <li>Open PowerPoint on the web, create a new presentation, and paste the deck prompt.</li>
+              <li>Select the April's Analog brand kit when PowerPoint asks for a template.</li>
+            </ol>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy Word prompt</button><pre><code>Apply the edits requested in the comments.</code></pre></div>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy PowerPoint prompt</button><pre><code>Create a 6-slide Analog Fest sponsor pitch from the Analog Fest folder.</code></pre></div>
+          </article>
+
+          <article class="demo-step" id="demo-8">
+            <div class="demo-step__head">
+              <span class="demo-step__number">8</span>
+              <div><h3>Teach PowerPoint and Excel a skill</h3><p>Use reusable instructions instead of explaining the same output every time.</p></div>
+            </div>
+            <h4>Reference files</h4>
+            <ul class="reference-files">
+              <li><a href="../assets/downloads/vibe-copilot-countdown/analog-event-recap-skill.zip">analog-event-recap skill</a></li>
+              <li><a href="../assets/downloads/vibe-copilot-countdown/last-fest-notes.docx">Last_Fest_Notes.docx</a></li>
+              <li><a href="../assets/downloads/vibe-copilot-countdown/weekly-sales-review-skill.zip">weekly-sales-review skill</a></li>
+              <li><a href="../assets/downloads/vibe-copilot-countdown/weekend-sales.xlsx">Weekend_Sales.xlsx</a></li>
+              <li><a href="../assets/downloads/vibe-copilot-countdown/inventory.xlsx">Inventory.xlsx</a></li>
+            </ul>
+            <h4>Demo flow</h4>
+            <ol>
+              <li>Extract each skill into its own matching folder in your OneDrive Skills location.</li>
+              <li>In a new PowerPoint deck, attach Last_Fest_Notes.docx and invoke the recap skill.</li>
+              <li>Return to the inventory workbook from demo 10 and invoke the built-in brand-kit skill.</li>
+              <li>Open Weekend_Sales.xlsx and invoke the weekly-sales-review skill.</li>
+            </ol>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy PowerPoint prompt</button><pre><code>@analog-event-recap using Last_Fest_Notes.docx</code></pre></div>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy Excel prompt</button><pre><code>@brandkit</code></pre></div>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy sales prompt</button><pre><code>@weekly-sales-review</code></pre></div>
+          </article>
+
+          <article class="demo-step" id="demo-7">
+            <div class="demo-step__head">
+              <span class="demo-step__number">7</span>
+              <div><h3>Show Copilot your screen with Vision</h3><p>Ask questions about a physical object or a visual already on your screen.</p></div>
+            </div>
+            <h4>Reference files</h4>
+            <ul class="reference-files">
+              <li><a href="../assets/downloads/vibe-copilot-countdown/needle-drop-lp-back-cover.pdf">Printable LP back cover</a></li>
+              <li><a href="../assets/downloads/vibe-copilot-countdown/inventory.xlsx">Inventory.xlsx</a></li>
+              <li><a href="../assets/downloads/vibe-copilot-countdown/weekend-by-genre-chart.png">Weekend genre chart (.png)</a></li>
+              <li><a href="../assets/downloads/vibe-copilot-countdown/weekend-by-genre-chart.xlsx">Weekend genre chart (.xlsx)</a></li>
+            </ul>
+            <h4>Demo flow</h4>
+            <ol>
+              <li>Print or display the LP back cover and open a voice chat in the Copilot mobile app.</li>
+              <li>Turn on the camera, point it at the cover, and ask the first question.</li>
+              <li>On desktop, share the genre chart with Vision and ask the comparison question.</li>
+            </ol>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy camera prompt</button><pre><code>What pressing is this, and do we already have it in our inventory?</code></pre></div>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy screen prompt</button><pre><code>What stands out here compared to our Analog Fest plan?</code></pre></div>
+          </article>
+
+          <article class="demo-step" id="demo-6">
+            <div class="demo-step__head">
+              <span class="demo-step__number">6</span>
+              <div><h3>Use the power of Notebooks</h3><p>Ground a short project in files, email, and a meeting, then turn the answer into a shared Page.</p></div>
+            </div>
+            <h4>Reference files</h4>
+            <ul class="reference-files">
+              <li><a href="../assets/downloads/vibe-copilot-countdown/fest-plan.docx">Fest_Plan.docx</a></li>
+              <li><a href="../assets/downloads/vibe-copilot-countdown/last-fest-recap.pptx">Last_Fest_Recap.pptx</a></li>
+              <li><a href="../assets/downloads/vibe-copilot-countdown/fest-planning-meeting-script.docx">Meeting script</a></li>
+              <li><a href="../assets/downloads/vibe-copilot-countdown/outlook-demo-mail.zip">Seeded Outlook mail</a></li>
+            </ul>
+            <h4>Demo flow</h4>
+            <ol>
+              <li>Create a Copilot Notebook named <strong>Analog Fest</strong>.</li>
+              <li>Add the festival plan, last recap, Sound + permits email thread, and transcribed planning meeting.</li>
+              <li>Generate an audio overview before the session if you want to show it.</li>
+              <li>Paste the run-of-show prompt, convert the answer to a Page, then add the staffing table.</li>
+            </ol>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy prompt</button><pre><code>Draft a run of show for Analog Fest Friday: doors, sets, changeovers, record swap, close.</code></pre></div>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy Page follow-up</button><pre><code>Add a table of staff shifts with a column for who's on the bar.</code></pre></div>
+          </article>
+
+          <article class="demo-step" id="demo-4">
+            <div class="demo-step__head">
+              <span class="demo-step__number">4</span>
+              <div><h3>Make it remember, and make it forget</h3><p>Contrast temporary chat with a saved memory that changes a later response.</p></div>
+            </div>
+            <h4>Reference file</h4>
+            <ul class="reference-files">
+              <li><a href="../assets/downloads/vibe-copilot-countdown/outlook-demo-mail.zip">Seeded Outlook mail</a></li>
+            </ul>
+            <h4>Demo flow</h4>
+            <ol>
+              <li>Start in temporary chat and ask Copilot to draft the confirmation email.</li>
+              <li>Return to a normal chat, save the band-deal memory, and ask for the email again.</li>
+              <li>Compare the results, then show where saved memories can be viewed or deleted.</li>
+            </ol>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy email prompt</button><pre><code>Draft an email to The Velvet Static confirming their Friday Analog Fest set. Remind them of our stage setup, load in and rate.</code></pre></div>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy memory</button><pre><code>Remember that we pay local bands a flat $200 plus 20% of the door, load-in is always 5pm, and our stage has no house drum kit.</code></pre></div>
+          </article>
+
+          <article class="demo-step" id="demo-3">
+            <div class="demo-step__head">
+              <span class="demo-step__number">3</span>
+              <div><h3>Make Copilot sound like you</h3><p>Combine global writing instructions with examples of your real voice.</p></div>
+            </div>
+            <h4>Reference files</h4>
+            <ul class="reference-files">
+              <li><a href="../assets/downloads/vibe-copilot-countdown/my-voice-samples.zip">MyVoice email samples</a></li>
+              <li><a href="../assets/downloads/vibe-copilot-countdown/outlook-demo-mail.zip">Crate &amp; Needle email thread</a></li>
+            </ul>
+            <h4>Demo flow</h4>
+            <ol>
+              <li>Upload the writing samples to a OneDrive folder named <strong>MyVoice</strong>.</li>
+              <li>Add the custom instructions below under <strong>Settings &gt; Personalization</strong>.</li>
+              <li>Open the Crate &amp; Needle pop-up request in Outlook and use Draft with Copilot.</li>
+            </ol>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy custom instructions</button><pre><code>Be direct. Lead with the benefit.
+Use contractions: can't, don't, it's.
+Never use em dashes.
+Explain new ideas with an analogy.
+Keep emails under 120 words.
+End with one clear next step.</code></pre></div>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy Outlook prompt</button><pre><code>Say yes to a pop-up table, in the style of the emails in my MyVoice folder.</code></pre></div>
+          </article>
+
+          <article class="demo-step" id="demo-2">
+            <div class="demo-step__head">
+              <span class="demo-step__number">2</span>
+              <div><h3>Let two AI models check each other's work</h3><p>Run the same business question through Researcher Critique and Model Council.</p></div>
+            </div>
+            <h4>Demo flow</h4>
+            <ol>
+              <li>Open Researcher and select <strong>Critique</strong> in the model picker.</li>
+              <li>Paste the question and show how the second model reviews evidence, gaps, and sources.</li>
+              <li>Run the same question with <strong>Model Council</strong> and compare where the models agree or disagree.</li>
+              <li>Pre-run both tabs before a live presentation so the results are ready.</li>
+            </ol>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy prompt</button><pre><code>Should April's Analog launch a monthly vinyl subscription box? Market size, three competitors, pricing, and risks for a small independent shop. Cite sources.</code></pre></div>
+          </article>
+
+          <article class="demo-step" id="demo-1">
+            <div class="demo-step__head">
+              <span class="demo-step__number">1</span>
+              <div><h3>Teach an agent a skill</h3><p>Package a repeatable voice and workflow into a skill for Agent Builder.</p></div>
+            </div>
+            <h4>Reference files</h4>
+            <ul class="reference-files">
+              <li><a href="../assets/downloads/vibe-copilot-countdown/sound-like-april.zip">sound-like-april skill</a></li>
+              <li><a href="../assets/downloads/vibe-copilot-countdown/needle-drop-tech-rider.docx">Needle Drop tech rider</a></li>
+            </ul>
+            <h4>Demo flow</h4>
+            <ol>
+              <li>Create an agent named <strong>Analog Voice</strong> with the description below.</li>
+              <li>Under <strong>Configure &gt; Skills</strong>, upload sound-like-april.zip.</li>
+              <li>Open Preview and ask for the newsletter introduction.</li>
+              <li>For the bonus, attach the tech rider and ask Agent Builder to create a stage-checklist skill.</li>
+            </ol>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy agent description</button><pre><code>Writes shop emails, newsletters, and social posts for April's Analog.</code></pre></div>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy preview prompt</button><pre><code>Write the intro for this month's newsletter announcing Analog Fest.</code></pre></div>
+            <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy bonus prompt</button><pre><code>Create a skill that turns a band's tech rider into a stage checklist for our sound tech.</code></pre></div>
+          </article>
+        </div>
+
+        <h2>Bonus prompts</h2>
+        <p>Save these to the Analog Staff team's Prompt Gallery for a quick audience takeaway.</p>
+        <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy prompt</button><pre><code>Summarize this week's email from labels and flag anything that needs a reply today.</code></pre></div>
+        <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy prompt</button><pre><code>Turn these notes into a 5-slide recap using the April's Analog brand kit.</code></pre></div>
+        <div class="prompt-block"><button class="prompt-copy" type="button" data-copy-prompt>Copy prompt</button><pre><code>Draft a volunteer thank-you email in my voice. Under 120 words.</code></pre></div>
       </div>
     </section>
   </main>
