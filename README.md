@@ -4,19 +4,22 @@ Approachable, practical AI learning paths and resources from April Dunnam — li
 **[aprildunnam.github.io/ai-with-april](https://aprildunnam.github.io/ai-with-april/)**.
 
 A public learning hub showcasing April's practical AI resources: the S.K.I.L.L. framework, the
-Copilot Cowork Masterclass, and an auto-synced feed of her latest videos and blog posts — plus a
-pointer to Agent Academy for anyone ready to build in Copilot Studio.
+Copilot Cowork Masterclass, downloadable conference session demo packs, and an auto-synced feed of
+her latest videos and blog posts — plus a pointer to Agent Academy for anyone ready to build in
+Copilot Studio.
 
 ## What's here
 
-- **Homepage** (`index.html`) — the two flagship guides front and center, a callout to Agent
-  Academy, and a live teaser of the latest videos/posts.
+- **Homepage** (`index.html`) — the two flagship guides, conference session demo packs, a callout
+  to Agent Academy, and a live teaser of the latest videos/posts.
 - **The S.K.I.L.L. framework** (`resources/skill-framework.html`) — five rules for writing agent
   skills that actually fire, with a downloadable companion deck.
 - **Copilot Cowork Masterclass** (`resources/cowork-masterclass.html`) — the full lab manual for
   Copilot Cowork: a copy-paste prompt bank, 7 hands-on labs and challenges, a skills starter kit,
   and a printable cheat sheet, plus the original slide deck. Folded in from April's
   `copilot-cowork-masterclass` repository so it has one public home.
+- **Conference sessions** (`sessions.html`) — detailed companion pages and lightweight demo packs
+  for “I Didn't Know Copilot Could Do That” and “Delegating Real Work to Copilot Cowork.”
 - **Watch & read** (`updates.html`) — April's latest YouTube videos and blog posts, synced
   automatically once a day (see below).
 - **About** (`about.html`) — who this is from and why it exists.
@@ -35,6 +38,17 @@ Because the site is deployed under `/ai-with-april/` on GitHub Pages, internal l
 relative paths (no leading slash) so they work both locally at the root and once deployed to a
 subpath. `404.html` is the one exception — GitHub Pages serves it for any unmatched path at any
 depth, so its links are rooted at `/ai-with-april/` intentionally.
+
+## Publishing the Vibe recordings
+
+The optimized session decks and lightweight demo ZIPs live in `assets/downloads/`. The larger MP4
+demo recordings are published as GitHub Release assets:
+
+```bash
+scripts/publish-vibe-release-assets.sh /path/to/Vibe
+```
+
+The script creates or updates the `vibe-session-assets` release and uploads every MP4 recording.
 
 ## Watch & read: auto-synced videos and blog posts
 
@@ -58,6 +72,9 @@ blog posts, refreshed once a day with no API keys and no backend:
 index.html                       Homepage — featured resources + Agent Academy callout
 resources/skill-framework.html   Full S.K.I.L.L. framework resource page
 resources/cowork-masterclass.html Full Copilot Cowork Masterclass resource page
+resources/vibe-copilot-countdown.html Copilot countdown session companion
+resources/vibe-cowork.html       Copilot Cowork session companion
+sessions.html                    Conference sessions and downloadable demo packs
 updates.html                     Watch & read — auto-synced YouTube videos + blog posts
 about.html                       About April
 404.html                         Custom not-found page
@@ -68,6 +85,7 @@ assets/downloads/                Downloadable companion decks and cheat sheets
 assets/data/                     Auto-synced JSON (blog-posts.json, youtube-videos.json) — do not hand-edit, regenerated daily
 content/                         Source content kept for reference/attribution
 scripts/fetch-feeds.mjs          Feed-sync script (see "Watch & read" above)
+scripts/publish-vibe-release-assets.sh Publishes oversized session recordings to a GitHub Release
 PRODUCT.md                       Confirmed product scope and non-fabrication rules
 DESIGN.md                        Brand tokens, IA, and content conventions
 ```

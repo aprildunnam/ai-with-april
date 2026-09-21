@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Delegating Real Work to Copilot Cowork session cover</title>
+  <desc id="desc">A pink and blue session cover with connected task cards.</desc>
+  <rect width="1200" height="675" rx="36" fill="#fff0f5"/>
+  <circle cx="1060" cy="90" r="210" fill="#f0f8ff"/>
+  <circle cx="1100" cy="610" r="250" fill="#ffffff"/>
+  <g font-family="Arial, sans-serif" font-weight="700">
+    <text x="90" y="105" font-size="34" fill="#993556" letter-spacing="3">VIBE SESSION</text>
+    <text x="90" y="220" font-size="66" fill="#111111">Delegating Real Work</text>
+    <text x="90" y="300" font-size="66" fill="#111111">to Copilot Cowork</text>
+    <text x="90" y="370" font-size="28" fill="#444444">Stop prompting. Start handing off.</text>
+    <text x="90" y="565" font-size="30" fill="#185fa5">AI with April</text>
+  </g>
+  <g fill="#ffffff" stroke-width="5">
+    <rect x="825" y="180" width="250" height="82" rx="18" stroke="#185fa5"/>
+    <rect x="885" y="310" width="250" height="82" rx="18" stroke="#e8327a"/>
+    <rect x="790" y="440" width="250" height="82" rx="18" stroke="#185fa5"/>
+    <path d="M950 262v48M1010 392v48" fill="none" stroke="#949494" stroke-linecap="round"/>
+  </g>
+</svg>

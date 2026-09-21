@@ -1,0 +1,41 @@
+DELEGATING REAL WORK TO COPILOT COWORK: COPY/PASTE PROMPTS
+
+==== Demo 1  Cowork 101: hand it your inbox (slide 13) ====
+Go through my unread email from this week. Flag anything about Analog Fest that needs me, sort it into a short list by urgency, and draft replies to the quick ones. Show me the drafts before sending anything.
+
+==== Demo 2  Prep me for tomorrow's vendor meeting (slide 17) ====
+Prep me for tomorrow's 10am with Crate & Needle Records. Pull our last 6 months of email with them, the pop-up request, any Teams chats about them, and their past orders from Vendor_Pipeline.xlsx. Build a one-page Word briefing with 3 talking points and save it to /Analog Fest/Meetings/. Preview before you create anything.
+
+/cost
+
+==== Demo 3  Build a volunteer check-in app (slide 21) ====
+/app Build an Analog Fest volunteer check-in app. Volunteers pick their name and shift and tap Check in. The shift lead sees who's checked in and who's missing for the current shift. Use the Volunteers list in the Analog Fest SharePoint site. Keep it simple and mobile-friendly.
+
+Refine:
+Add a no-show count by shift at the top.
+
+==== Demo 4  Event-triggered automation (slide 23) ====
+Whenever an indie label emails me asking about an Analog Fest pop-up table, summarize the request, check Vendor_Pipeline.xlsx for their past orders, draft a friendly reply (yes if they've ordered in the last 6 months, otherwise waitlist), and add them to the pop-up list. Draft everything and wait for my approval.
+
+Test email (send from your SECOND mailbox to the demo user):
+Subject: Pop-up table for Analog Fest Saturday?
+Hi April,
+
+Jonah from Tape Hiss Records here. Any chance we could grab a pop-up table for Analog Fest Saturday? We'd bring cassettes, a few test pressings, and a turntable so folks can listen before they buy.
+
+Thanks!
+Jonah Pike
+Tape Hiss Records
+
+==== Demo 5  Turn a finished task into a shared skill (slide 30) ====
+(In the Demo 2 conversation)
+Save this as a skill called vendor-brief. Make it work for any vendor or label, not just Crate & Needle.
+
+Prep me for my call with Tape Hiss Records.
+
+==== Demo 6 (optional)  Plugin in action (slide 34) ====
+Miro:
+Take Fest_Plan.docx and turn the three nights into a visual run of show in Miro: one frame per night, sets as cards in order, changeovers flagged in pink. Share the board with the shop manager.
+
+monday.com backup:
+Create a board for Analog Fest from Fest_Plan.docx with one group per night and a task per set.

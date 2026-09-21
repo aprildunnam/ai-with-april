@@ -76,9 +76,12 @@ sans-serif fallback stack, so the site is still fully legible offline or if the 
 ## Information architecture
 
 ```
-/                                Homepage — 2 featured resources + Agent Academy callout + latest feed
+/                                Homepage — featured guides + conference sessions + Agent Academy + latest feed
 /resources/skill-framework.html  Flagship resource #1
 /resources/cowork-masterclass.html  Flagship resource #2 (folded in from copilot-cowork-masterclass)
+/sessions.html                   Conference sessions and demo-pack index
+/resources/vibe-copilot-countdown.html  "I Didn't Know Copilot Could Do That" companion
+/resources/vibe-cowork.html      "Delegating Real Work to Copilot Cowork" companion
 /updates.html                    "Watch & read" — auto-synced YouTube videos + blog posts (v3)
 /about.html                      About April
 /404.html                        Not-found page (absolute /ai-with-april/ paths — see below)
@@ -137,6 +140,23 @@ If a future version reintroduces role- or topic-based framing, do it once there 
 resources that a flat list stops being the fastest path to a first useful resource (same threshold
 noted in "Information architecture" above) — and keep entrances parallel (no implied order, no
 connector line/numbering), per the reasoning in `PRODUCT.md`'s v2 framing note.
+
+## Conference sessions (v5)
+
+`sessions.html` is a small index for stage-session companions rather than a return of the old
+filterable resource library. Each session has a real, complete page under `resources/`, and the
+homepage shows the same two session cards.
+
+The session pages use:
+
+- `.session-grid` / `.session-card` for the two-session index and homepage teaser.
+- `.demo-grid` / `.demo-card` for the numbered live-demo sequence.
+- A lightweight ZIP under `assets/downloads/` containing setup guides, prompts, skills, sample
+  documents, and seeded data.
+- Optimized PowerPoint decks under `assets/downloads/` for direct download.
+- GitHub Release assets for MP4 recordings that exceed GitHub's normal 100 MB file limit.
+  `scripts/publish-vibe-release-assets.sh` publishes those recordings without putting them in
+  repository history.
 
 ## Component conventions
 
