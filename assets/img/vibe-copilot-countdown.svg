@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">I Didn't Know Copilot Could Do That session cover</title>
+  <desc id="desc">A blue and pink session cover with a ten-to-one countdown motif.</desc>
+  <rect width="1200" height="675" rx="36" fill="#f0f8ff"/>
+  <circle cx="1040" cy="120" r="220" fill="#fff0f5"/>
+  <circle cx="1080" cy="560" r="250" fill="#dceeff"/>
+  <g font-family="Arial, sans-serif" font-weight="700">
+    <text x="90" y="105" font-size="34" fill="#185fa5" letter-spacing="3">VIBE SESSION</text>
+    <text x="90" y="220" font-size="68" fill="#111111">I Didn't Know</text>
+    <text x="90" y="300" font-size="68" fill="#111111">Copilot Could Do That</text>
+    <text x="90" y="370" font-size="28" fill="#444444">10 Microsoft 365 Copilot features, demos, and files</text>
+    <text x="90" y="565" font-size="30" fill="#993556">AI with April</text>
+    <text x="880" y="390" font-size="230" fill="#185fa5">10</text>
+    <text x="980" y="510" font-size="150" fill="#e8327a">1</text>
+  </g>
+</svg>

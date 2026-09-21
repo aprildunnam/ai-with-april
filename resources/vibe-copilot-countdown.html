@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>I Didn't Know Copilot Could Do That — AI with April</title>
+  <meta name="description" content="Prompts, setup instructions, and demo files for April Dunnam's ten-part Microsoft 365 Copilot countdown session.">
+  <link rel="canonical" href="https://aprildunnam.github.io/ai-with-april/resources/vibe-copilot-countdown.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="I Didn't Know Copilot Could Do That — AI with April">
+  <meta property="og:description" content="A ten-part Microsoft 365 Copilot countdown with prompts, setup instructions, and demo files.">
+  <meta property="og:image" content="../assets/img/vibe-copilot-countdown.svg">
+  <meta property="og:url" content="https://aprildunnam.github.io/ai-with-april/resources/vibe-copilot-countdown.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Bricolage+Grotesque:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="../index.html"><img src="../assets/img/favicon.svg" alt="" width="30" height="30">AI with April</a>
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav aria-label="Primary">
+        <ul class="main-nav" id="main-nav">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="skill-framework.html">S.K.I.L.L. framework</a></li>
+          <li><a href="cowork-masterclass.html">Cowork Masterclass</a></li>
+          <li><a href="../sessions.html" aria-current="page">Sessions</a></li>
+          <li><a href="../updates.html">Watch &amp; read</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="section--tight">
+      <div class="wrap">
+        <p class="eyebrow">Vibe session &middot; Microsoft 365 Copilot</p>
+        <h1>I Didn't Know Copilot Could Do That</h1>
+        <p class="hero__lede">
+          A ten-to-one countdown of Microsoft 365 Copilot features people already have but often
+          miss. Every demo happens inside April's Analog, a fictional record shop preparing for
+          a three-night music festival.
+        </p>
+        <div class="featured__actions" style="margin-bottom: var(--space-4);">
+          <a class="btn btn-primary" href="../assets/downloads/i-didnt-know-copilot-could-do-that.pptx">Download the slide deck (.pptx)</a>
+          <a class="btn btn-secondary" href="../assets/downloads/vibe-copilot-countdown-demo-pack.zip">Download the demo pack (.zip)</a>
+          <a class="btn btn-secondary" href="../assets/downloads/vibe-copilot-countdown-prompts.txt">Open the prompt sheet (.txt)</a>
+        </div>
+        <img class="resource-cover" src="../assets/img/vibe-copilot-countdown.svg" alt="I Didn't Know Copilot Could Do That session cover">
+        <div class="callout-box">
+          <p>
+            <strong>What's in the 1.6 MB download:</strong> the setup guide, copy-paste prompts,
+            Excel and Word samples, SharePoint and Teams files, skills, seeded Outlook messages,
+            Jira and Confluence data, the April's Analog brand kit, and stage props. The optimized
+            27 MB slide deck is available directly above. The large demo recordings remain
+            prepared for distribution through
+            <a href="https://github.com/aprildunnam/ai-with-april/releases">GitHub Releases</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section--tight prose">
+      <div class="wrap prose">
+        <h2>The countdown</h2>
+        <div class="demo-grid">
+          <article class="demo-card"><span>10</span><h3>Never build a PivotTable again</h3><p>Describe the summary, chart, and slow-stock flags you want in Excel.</p></article>
+          <article class="demo-card"><span>9</span><h3>Let Word and PowerPoint do the work</h3><p>Apply reviewer comments in Word and build a sponsor deck from a SharePoint folder.</p></article>
+          <article class="demo-card"><span>8</span><h3>Teach PowerPoint and Excel a skill</h3><p>Run reusable event-recap, brand-kit, and weekly-sales skills with an @mention.</p></article>
+          <article class="demo-card"><span>7</span><h3>Show Copilot your screen</h3><p>Use Vision with a phone camera or shared desktop to reason over what it sees.</p></article>
+          <article class="demo-card"><span>6</span><h3>Use the power of Notebooks</h3><p>Ground a short-lived project in files, email, and meetings, then create a live Page.</p></article>
+          <article class="demo-card"><span>5</span><h3>Bring your other data in</h3><p>Answer across Microsoft 365, Confluence, and Jira with Copilot connectors.</p></article>
+          <article class="demo-card"><span>4</span><h3>Make it remember and forget</h3><p>Compare saved memory, chat history, and temporary chat.</p></article>
+          <article class="demo-card"><span>3</span><h3>Make Copilot sound like you</h3><p>Combine custom instructions with real writing samples and a brand kit.</p></article>
+          <article class="demo-card"><span>2</span><h3>Let two models check the work</h3><p>Use Researcher Critique and Model Council for a subscription-box decision.</p></article>
+          <article class="demo-card"><span>1</span><h3>Teach an agent a skill</h3><p>Upload a packaged voice skill to Agent Builder and use it in a real task.</p></article>
+        </div>
+        <h2>Prompts to try first</h2>
+        <h3>Excel inventory analysis</h3>
+        <pre><code>Show stock value by genre and format as a PivotTable with a chart,
+and flag anything in stock over 90 days.
+
+Show it as % of total.</code></pre>
+        <h3>Researcher model comparison</h3>
+        <pre><code>Should April's Analog launch a monthly vinyl subscription box?
+Market size, three competitors, pricing, and risks for a small
+independent shop. Cite sources.</code></pre>
+        <h3>Agent Builder</h3>
+        <pre><code>Write the intro for this month's newsletter announcing Analog Fest.</code></pre>
+        <h2>Setup at a glance</h2>
+        <ol>
+          <li>Create the Analog Fest SharePoint site and upload the supplied plan, recap, and notes.</li>
+          <li>Upload the inventory, weekend sales, chart, writing samples, and skills to OneDrive.</li>
+          <li>Seed Outlook with the supplied PowerShell script or import the individual EML files.</li>
+          <li>Create the Teams meeting, Confluence Stage Ops space, and Jira SHOP project.</li>
+          <li>Enable the required Copilot features, connect the data sources, and build the Analog Fest Notebook.</li>
+          <li>Rehearse with the night-before and morning-of checklists in the included setup guide.</li>
+        </ol>
+        <h2>What the sample data is designed to reveal</h2>
+        <ul>
+          <li>The inventory has 2,000 records and plenty of stock older than 90 days.</li>
+          <li>Jazz and Blues sales are down week over week, while Soul spikes during a DJ night.</li>
+          <li>The festival documents intentionally disagree so Copilot has changes and conflicts to find.</li>
+          <li>The Jira project contains a high-priority checkout bug that threatens weekend-pass sales.</li>
+          <li>The Confluence pages contain the stage checklist, load-in rules, band deal, and stage plot.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p>&copy; <span data-current-year>2026</span> April Dunnam. Built for AI with April.</p>
+      <nav aria-label="Footer"><ul>
+        <li><a href="skill-framework.html">S.K.I.L.L. framework</a></li>
+        <li><a href="cowork-masterclass.html">Cowork Masterclass</a></li>
+        <li><a href="../sessions.html">Sessions</a></li>
+        <li><a href="../updates.html">Watch &amp; read</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="https://aprildunnam.com">aprildunnam.com</a></li>
+        <li><a href="https://github.com/aprildunnam/ai-with-april">GitHub</a></li>
+      </ul></nav>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

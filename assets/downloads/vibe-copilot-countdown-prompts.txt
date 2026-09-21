@@ -1,0 +1,82 @@
+I DIDN'T KNOW COPILOT COULD DO THAT: COPY/PASTE PROMPTS
+
+==== No. 10  Never build a pivot table again  (Excel, Inventory.xlsx) ====
+Show stock value by genre and format as a PivotTable with a chart, and flag anything in stock over 90 days.
+
+Show it as % of total.
+
+
+==== No. 9  Word + PowerPoint Agent Mode ====
+Word (Fest_Plan.docx): Copilot > Catch up, then:
+Apply the edits requested in the comments.
+
+PowerPoint on the web (Agent Mode):
+Create a 6-slide Analog Fest sponsor pitch from the Analog Fest folder.
+(Pick the April's Analog brand kit when asked.)
+
+==== No. 8  Skills in PowerPoint and Excel ====
+PowerPoint, new deck:
+@analog-event-recap using Last_Fest_Notes.docx
+
+Excel, on the pivot from No. 10:
+@brandkit
+
+Excel, Weekend_Sales.xlsx:
+@weekly-sales-review
+
+==== No. 7  Vision ====
+Phone (camera on the LP back cover):
+What pressing is this, and do we already have it in our inventory?
+
+Desktop (sharing Weekend_By_Genre_Chart):
+What stands out here compared to our Analog Fest plan?
+
+==== No. 6  Notebook audio overview + Pages ====
+Draft a run of show for Analog Fest Friday: doors, sets, changeovers, record swap, close.
+
+On the page:
+Add a table of staff shifts with a column for who's on the bar.
+
+==== No. 5  Connectors ====
+Using the Stage Ops space in Confluence, what's our sound check checklist for a four-piece band?
+
+Any open issues in project SHOP that could hurt Analog Fest online ticket sales?
+
+==== No. 4  Memory + temporary chat ====
+(Temporary chat first, then normal chat, then the email prompt again)
+Draft an email to The Velvet Static confirming their Friday Analog Fest set. Remind them of our stage setup, load in and rate.
+
+Remember that we pay local bands a flat $200 plus 20% of the door, load-in is always 5pm, and our stage has no house drum kit.
+
+==== No. 3  Sound like you ====
+Write a reply to Crate & Needle Records saying yes to an Analog Fest pop-up table.
+
+Custom instructions (Settings > Personalization > Custom instructions):
+Be direct. Lead with the benefit.
+Use contractions: can't, don't, it's.
+Never use em dashes.
+Explain new ideas with an analogy.
+Keep emails under 120 words.
+End with one clear next step.
+
+Outlook (on the Crate & Needle email) > Draft with Copilot:
+Say yes to a pop-up table, in the style of the emails in my MyVoice folder.
+
+==== No. 2  Critique + Model Council (Researcher, pre-run both) ====
+Should April's Analog launch a monthly vinyl subscription box? Market size, three competitors, pricing, and risks for a small independent shop. Cite sources.
+
+==== No. 1  Skills in Agent Builder ====
+Agent name: Analog Voice
+Description: Writes shop emails, newsletters, and social posts for April's Analog.
+Skill: upload sound-like-april.zip
+
+Preview:
+Write the intro for this month's newsletter announcing Analog Fest.
+
+Bonus (attach Needle_Drop_Tech_Rider.docx):
+Create a skill that turns a band's tech rider into a stage checklist for our sound tech.
+
+==== Prompt Gallery (bonus round, save these to the Analog Staff team) ====
+Summarize this week's email from labels and flag anything that needs a reply today.
+Turn these notes into a 5-slide recap using the April's Analog brand kit.
+Draft a volunteer thank-you email in my voice. Under 120 words.

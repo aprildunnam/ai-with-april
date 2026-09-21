@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Delegating Real Work to Copilot Cowork — AI with April</title>
+  <meta name="description" content="Prompts, setup instructions, and demo files for April Dunnam's practical Copilot Cowork session.">
+  <link rel="canonical" href="https://aprildunnam.github.io/ai-with-april/resources/vibe-cowork.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Delegating Real Work to Copilot Cowork — AI with April">
+  <meta property="og:description" content="A practical Copilot Cowork session with prompts, setup instructions, and demo files.">
+  <meta property="og:image" content="../assets/img/vibe-cowork.svg">
+  <meta property="og:url" content="https://aprildunnam.github.io/ai-with-april/resources/vibe-cowork.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Bricolage+Grotesque:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="../index.html"><img src="../assets/img/favicon.svg" alt="" width="30" height="30">AI with April</a>
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav aria-label="Primary">
+        <ul class="main-nav" id="main-nav">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="skill-framework.html">S.K.I.L.L. framework</a></li>
+          <li><a href="cowork-masterclass.html">Cowork Masterclass</a></li>
+          <li><a href="../sessions.html" aria-current="page">Sessions</a></li>
+          <li><a href="../updates.html">Watch &amp; read</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="section--tight">
+      <div class="wrap">
+        <p class="eyebrow">Vibe session &middot; Copilot Cowork</p>
+        <h1>Delegating Real Work to Copilot Cowork</h1>
+        <p class="hero__lede">
+          Stop prompting and start handing off. This session shows where Cowork fits in the
+          Copilot family, how it plans cross-app work, and how to turn one successful task into
+          an app, automation, skill, or plugin.
+        </p>
+        <div class="featured__actions" style="margin-bottom: var(--space-4);">
+          <a class="btn btn-primary" href="../assets/downloads/delegating-real-work-to-copilot-cowork.pptx">Download the slide deck (.pptx)</a>
+          <a class="btn btn-secondary" href="../assets/downloads/vibe-cowork-demo-pack.zip">Download the demo pack (.zip)</a>
+          <a class="btn btn-secondary" href="../assets/downloads/vibe-cowork-prompts.txt">Open the prompt sheet (.txt)</a>
+        </div>
+        <img class="resource-cover" src="../assets/img/vibe-cowork.svg" alt="Delegating Real Work to Copilot Cowork session cover">
+        <div class="callout-box">
+          <p>
+            <strong>What's in the 436 KB download:</strong> the setup guide, copy-paste prompts,
+            seeded Outlook data, a Teams chat script, vendor and festival files, SharePoint list
+            CSVs, and fallback artifacts. The optimized 6.6 MB slide deck is available directly
+            above. The large demo recordings remain prepared for distribution through
+            <a href="https://github.com/aprildunnam/ai-with-april/releases">GitHub Releases</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section--tight prose">
+      <div class="wrap prose">
+        <h2>The six demos</h2>
+        <div class="demo-grid demo-grid--pink">
+          <article class="demo-card"><span>1</span><h3>Hand it your inbox</h3><p>Triage unread festival mail, draft quick replies, and keep approval before anything sends.</p></article>
+          <article class="demo-card"><span>2</span><h3>Prep a vendor meeting</h3><p>Combine six months of email, Teams chat, and order history into a one-page Word brief.</p></article>
+          <article class="demo-card"><span>3</span><h3>Build a volunteer app</h3><p>Use <code>/app</code> to create a mobile check-in experience from a SharePoint list.</p></article>
+          <article class="demo-card"><span>4</span><h3>Create an event-triggered automation</h3><p>React to a label's email, check order history, draft a response, and update a list.</p></article>
+          <article class="demo-card"><span>5</span><h3>Save the task as a skill</h3><p>Generalize the vendor briefing workflow and reuse it for another label.</p></article>
+          <article class="demo-card"><span>6</span><h3>Put a plugin to work</h3><p>Turn the festival plan into a visual run of show in Miro or a monday.com board.</p></article>
+        </div>
+        <h2>Prompts to try first</h2>
+        <h3>Clear the festival inbox</h3>
+        <pre><code>Go through my unread email from this week. Flag anything about
+Analog Fest that needs me, sort it into a short list by urgency,
+and draft replies to the quick ones. Show me the drafts before
+sending anything.</code></pre>
+        <h3>Prepare the vendor meeting</h3>
+        <pre><code>Prep me for tomorrow's 10am with Crate &amp; Needle Records.
+Pull our last 6 months of email with them, the pop-up request,
+any Teams chats about them, and their past orders from
+Vendor_Pipeline.xlsx. Build a one-page Word briefing with
+3 talking points and save it to /Analog Fest/Meetings/.
+Preview before you create anything.</code></pre>
+        <h3>Build the check-in app</h3>
+        <pre><code>/app Build an Analog Fest volunteer check-in app. Volunteers pick
+their name and shift and tap Check in. The shift lead sees who's
+checked in and who's missing for the current shift. Use the
+Volunteers list in the Analog Fest SharePoint site. Keep it simple
+and mobile-friendly.</code></pre>
+        <h2>The delegation model</h2>
+        <table>
+          <thead><tr><th>Part</th><th>What to specify</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Goal</strong></td><td>The outcome you want, not every click.</td></tr>
+            <tr><td><strong>Sources</strong></td><td>The files, people, systems, or date range it should use.</td></tr>
+            <tr><td><strong>Format</strong></td><td>The length, structure, tone, and destination.</td></tr>
+            <tr><td><strong>Boundary</strong></td><td>What it may do, what it must preview, and when it should ask.</td></tr>
+          </tbody>
+        </table>
+        <h2>Setup at a glance</h2>
+        <ol>
+          <li>Seed the demo mailbox with the supplied PowerShell script and keep the unread messages current.</li>
+          <li>Post the supplied messages in a one-to-one Teams chat.</li>
+          <li>Upload the vendor pipeline and festival plan, then create the meetings folder.</li>
+          <li>Create the Volunteers and Pop-up SharePoint lists from the supplied CSV files.</li>
+          <li>Enable Cowork, Copilot Credits, <code>/app</code>, and the Miro plugin or monday.com backup.</li>
+          <li>Build the volunteer app once in rehearsal and follow the reset checklist before presenting.</li>
+        </ol>
+        <h2>What the sample data is designed to reveal</h2>
+        <ul>
+          <li>The unread inbox separates urgent approvals, quick replies, and low-value noise.</li>
+          <li>Crate &amp; Needle has a six-month relationship, two orders, one late shipment, and a pending pop-up request.</li>
+          <li>Tape Hiss Records ordered recently enough to qualify for an automatic “yes” response.</li>
+          <li>The volunteer list has 40 people across six shifts, with Sunday late intentionally understaffed.</li>
+          <li>The fallback skill demonstrates the same open <code>SKILL.md</code> format used across Cowork, PowerPoint, Excel, and Agent Builder.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p>&copy; <span data-current-year>2026</span> April Dunnam. Built for AI with April.</p>
+      <nav aria-label="Footer"><ul>
+        <li><a href="skill-framework.html">S.K.I.L.L. framework</a></li>
+        <li><a href="cowork-masterclass.html">Cowork Masterclass</a></li>
+        <li><a href="../sessions.html">Sessions</a></li>
+        <li><a href="../updates.html">Watch &amp; read</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="https://aprildunnam.com">aprildunnam.com</a></li>
+        <li><a href="https://github.com/aprildunnam/ai-with-april">GitHub</a></li>
+      </ul></nav>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -156,6 +156,21 @@ Out of scope for v4 (explicitly deferred, not silently dropped):
 - A dedicated Agent Academy content page on this site — Agent Academy already has its own site;
   this hub only links out to it.
 
+## Scope for v5
+
+In scope (this update):
+
+- Add a **Conference sessions** page with two complete session companions:
+  **I Didn't Know Copilot Could Do That** and **Delegating Real Work to Copilot Cowork**.
+- Give each session its own page with the real demo sequence, copy-paste prompts, setup summary,
+  sample-data expectations, and a downloadable lightweight demo pack.
+- Include optimized PowerPoint decks as direct site downloads. Keep the much larger MP4 recordings
+  out of normal Git history; a repository script publishes those files as GitHub Release assets.
+- Add a Sessions entry to global navigation and surface both sessions on the homepage.
+
+The fictional April's Analog business and all sample data are clearly presented as demo material,
+not a real customer, partner, or operating business.
+
 ## Scope for v2
 
 In scope (this update):
