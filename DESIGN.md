@@ -162,9 +162,9 @@ The session pages use:
   `scripts/publish-vibe-release-assets.sh` publishes those recordings without putting them in
   repository history.
 
-Session companions use a centered content column and centered hero/action area, while the detailed
-runbook cards remain left-aligned inside that centered column for readable steps and code blocks.
-Every session identifies its source event and date near the title.
+Session companions use a centered content column throughout, including the hero, setup guidance,
+runbook steps, reference files, prompts, and expected results. Every session identifies its source
+event and date near the title, and each catalog card links its event name to the event site.
 
 ## Component conventions
 
