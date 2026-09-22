@@ -404,6 +404,36 @@ hr {
   margin-top: var(--space-3);
 }
 
+.hero__layout {
+  display: block;
+}
+
+.hero__content {
+  min-width: 0;
+}
+
+.hero__portrait {
+  display: none;
+}
+
+@media (min-width: 961px) {
+  .hero__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+    gap: var(--space-4);
+    align-items: center;
+  }
+
+  .hero__portrait {
+    display: block;
+    align-self: end;
+    width: min(100%, 390px);
+    aspect-ratio: 1122 / 1402;
+    justify-self: end;
+    background: url("../img/april-dunnam-hero.png") center bottom / contain no-repeat;
+  }
+}
+
 /* =========================================================================
    Featured resource block
    ========================================================================= */
