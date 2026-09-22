@@ -472,6 +472,168 @@ hr {
 }
 
 /* =========================================================================
+   Book feature
+   ========================================================================= */
+
+.book-section {
+  background:
+    radial-gradient(700px 300px at 95% 0%, rgba(255, 196, 50, 0.13), transparent 65%),
+    var(--color-bg-alt);
+  border-block: 1px solid var(--color-border);
+}
+
+.book-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.55fr);
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid #6f5b24;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #2c292a 0%, #171717 72%);
+  color: #ffffff;
+  box-shadow: var(--shadow-card);
+}
+
+.book-feature__body {
+  padding: var(--space-4);
+}
+
+.book-feature .badge {
+  background: rgba(255, 196, 50, 0.14);
+  border-color: rgba(255, 196, 50, 0.48);
+  color: #ffd66e;
+}
+
+.book-feature h3 {
+  max-width: 24ch;
+  margin-top: var(--space-2);
+  color: #ffffff;
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+}
+
+.book-feature__body > p:not(.book-meta) {
+  max-width: 62ch;
+  color: #e7e3e4;
+}
+
+.book-highlights {
+  display: grid;
+  gap: 0.65rem;
+  max-width: 62ch;
+  margin: var(--space-3) 0;
+  padding: 0;
+  list-style: none;
+}
+
+.book-highlights li {
+  position: relative;
+  padding-left: 1.4rem;
+  color: #f5f2f2;
+}
+
+.book-highlights li::before {
+  position: absolute;
+  top: 0.65em;
+  left: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #ffc432;
+  content: "";
+}
+
+.book-meta {
+  color: #ffd66e;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.book-feature .btn-primary {
+  border-color: #ffc432;
+  background: #ffc432;
+  color: #171717;
+}
+
+.book-feature .btn-primary:hover {
+  border-color: #ffda7a;
+  background: #ffda7a;
+  color: #171717;
+}
+
+.book-feature .btn-secondary {
+  border-color: #817d7e;
+  background: transparent;
+  color: #ffffff;
+}
+
+.book-feature .btn-secondary:hover {
+  border-color: #ffc432;
+  background: rgba(255, 196, 50, 0.1);
+  color: #ffffff;
+}
+
+.book-retailers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1rem;
+  margin-top: var(--space-2);
+  color: #c9c4c5;
+  font-size: 0.9rem;
+}
+
+.book-retailers a {
+  color: #ffffff;
+  text-underline-offset: 0.2em;
+}
+
+.book-retailers a:hover {
+  color: #ffd66e;
+}
+
+.book-feature__media {
+  display: grid;
+  align-self: stretch;
+  place-items: center;
+  padding: var(--space-4);
+  background:
+    radial-gradient(circle at center, rgba(255, 196, 50, 0.18), transparent 62%),
+    rgba(255, 255, 255, 0.025);
+}
+
+.book-feature__media a {
+  display: block;
+  width: min(100%, 18rem);
+}
+
+.book-feature__media img {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 0.25rem;
+  box-shadow: 0 28px 45px -22px rgba(0, 0, 0, 0.85);
+  transform: rotate(1deg);
+  transition: transform var(--transition-med);
+}
+
+.book-feature__media a:hover img {
+  transform: rotate(0deg) translateY(-4px);
+}
+
+@media (max-width: 860px) {
+  .book-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .book-feature__media {
+    order: -1;
+    padding-bottom: 0;
+  }
+
+  .book-feature__media a {
+    width: min(62%, 15rem);
+  }
+}
+
+/* =========================================================================
    Conference sessions and demo packs
    ========================================================================= */
 
