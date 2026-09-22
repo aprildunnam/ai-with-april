@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add("js");</script>
   <title>Watch &amp; read | AI with April</title>
   <meta name="description" content="April Dunnam's latest YouTube videos and blog posts, synced automatically with practical AI, Copilot, and Power Platform content.">
 
@@ -10,9 +11,14 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Watch & read | AI with April">
   <meta property="og:description" content="April's latest YouTube videos and blog posts, synced automatically.">
-  <meta property="og:image" content="assets/img/og-cover.png">
+  <meta property="og:image" content="https://aprildunnam.github.io/ai-with-april/assets/img/og-cover.png">
+  <meta property="og:image:alt" content="Watch and read the latest practical AI content from April Dunnam">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://aprildunnam.github.io/ai-with-april/updates.html">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@aprildunnam">
+  <meta name="twitter:image" content="https://aprildunnam.github.io/ai-with-april/assets/img/og-cover.png">
 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,6 +75,7 @@
         <div class="update-grid" data-feed="videos" aria-live="polite">
           <p class="update-empty">Loading latest videos&hellip;</p>
         </div>
+        <noscript><p class="update-empty">JavaScript is unavailable. <a href="https://www.youtube.com/@AprilDunnam">Visit April's YouTube channel</a>.</p></noscript>
         <p class="update-synced" data-feed-updated="videos"></p>
       </div>
     </section>
@@ -84,6 +91,7 @@
         <div class="update-grid" data-feed="posts" aria-live="polite">
           <p class="update-empty">Loading latest posts&hellip;</p>
         </div>
+        <noscript><p class="update-empty">JavaScript is unavailable. <a href="https://aprildunnam.com/blog/">Read April's blog</a>.</p></noscript>
         <p class="update-synced" data-feed-updated="posts"></p>
       </div>
     </section>

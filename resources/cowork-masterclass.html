@@ -3,16 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add("js");</script>
   <title>Copilot Cowork Masterclass | AI with April</title>
-  <meta name="description" content="The full lab manual for Copilot Cowork: a copy-paste prompt bank, 7 hands-on labs and challenges, a skills starter kit, and a printable cheat sheet, plus the original slide deck.">
+  <meta name="description" content="A practical Copilot Cowork guide with a prompt bank, 7 hands-on labs, reusable skills, a printable cheat sheet, and companion slides.">
 
   <link rel="canonical" href="https://aprildunnam.github.io/ai-with-april/resources/cowork-masterclass.html">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Copilot Cowork Masterclass | AI with April">
   <meta property="og:description" content="The full lab manual for Copilot Cowork: prompt bank, hands-on labs, a skills starter kit, and a printable cheat sheet.">
-  <meta property="og:image" content="../assets/img/cowork-cheat-sheet.png">
+  <meta property="og:image" content="https://aprildunnam.github.io/ai-with-april/assets/img/cowork-cheat-sheet.png">
+  <meta property="og:image:alt" content="Copilot Cowork quick-reference cheat sheet">
+  <meta property="og:image:width" content="2112">
+  <meta property="og:image:height" content="1000">
   <meta property="og:url" content="https://aprildunnam.github.io/ai-with-april/resources/cowork-masterclass.html">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@aprildunnam">
+  <meta name="twitter:image" content="https://aprildunnam.github.io/ai-with-april/assets/img/cowork-cheat-sheet.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "Copilot Cowork Masterclass",
+    "description": "A practical Copilot Cowork guide with a prompt bank, hands-on labs, reusable skills, and companion downloads.",
+    "url": "https://aprildunnam.github.io/ai-with-april/resources/cowork-masterclass.html",
+    "learningResourceType": ["Guide", "Lab", "Prompt library"],
+    "dateModified": "2026-09-21",
+    "author": { "@type": "Person", "name": "April Dunnam" }
+  }
+  </script>
 
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,12 +76,34 @@
           a skills starter kit, and a one-page cheat sheet worth pinning.
         </p>
         <div class="featured__actions" style="margin-bottom: var(--space-4);">
-          <a class="btn btn-primary" href="../assets/downloads/cowork-masterclass-slides.pdf">Download the slide deck (.pdf)</a>
+          <a class="btn btn-primary" href="../assets/downloads/cowork-masterclass-slides.pdf">Download the slide deck (.pdf, 1.6 MB)</a>
           <a class="btn btn-secondary" href="#labs">Jump to the labs</a>
         </div>
 
-        <img src="../assets/img/cowork-cheat-sheet.png" alt="Copilot Cowork cheat sheet: which tool to use (M365 Copilot, Cowork, or Scout), model and cost guidance, the four parts of a great prompt, steal-these prompts, and how to stay in control." style="border-radius: var(--radius-lg); border: 1px solid var(--color-border); box-shadow: var(--shadow-card); margin-bottom: var(--space-4);">
+        <div class="guide-overview" aria-label="Guide details">
+          <dl>
+            <div><dt>Reading time</dt><dd>About 20 minutes</dd></div>
+            <div><dt>Hands-on time</dt><dd>5 to 25 minutes per exercise</dd></div>
+            <div><dt>Prerequisites</dt><dd>Copilot Cowork for the labs</dd></div>
+            <div><dt>Last reviewed</dt><dd>September 21, 2026</dd></div>
+          </dl>
+        </div>
 
+        <nav class="page-toc" aria-labelledby="cowork-toc-title">
+          <h2 id="cowork-toc-title">On this page</h2>
+          <ul>
+            <li><a href="#cowork-overview">What Cowork is</a></li>
+            <li><a href="#cowork-faq">Glossary and FAQ</a></li>
+            <li><a href="#prompt-bank">Prompt bank</a></li>
+            <li><a href="#labs">Labs and challenges</a></li>
+            <li><a href="#skills-starter-kit">Skills starter kit</a></li>
+            <li><a href="#cowork-downloads">Downloads</a></li>
+          </ul>
+        </nav>
+
+        <img src="../assets/img/cowork-cheat-sheet.png" width="2112" height="1000" loading="lazy" decoding="async" alt="Copilot Cowork cheat sheet: which tool to use (M365 Copilot, Cowork, or Scout), model and cost guidance, the four parts of a great prompt, steal-these prompts, and how to stay in control." style="border-radius: var(--radius-lg); border: 1px solid var(--color-border); box-shadow: var(--shadow-card); margin-bottom: var(--space-4);">
+
+        <h2>Who this guide is for</h2>
         <div class="role-callouts" aria-label="Why this matters for each role">
           <div class="role-callout" id="for-professionals">
             <h3><span class="role-callout__dot" aria-hidden="true"></span>If you're a Curious Professional</h3>
@@ -71,6 +112,7 @@
               step, and it plans and works across your inbox, calendar, and files. Start with
               the <a href="#challenges">first challenge</a>, no setup required.
             </p>
+            <p class="back-to-top"><a href="#main">Back to top &uarr;</a></p>
           </div>
           <div class="role-callout" id="for-makers">
             <h3><span class="role-callout__dot" aria-hidden="true"></span>If you're a Microsoft Maker</h3>
@@ -87,17 +129,17 @@
             <p>
               The <a href="#skills-starter-kit">Skills Starter Kit</a> below is the same
               <code>SKILL.md</code> format covered in the
-              <a href="skill-framework.html">S.K.I.L.L. framework</a>. It is one more surface where
-              the identical file runs unchanged.
+              <a href="skill-framework.html">S.K.I.L.L. framework</a>. The core format is portable,
+              while installation paths, scope, scripts, and supported metadata can vary by product.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section--tight prose">
+    <section class="section--tight">
       <div class="wrap prose">
-        <h2>What is Copilot Cowork?</h2>
+        <h2 id="cowork-overview">What is Copilot Cowork?</h2>
         <p>
           <strong>Microsoft Copilot</strong> is the AI assistant built into Word, Excel,
           PowerPoint, Outlook, and Teams, grounded in your organization's own data through the
@@ -133,14 +175,21 @@
           <dt><strong>Skill</strong></dt>
           <dd>A saved, reusable playbook Cowork loads on demand, so you stop re-prompting and cut credits. See the <a href="#skills-starter-kit">Skills Starter Kit</a>.</dd>
           <dt><strong>Credits</strong></dt>
-          <dd>Usage-based Copilot Credits (~$0.01 each) that Cowork spends per task on top of your Copilot license. Start on <strong>Auto</strong>, drop to a lighter model for routine work, and type <code>/cost</code> to check spend.</dd>
+          <dd>
+            Cowork uses usage-based Copilot Credits. Microsoft's current pay-as-you-go price is
+            $0.01 per credit as of September 2026, and task costs vary by complexity. Start on
+            <strong>Auto</strong>, use a lighter model for routine work, and type <code>/cost</code>
+            to check an estimate. Review the
+            <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits" target="_blank" rel="noopener">current billing guidance</a>
+            before making budget decisions.
+          </dd>
         </dl>
       </div>
     </section>
 
-    <section class="section--tight prose">
+    <section class="section--tight">
       <div class="wrap prose">
-        <h2>Glossary &amp; FAQ</h2>
+        <h2 id="cowork-faq">Glossary &amp; FAQ</h2>
         <dl>
           <dt><strong>Cowork vs. M365 Copilot vs. Scout</strong></dt>
           <dd>M365 Copilot = a quick edit, in the flow. Cowork = a whole job you delegate. Scout = ongoing, proactive help that comes to you.</dd>
@@ -156,12 +205,15 @@
 
         <h3>Common questions</h3>
         <p><strong>Is my data safe? What about my permissions?</strong><br>
-          Cowork works within your existing Microsoft 365 boundary and only ever sees what you
-          already have access to. It runs under your organization's identity, DLP, and compliance
-          policies.</p>
+          Cowork works within your Microsoft 365 boundary and uses your existing identity,
+          permissions, DLP, and compliance controls. It does not grant access to Microsoft 365
+          content you could not already access. Plugins and external web sources may have
+          additional data-handling policies, so review those separately.</p>
         <p><strong>Does it take actions without asking?</strong><br>
-          No. It previews actions and asks you to approve before it sends, posts, or schedules
-          anything. You stay in control.</p>
+          Cowork pauses for approval before important actions such as sending an email, posting a
+          message, or scheduling a meeting. It can offer to skip future prompts for similar
+          actions, so review that choice carefully. You can pause or cancel the session at any
+          time.</p>
         <p><strong>Where do the files it creates go?</strong><br>
           <strong>OneDrive &#9656; Documents &#9656; Cowork.</strong> You can always ask "where did
           you save that?"</p>
@@ -170,10 +222,11 @@
           for a heavier model only when the stakes justify the extra credits.</p>
         <p><strong>How do I get Browser Use?</strong><br>
           It's admin-enabled in Microsoft Edge. If you don't see it, ask your IT admin.</p>
+        <p class="back-to-top"><a href="#main">Back to top &uarr;</a></p>
       </div>
     </section>
 
-    <section class="section--tight prose">
+    <section class="section--tight">
       <div class="wrap prose">
         <h2 id="prompt-bank">Prompt bank</h2>
         <p>Copy these and make them yours. Replace anything in <code>[brackets]</code>. Start on <strong>Auto</strong>; drop to a lighter model for simple, high-volume work to save credits.</p>
@@ -210,10 +263,11 @@
         <h3>&#128179; Cost &amp; control</h3>
         <pre><code>/cost</code></pre>
         <pre><code>Before you send or post anything, show me a preview first.</code></pre>
+        <p class="back-to-top"><a href="#main">Back to top &uarr;</a></p>
       </div>
     </section>
 
-    <section class="section--tight prose" id="labs">
+    <section class="section--tight" id="labs">
       <div class="wrap prose">
         <h2>Labs &amp; challenges</h2>
         <p>
@@ -307,10 +361,11 @@
           <p><strong>Deliverable:</strong> a triaged inbox plan plus 2&ndash;3 drafted replies.</p>
           <p><strong>Stretch:</strong> <code>Create a skill called "inbox triage" that does this every morning and shows me only what needs me.</code></p>
         </details>
+        <p class="back-to-top"><a href="#main">Back to top &uarr;</a></p>
       </div>
     </section>
 
-    <section class="section--tight prose" id="skills-starter-kit">
+    <section class="section--tight" id="skills-starter-kit">
       <div class="wrap prose">
         <h2>Skills starter kit</h2>
         <p>
@@ -378,15 +433,16 @@ description: Use when I say "run my weekly status" or "Friday wrap-up". Compiles
 - Use only these labels: On Track, At Risk, Blocked, Complete, Not Started.
 - If any milestone is Blocked, put &#9888; at the top and list the blocker first.
 - Never invent numbers. If data is missing, say "data not available."</code></pre>
+        <p class="back-to-top"><a href="#main">Back to top &uarr;</a></p>
       </div>
     </section>
 
-    <section class="section--tight prose">
+    <section class="section--tight" id="cowork-downloads">
       <div class="wrap prose">
         <h2>Downloads &amp; credits</h2>
         <div class="featured__actions">
-          <a class="btn btn-primary" href="../assets/downloads/cowork-masterclass-slides.pdf">Slide deck (.pdf)</a>
-          <a class="btn btn-secondary" href="../assets/downloads/cowork-cheat-sheet.pdf">Cheat sheet (.pdf)</a>
+          <a class="btn btn-primary" href="../assets/downloads/cowork-masterclass-slides.pdf">Slide deck (.pdf, 1.6 MB)</a>
+          <a class="btn btn-secondary" href="../assets/downloads/cowork-cheat-sheet.pdf">Cheat sheet (.pdf, 0.1 MB)</a>
           <a class="btn btn-secondary" href="../assets/img/cowork-cheat-sheet.png">Cheat sheet (.png)</a>
           <a class="btn btn-secondary" href="skill-framework.html">Read the S.K.I.L.L. framework</a>
         </div>
@@ -407,6 +463,7 @@ description: Use when I say "run my weekly status" or "Friday wrap-up". Compiles
           files use the open <a href="https://agentskills.io" target="_blank" rel="noopener">agentskills.io</a>
           format, also covered in the <a href="skill-framework.html">S.K.I.L.L. framework</a>.
         </p>
+        <p class="back-to-top"><a href="#main">Back to top &uarr;</a></p>
       </div>
     </section>
   </main>

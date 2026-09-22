@@ -9,7 +9,8 @@
  * (see .github/workflows/fetch-feeds.yml) or by hand with
  * `node scripts/fetch-feeds.mjs`.
  *
- * To feature a specific curated playlist instead of the full channel
+ * The channel fallback filters Shorts and obvious event promos so the site
+ * favors durable walkthroughs. To feature a specific curated playlist instead,
  * upload history, change YOUTUBE_FEED_URL below to:
  *   https://www.youtube.com/feeds/videos.xml?playlist_id=PLxxxxxxxx
  * (Grab the playlist ID from the `list=` query param on the playlist's
@@ -19,6 +20,7 @@
 const BLOG_FEED_URL = "https://aprildunnam.com/feed/";
 const YOUTUBE_FEED_URL =
   "https://www.youtube.com/feeds/videos.xml?channel_id=UCz_x76EBX5UXsV27drGNh6w";
+const YOUTUBE_VIDEOS_URL = "https://www.youtube.com/@AprilDunnam/videos";
 
 const MAX_ITEMS = 6;
 const OUT_DIR = new URL("../assets/data/", import.meta.url);
@@ -44,6 +46,13 @@ function decodeEntities(str) {
 
 function stripTags(str) {
   return str.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function normalizeExcerpt(str) {
+  return str
+    .replace(/([.!?]["\u201d\u2019]?)(?=[A-Z(])/g, "$1 ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function truncate(str, max) {
@@ -90,7 +99,9 @@ async function fetchBlogPosts() {
       return decodeEntities(c[1]);
     });
 
-    var excerpt = stripTags(rawDescription).replace(/\s*The post .* appeared first on .*\.?\s*$/, "");
+    var excerpt = normalizeExcerpt(
+      stripTags(rawDescription).replace(/\s*The post .* appeared first on .*\.?\s*$/, "")
+    );
 
     return {
       title: title,
@@ -107,10 +118,17 @@ async function fetchBlogPosts() {
 }
 
 async function fetchYoutubeVideos() {
-  var xml = await fetchText(YOUTUBE_FEED_URL);
+  var xml;
+  try {
+    xml = await fetchText(YOUTUBE_FEED_URL);
+  } catch (feedError) {
+    console.warn("YouTube Atom feed unavailable, using the public videos page:", feedError.message);
+    return fetchYoutubeVideosFromPage();
+  }
+
   var entries = matchAll(xml, /<entry>([\s\S]*?)<\/entry>/g);
 
-  var videos = entries.slice(0, MAX_ITEMS).map(function (m) {
+  var videos = entries.map(function (m) {
     var block = m[1];
     var videoId = extract(block, /<yt:videoId>([\s\S]*?)<\/yt:videoId>/);
     var linkMatch = block.match(/<link rel="alternate" href="([^"]*)"/);
@@ -131,9 +149,52 @@ async function fetchYoutubeVideos() {
     };
   });
 
-  return videos.filter(function (v) {
-    return v.title && v.url && v.videoId;
-  });
+  return videos
+    .filter(function (v) {
+      var isShort = /youtube\.com\/shorts\//.test(v.url);
+      var isPromo = /\bcoming (up|soon)\b/i.test(v.title);
+      return v.title && v.url && v.videoId && !isShort && !isPromo;
+    })
+    .slice(0, MAX_ITEMS);
+}
+
+async function fetchYoutubeVideosFromPage() {
+  var html = await fetchText(YOUTUBE_VIDEOS_URL);
+  var matches = matchAll(
+    html,
+    /"contentId":"([A-Za-z0-9_-]{11})"[\s\S]{0,3500}?"accessibilityContext":\{"label":"((?:\\.|[^"])*)"/g
+  );
+  var seen = new Set();
+
+  return matches
+    .map(function (match) {
+      var videoId = match[1];
+      var label;
+      try {
+        label = JSON.parse('"' + match[2] + '"');
+      } catch {
+        label = match[2];
+      }
+      var title = label.replace(
+        /\s+\d+(?:\.\d+)?\s+(?:seconds?|minutes?|hours?)(?:,\s*\d+\s+seconds?)?$/i,
+        ""
+      );
+
+      return {
+        title: title,
+        url: "https://www.youtube.com/watch?v=" + videoId,
+        videoId: videoId,
+        thumbnail: "https://i.ytimg.com/vi/" + videoId + "/hqdefault.jpg",
+        date: null
+      };
+    })
+    .filter(function (video) {
+      var duplicate = seen.has(video.videoId);
+      seen.add(video.videoId);
+      var isPromo = /\bcoming (up|soon)\b/i.test(video.title);
+      return !duplicate && video.title && !isPromo;
+    })
+    .slice(0, MAX_ITEMS);
 }
 
 async function writeJson(filename, data) {

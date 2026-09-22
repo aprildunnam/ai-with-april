@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aprildunnam.github.io/ai-with-april/sitemap.xml

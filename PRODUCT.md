@@ -27,9 +27,9 @@ funnel:
 
 Within **one minute** of landing on the site, a visitor should be able to:
 
-1. Recognize which of the three roles fits them (or opt straight into browsing by topic instead).
-2. Pick that entry point.
-3. Land on and start one genuinely useful resource — not another menu.
+1. Understand who April is and what kind of practical material the site provides.
+2. Choose a direct task path: build a skill, recreate a live demo, or build an agent.
+3. Land on and start one genuinely useful resource, not another menu.
 
 This is the primary usability bar for the homepage. If a visitor is still deciding where to click
 after a minute, the homepage has failed.
@@ -114,12 +114,10 @@ In scope (this update):
   shorter-lived content for the hub's reviewed role/topic taxonomy.
 
 **Known limitation, flagged rather than hidden:** the user asked for "a playlist I curate," implying
-a specific hand-picked YouTube playlist. No playlist ID/URL was available at build time, so this
-ships against April's full channel-uploads feed instead — real, verifiable content, not fabricated,
-but broader than a curated playlist would be (it includes shorts, promos, and announcements
-alongside long-form videos). `scripts/fetch-feeds.mjs` documents, at the top of the file, the
-one-line change (swap `YOUTUBE_FEED_URL` to a `playlist_id=` URL) needed to point this at a specific
-playlist once one is supplied.
+a specific hand-picked YouTube playlist. No verified playlist ID/URL was available at build time,
+so this uses April's channel uploads with automatic filtering for Shorts and obvious promotional
+announcements. The content is real and verifiable, but the selection remains heuristic rather than
+hand-curated.
 
 Non-fabrication rule applied here: every video/post title, date, and thumbnail shown is pulled
 verbatim from April's real feeds — none of it is invented, curated-sounding copy, or backfilled.
@@ -178,6 +176,28 @@ In scope (this update):
 - Include optimized PowerPoint decks as direct site downloads. Keep the much larger MP4 recordings
   out of normal Git history; a repository script publishes those files as GitHub Release assets.
 - Add a Sessions entry to global navigation and surface both sessions on the homepage.
+
+## Scope for v6
+
+In scope (this update):
+
+- Add a compact, task-based quick-start strip without restoring the removed role taxonomy or
+  resource library.
+- Keep the site flat, but improve long-guide orientation with reading and hands-on time,
+  prerequisites, review dates, page contents, section anchors, and back-to-top links.
+- Improve responsive behavior with a 900px navigation breakpoint, a usable no-JavaScript menu,
+  larger touch targets, wrapped natural-language prompts, and keyboard-accessible overflow regions.
+- Keep session filtering available for growth but hide it while the catalog has fewer than four
+  sessions.
+- Optimize the homepage portrait with AVIF delivery and a PNG fallback, and prevent portrait
+  downloads on smaller screens where the image is hidden.
+- Add explicit loading, empty, error, and stale states to the public feeds. Use the YouTube public
+  videos page as a keyless fallback when the Atom endpoint is unavailable.
+- Qualify fast-changing Copilot and Agent Skills claims, link current pricing guidance, and show a
+  visible last-reviewed date on time-sensitive guides.
+- Add complete social metadata, structured data, a sitemap, and crawler guidance for public pages.
+- Keep free learning material before the book feature and add the book plus speaking/contact paths
+  to the About page.
 
 The fictional April's Analog business and all sample data are clearly presented as demo material,
 not a real customer, partner, or operating business.
