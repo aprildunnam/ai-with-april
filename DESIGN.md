@@ -152,6 +152,7 @@ The session pages use:
 
 - `.session-grid` / `.session-card` for the two-session index and homepage teaser.
 - `[data-session-search]` / `[data-session-filter]` for catalog search and topic filtering.
+- `.book-feature` for the homepage book promotion, including a local cover image and retailer links.
 - `.demo-grid` / `.demo-card` for the numbered live-demo sequence.
 - `.demo-runbook` / `.demo-step` for detailed flows, `.reference-files` for per-demo downloads,
   and `.prompt-block` for copyable prompts.

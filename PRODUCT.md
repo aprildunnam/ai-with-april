@@ -171,6 +171,8 @@ In scope (this update):
   sessions. Identify both as Vibe 2.0 sessions from September 21-23, 2026.
 - Publish only synthetic, prompt-relevant demo data. Use reserved `.example` email domains, omit
   mailbox-write scripts and stale setup guides, and make skills a prominent part of each session.
+- Feature April's book, *The Copilot Compass*, on the homepage with its cover, practical audience
+  and value proposition, and multiple reputable paperback and eBook purchase options.
 - Include optimized PowerPoint decks as direct site downloads. Keep the much larger MP4 recordings
   out of normal Git history; a repository script publishes those files as GitHub Release assets.
 - Add a Sessions entry to global navigation and surface both sessions on the homepage.
