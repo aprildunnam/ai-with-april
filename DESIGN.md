@@ -185,10 +185,9 @@ event and date near the title, and each catalog card links its event name to the
 - **A second "featured" resource block** (`.featured--pink`) exists specifically so a 2nd flagship
   resource (Cowork Masterclass) reads as visually distinct from the 1st (S.K.I.L.L. framework, plain
   `.featured`) via accent color alone — same layout, same actions pattern, different identity color.
-- **`.spotlight`** (v4, added for the Agent Academy callout) is a single-column blue-gradient
-  banner using `--color-blue-light` / `--color-blue-border`, deliberately distinct from `.featured`
-  (which is two-column with media) — it reads as an external pointer, not a "third resource," since
-  there's no accompanying image for it.
+- **`.spotlight`** (v4, added for the Agent Academy callout) is a compact blue-gradient callout
+  using `--color-blue-light` / `--color-blue-border`. It pairs the CTA with the Agent Academy
+  Recruit artwork, but remains visually lighter and smaller than the full `.featured` resources.
 
 ## Accessibility & motion
 
