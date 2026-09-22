@@ -10,6 +10,11 @@
   var nav = document.getElementById("main-nav");
 
   if (toggle && nav) {
+    function closeNavigation() {
+      nav.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+
     toggle.addEventListener("click", function () {
       var isOpen = nav.classList.toggle("is-open");
       toggle.setAttribute("aria-expanded", String(isOpen));
@@ -18,8 +23,20 @@
     // Close the menu when a link inside it is activated (small screens)
     nav.addEventListener("click", function (event) {
       if (event.target.tagName === "A" && nav.classList.contains("is-open")) {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
+        closeNavigation();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && nav.classList.contains("is-open")) {
+        closeNavigation();
+        toggle.focus();
+      }
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 900 && nav.classList.contains("is-open")) {
+        closeNavigation();
       }
     });
   }
@@ -30,10 +47,29 @@
     yearEl.textContent = String(new Date().getFullYear());
   }
 
-  // Copy buttons for reusable prompt blocks
+  // Add copy controls to code examples that do not already provide one.
+  document.querySelectorAll(".prose pre").forEach(function (pre) {
+    if (pre.closest(".prompt-block, .code-block")) {
+      return;
+    }
+
+    var wrapper = document.createElement("div");
+    wrapper.className = "code-block";
+    pre.parentNode.insertBefore(wrapper, pre);
+    wrapper.appendChild(pre);
+
+    var button = document.createElement("button");
+    button.className = "prompt-copy";
+    button.type = "button";
+    button.setAttribute("data-copy-prompt", "");
+    button.textContent = "Copy";
+    wrapper.insertBefore(button, pre);
+  });
+
+  // Copy buttons for reusable prompt and code blocks
   document.querySelectorAll("[data-copy-prompt]").forEach(function (button) {
     button.addEventListener("click", function () {
-      var block = button.closest(".prompt-block");
+      var block = button.closest(".prompt-block, .code-block");
       var code = block && block.querySelector("code");
 
       if (!code || !navigator.clipboard) {
@@ -51,15 +87,35 @@
         button.textContent = "Copy failed";
       });
     });
+
+    function updateScrollableRegions() {
+      document.querySelectorAll(".prose table, .prose pre").forEach(function (region) {
+        var isScrollable = region.scrollWidth > region.clientWidth + 1;
+        region.classList.toggle("is-scrollable", isScrollable);
+        if (isScrollable) {
+          region.setAttribute("tabindex", "0");
+        } else {
+          region.removeAttribute("tabindex");
+        }
+      });
+    }
+
+    updateScrollableRegions();
+    window.addEventListener("resize", updateScrollableRegions);
   });
 
   // Search and topic filters for the growing session catalog
   var sessionSearch = document.querySelector("[data-session-search]");
   var sessionCards = Array.prototype.slice.call(document.querySelectorAll("[data-session-card]"));
   var sessionFilters = Array.prototype.slice.call(document.querySelectorAll("[data-session-filter]"));
+  var sessionToolbar = document.querySelector(".session-toolbar");
   var sessionResults = document.querySelector("[data-session-results]");
   var sessionEmpty = document.querySelector("[data-session-empty]");
   var activeSessionFilter = "all";
+
+  if (sessionToolbar && sessionCards.length >= 4) {
+    sessionToolbar.hidden = false;
+  }
 
   function updateSessionCatalog() {
     if (!sessionCards.length) {

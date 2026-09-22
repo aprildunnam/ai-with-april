@@ -76,7 +76,7 @@ sans-serif fallback stack, so the site is still fully legible offline or if the 
 ## Information architecture
 
 ```
-/                                Homepage — featured guides + conference sessions + Agent Academy + latest feed
+/                                Homepage — intent shortcuts + guides + sessions + Agent Academy + book + latest feed
 /resources/skill-framework.html  Flagship resource #1
 /resources/cowork-masterclass.html  Flagship resource #2 (folded in from copilot-cowork-masterclass)
 /sessions.html                   Conference sessions and demo-pack index
@@ -124,17 +124,21 @@ Only add a page when it's real and written. Per `PRODUCT.md`'s non-fabrication r
 placeholder entries for resources that don't exist yet — mention them in prose as "coming soon"
 only if truly necessary, and never as a clickable link.
 
-## Homepage pattern (v4: simplified)
+## Homepage pattern (v6: direct paths)
 
 **v4 removed the three-role "Start Here" pattern entirely** (previously `.start-grid` /
 `.start-card`, and before that a v1 "learning map" with a dashed connector line). With only two
 flagship resources and a live feed, a role-selection step added a click before a visitor could
 reach real content — the opposite of the "land on one useful resource fast" goal.
 
-The homepage is now a direct, linear stack: hero → S.K.I.L.L. framework (`.featured`) → Cowork
-Masterclass (`.featured--pink`) → Agent Academy callout (`.spotlight`) → "Fresh from April" live
-feed teaser. No role self-selection, no topic browsing — every visitor sees the same two
-resources first, because there are only two.
+The homepage remains a direct, linear stack, but v6 adds a compact `.quick-start` strip immediately
+after the hero. Its three links are task-based shortcuts, not personas or a new content taxonomy:
+build a reliable skill, recreate a live demo, or build an agent. Each goes directly to real content.
+
+The complete order is: hero → quick-start strip → S.K.I.L.L. framework (`.featured`) → Cowork
+Masterclass (`.featured--pink`) → conference sessions → Agent Academy callout (`.spotlight`) →
+book feature → "Fresh from April" live feed teaser. Free learning and reusable session material
+stay ahead of the book promotion.
 
 If a future version reintroduces role- or topic-based framing, do it once there are enough
 resources that a flat list stops being the fastest path to a first useful resource (same threshold
@@ -144,9 +148,9 @@ connector line/numbering), per the reasoning in `PRODUCT.md`'s v2 framing note.
 ## Conference sessions (v5)
 
 `sessions.html` is a small index for stage-session companions rather than a return of the old
-resource library. It has lightweight client-side text search and topic chips so the catalog can
-scale as real sessions are added, without bringing back a separate data taxonomy. Each session
-has a real, complete page under `resources/`, and the homepage shows the same session cards.
+resource library. Lightweight client-side text search and topic chips are present for future
+growth, but JavaScript reveals the toolbar only once the catalog has at least four sessions. Each
+session has a real, complete page under `resources/`, and the homepage shows the same session cards.
 
 The session pages use:
 
@@ -227,9 +231,8 @@ Instead, both sources are fetched **server-side, on a schedule**, using endpoint
 key at all:
 
 - Blog: `https://aprildunnam.com/feed/` — WordPress's built-in RSS feed.
-- Video: `https://www.youtube.com/feeds/videos.xml?channel_id=UCz_x76EBX5UXsV27drGNh6w` — YouTube's
-  built-in, public, keyless Atom feed for a channel (or, with `playlist_id=` instead of
-  `channel_id=`, for a specific playlist — see limitation below).
+- Video: the keyless YouTube channel Atom feed, with a fallback parser for April's public `/videos`
+  page when the Atom endpoint is unavailable.
 
 ### Pipeline
 
@@ -237,40 +240,38 @@ key at all:
 .github/workflows/fetch-feeds.yml   Daily cron (+ manual dispatch) →
 scripts/fetch-feeds.mjs             fetches both feeds, parses via regex (no deps), writes →
 assets/data/blog-posts.json         ← capped at 6 items, decoded entities, boilerplate stripped
-assets/data/youtube-videos.json     ← capped at 6 items
+assets/data/youtube-videos.json     ← capped at 6 substantial videos, Shorts/promos filtered
                                      Workflow commits changed JSON to main, which triggers the
                                      existing deploy.yml (it runs on every push to main) →
 assets/js/feeds.js                  Client runtime: reads [data-feed="videos"/"posts"] containers,
                                      fetches the matching JSON same-origin, renders cards.
 ```
 
-`scripts/fetch-feeds.mjs` has no npm dependencies (uses global `fetch`, matching the rest of the
-site's zero-build-step convention) and parses both feed formats with regex, since both are simple,
-predictable XML shapes (RSS `<item>` blocks; Atom `<entry>` blocks with a nested `<media:group>`).
-It decodes the small set of numeric entities WordPress emits, strips the "The post X appeared first
-on Y." boilerplate WordPress appends to `<description>`, and truncates excerpts to 180 characters.
-If a fetch fails, that feed's existing JSON file is left untouched (last-known-good) rather than
-overwritten with empty data, and the script exits non-zero so the workflow run shows as failed.
+`scripts/fetch-feeds.mjs` has no npm dependencies and uses global `fetch`, matching the rest of the
+site's zero-build-step convention. It parses RSS and Atom XML with regex and can parse YouTube's
+public `lockupViewModel` records as a fallback. It decodes entities, normalizes missing excerpt
+spaces, strips WordPress boilerplate, truncates excerpts to 180 characters, and filters Shorts and
+obvious "coming up" promos. If both sources for a feed fail, its existing JSON remains untouched
+instead of being overwritten with empty data, and the script exits non-zero.
 
 `assets/js/feeds.js` is a small reusable renderer, not a page-specific script: any container with
 `data-feed="videos"` or `data-feed="posts"` gets populated from the matching JSON file, optionally
 capped with `data-feed-limit="N"` (used for the homepage's 3-item teaser vs. `updates.html`'s full
 6-item grids), and any element with `data-feed-updated="videos"/"posts"` gets a "Last synced &lt;date&gt;"
-note. Empty and error states render honest placeholder copy ("New videos will appear here once the
-daily sync runs") rather than hiding silently or showing a stale/fake state.
+note. Loading, empty, error, and stale states are explicit; a feed older than three days is labeled
+as potentially delayed rather than silently presented as current.
 
 **`.update-card` CSS** (in `style.css`, alongside the other card components) follows the existing
 accent convention: blue for videos, `.update-card--post` (pink) for blog posts — matching
 `.featured` / `.featured--pink`'s existing blue=primary/pink=secondary pattern. All colors reference
 existing `--color-*` tokens; no new hex values were introduced for this feature.
 
-### Known limitation: channel uploads, not a curated playlist
+### Known limitation: automatically filtered channel uploads
 
-The request was for "a playlist I curate" — a specific, hand-picked YouTube playlist. No playlist
-ID/URL was available at build time, so this ships against April's **full channel uploads feed**
-instead: real, verifiable, unfabricated content, but broader than a curated playlist (it includes
-shorts, promos, and "coming up" announcements alongside long-form videos). This is a genuine
-placeholder, not a design choice — reconfigure it the moment a playlist ID exists:
+No verified curated playlist ID/URL was available at build time, so the feed uses April's channel
+uploads and automatically removes Shorts and obvious promotional announcements. That produces a
+more useful long-form feed, but it is still heuristic rather than hand-curated. Reconfigure it when
+a verified playlist exists:
 
 1. Open `scripts/fetch-feeds.mjs`.
 2. Change `YOUTUBE_FEED_URL` from `...?channel_id=UCz_x76EBX5UXsV27drGNh6w` to

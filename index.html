@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add("js");</script>
   <title>AI with April | Practical AI, Copilot &amp; Power Platform learning</title>
   <meta name="description" content="A practical learning hub from April Dunnam: guides, labs, videos, and posts on AI, Copilot, Copilot Studio, Cowork, and Power Platform.">
 
@@ -10,10 +11,51 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="AI with April | Practical AI, Copilot &amp; Power Platform learning">
   <meta property="og:description" content="Practical guides, labs, videos, and posts on AI, Microsoft Copilot, Copilot Studio, Cowork, and Power Platform.">
-  <meta property="og:image" content="assets/img/og-cover.png">
+  <meta property="og:image" content="https://aprildunnam.github.io/ai-with-april/assets/img/og-cover.png">
+  <meta property="og:image:alt" content="AI with April: practical AI, Copilot, and Power Platform learning">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://aprildunnam.github.io/ai-with-april/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@aprildunnam">
+  <meta name="twitter:creator" content="@aprildunnam">
+  <meta name="twitter:image" content="https://aprildunnam.github.io/ai-with-april/assets/img/og-cover.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "AI with April",
+        "url": "https://aprildunnam.github.io/ai-with-april/",
+        "description": "Practical guides, labs, sessions, videos, and posts on AI, Microsoft Copilot, Copilot Studio, Cowork, and Power Platform.",
+        "author": { "@id": "https://aprildunnam.github.io/ai-with-april/#april-dunnam" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://aprildunnam.github.io/ai-with-april/#april-dunnam",
+        "name": "April Dunnam",
+        "jobTitle": "Principal Cloud Advocate",
+        "worksFor": { "@type": "Organization", "name": "Microsoft" },
+        "url": "https://aprildunnam.com",
+        "sameAs": [
+          "https://www.youtube.com/@AprilDunnam",
+          "https://github.com/aprildunnam"
+        ]
+      },
+      {
+        "@type": "Book",
+        "name": "The Copilot Compass: Navigating Copilot and Agents in Microsoft 365",
+        "isbn": "9798868826542",
+        "author": { "@id": "https://aprildunnam.github.io/ai-with-april/#april-dunnam" },
+        "publisher": { "@type": "Organization", "name": "Apress" },
+        "url": "https://link.springer.com/book/10.1007/979-8-8688-2655-9",
+        "image": "https://aprildunnam.github.io/ai-with-april/assets/img/copilot-compass-cover.jpg"
+      }
+    ]
+  }
+  </script>
 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,10 +95,9 @@
           <p class="eyebrow">Practical AI for real work</p>
           <h1>Make AI, Copilot &amp; Power Platform make sense for real work.</h1>
           <p class="hero__lede">
-            I'm April Dunnam, a Principal Cloud Advocate at Microsoft, author of
-            <em>The Copilot Compass</em>, and a longtime Power Platform builder. I create practical,
-            no-fluff guides and labs that help you use AI, Microsoft Copilot, Copilot Studio,
-            Cowork, and Power Platform with confidence.
+            I'm April Dunnam, a Microsoft Principal Cloud Advocate, author of
+            <em>The Copilot Compass</em>, and longtime Power Platform builder. I share practical
+            guides and labs for using AI and Microsoft Copilot with confidence.
           </p>
           <div class="hero__actions">
             <a class="btn btn-primary" href="#resources">Explore the resources</a>
@@ -64,6 +105,26 @@
           </div>
         </div>
         <div class="hero__portrait" role="img" aria-label="April Dunnam"></div>
+      </div>
+    </section>
+
+    <section class="quick-start" aria-labelledby="quick-start-title">
+      <div class="wrap quick-start__inner">
+        <h2 id="quick-start-title">Start with what you need today</h2>
+        <ul>
+          <li>
+            <a href="#resources">Build a reliable skill</a>
+            <p>Use the S.K.I.L.L. framework and working examples.</p>
+          </li>
+          <li>
+            <a href="sessions.html">Recreate a live demo</a>
+            <p>Get prompts, runbooks, decks, and synthetic files.</p>
+          </li>
+          <li>
+            <a href="https://aka.ms/agent-academy" target="_blank" rel="noopener noreferrer">Build an agent</a>
+            <p>Start with free, hands-on Copilot Studio labs.</p>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -83,11 +144,11 @@
             </p>
             <div class="featured__actions">
               <a class="btn btn-primary" href="resources/skill-framework.html">Read the guide</a>
-              <a class="btn btn-secondary" href="assets/downloads/skills-explained-deck.pptx">Download the deck (.pptx)</a>
+              <a class="btn btn-secondary" href="assets/downloads/skills-explained-deck.pptx">Download the deck (.pptx, 0.6 MB)</a>
             </div>
           </div>
           <div class="featured__media">
-            <img src="assets/img/skill-framework.png" alt="Diagram of the S.K.I.L.L. framework: Scope it to one job, Keywords in the description, Instructions not explanations, Lean body, Live test and iterate.">
+            <img src="assets/img/skill-framework.png" width="1200" height="820" loading="lazy" decoding="async" alt="Diagram of the S.K.I.L.L. framework: Scope it to one job, Keywords in the description, Instructions not explanations, Lean body, Live test and iterate.">
           </div>
         </div>
       </div>
@@ -108,11 +169,70 @@
             </p>
             <div class="featured__actions">
               <a class="btn btn-primary" href="resources/cowork-masterclass.html">Read the guide</a>
-              <a class="btn btn-secondary" href="assets/downloads/cowork-masterclass-slides.pdf">Download the deck (.pdf)</a>
+              <a class="btn btn-secondary" href="assets/downloads/cowork-masterclass-slides.pdf">Download the deck (.pdf, 1.6 MB)</a>
             </div>
           </div>
           <div class="featured__media">
-            <img src="assets/img/cowork-cheat-sheet.png" alt="Copilot Cowork cheat sheet: which tool to use, model and cost guidance, the four parts of a great prompt, and steal-these prompts.">
+            <img src="assets/img/cowork-cheat-sheet.png" width="2112" height="1000" loading="lazy" decoding="async" alt="Copilot Cowork cheat sheet: which tool to use, model and cost guidance, the four parts of a great prompt, and steal-these prompts.">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="update-section-head">
+          <div>
+            <p class="eyebrow">From the stage to your tenant</p>
+            <h2>Conference sessions &amp; demo packs</h2>
+          </div>
+          <a class="btn-ghost" href="sessions.html">See all session materials &rarr;</a>
+        </div>
+        <p class="hero__lede" style="margin-bottom: var(--space-3);">
+          Recreate the demos with copyable prompts, reusable skills, focused sample files, and
+          synthetic data from April's live sessions.
+        </p>
+        <div class="session-grid">
+          <article class="session-card">
+            <a class="session-card__media" href="resources/vibe-copilot-countdown.html">
+              <img src="assets/img/vibe-copilot-countdown.svg" width="1200" height="675" loading="lazy" decoding="async" alt="I Didn't Know Copilot Could Do That session cover">
+            </a>
+            <div class="session-card__body">
+              <p class="session-meta">9 live demos &middot; Microsoft 365 Copilot</p>
+              <h3><a href="resources/vibe-copilot-countdown.html">I Didn't Know Copilot Could Do That</a></h3>
+              <p>A countdown through underused Copilot features, from PivotTables to Agent Builder skills.</p>
+              <a class="btn btn-secondary" href="resources/vibe-copilot-countdown.html">Get the materials</a>
+            </div>
+          </article>
+          <article class="session-card session-card--pink">
+            <a class="session-card__media" href="resources/vibe-cowork.html">
+              <img src="assets/img/vibe-cowork.svg" width="1200" height="675" loading="lazy" decoding="async" alt="Delegating Real Work to Copilot Cowork session cover">
+            </a>
+            <div class="session-card__body">
+              <p class="session-meta">6 demos &middot; Copilot Cowork</p>
+              <h3><a href="resources/vibe-cowork.html">Delegating Real Work to Copilot Cowork</a></h3>
+              <p>Hand off inbox, meeting, app, automation, skill, and plugin work across Microsoft 365.</p>
+              <a class="btn btn-secondary" href="resources/vibe-cowork.html">Get the materials</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="wrap">
+        <div class="spotlight">
+          <p class="eyebrow">Building with Copilot Studio?</p>
+          <h2>Start with Agent Academy</h2>
+          <p>
+            Free, hands-on labs for building agents in Copilot Studio, including the new
+            GitHub Copilot harness. April helps build and maintain it, so it's a natural next
+            stop once you're ready to go from "reading about agents" to actually building one.
+          </p>
+          <div class="spotlight__actions">
+            <a class="btn btn-primary" href="https://aka.ms/agent-academy" target="_blank" rel="noopener noreferrer">
+              Visit Agent Academy<span class="visually-hidden"> (opens in a new tab)</span> &rarr;
+            </a>
           </div>
         </div>
       </div>
@@ -154,66 +274,7 @@
           </div>
           <div class="book-feature__media">
             <a href="https://www.amazon.com/Copilot-Compass-Navigating-Agents-Microsoft/dp/B0GN6XTWFG" target="_blank" rel="noopener noreferrer" aria-label="Buy The Copilot Compass on Amazon">
-              <img src="assets/img/copilot-compass-cover.jpg" alt="Book cover for The Copilot Compass: Navigating Copilot and Agents in Microsoft 365 by April Dunnam.">
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="update-section-head">
-          <div>
-            <p class="eyebrow">From the stage to your tenant</p>
-            <h2>Conference sessions &amp; demo packs</h2>
-          </div>
-          <a class="btn-ghost" href="sessions.html">See all session materials &rarr;</a>
-        </div>
-        <p class="hero__lede" style="margin-bottom: var(--space-3);">
-          Recreate the demos with copyable prompts, reusable skills, focused sample files, and
-          synthetic data from April's live sessions.
-        </p>
-        <div class="session-grid">
-          <article class="session-card">
-            <a class="session-card__media" href="resources/vibe-copilot-countdown.html">
-              <img src="assets/img/vibe-copilot-countdown.svg" alt="I Didn't Know Copilot Could Do That session cover">
-            </a>
-            <div class="session-card__body">
-              <p class="session-meta">9 live demos &middot; Microsoft 365 Copilot</p>
-              <h3><a href="resources/vibe-copilot-countdown.html">I Didn't Know Copilot Could Do That</a></h3>
-              <p>A countdown through underused Copilot features, from PivotTables to Agent Builder skills.</p>
-              <a class="btn btn-secondary" href="resources/vibe-copilot-countdown.html">Get the materials</a>
-            </div>
-          </article>
-          <article class="session-card session-card--pink">
-            <a class="session-card__media" href="resources/vibe-cowork.html">
-              <img src="assets/img/vibe-cowork.svg" alt="Delegating Real Work to Copilot Cowork session cover">
-            </a>
-            <div class="session-card__body">
-              <p class="session-meta">6 demos &middot; Copilot Cowork</p>
-              <h3><a href="resources/vibe-cowork.html">Delegating Real Work to Copilot Cowork</a></h3>
-              <p>Hand off inbox, meeting, app, automation, skill, and plugin work across Microsoft 365.</p>
-              <a class="btn btn-secondary" href="resources/vibe-cowork.html">Get the materials</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--tight">
-      <div class="wrap">
-        <div class="spotlight">
-          <p class="eyebrow">Building with Copilot Studio?</p>
-          <h2>Start with Agent Academy</h2>
-          <p>
-            Free, hands-on labs for building agents in Copilot Studio, including the new
-            GitHub Copilot harness. April helps build and maintain it, so it's a natural next
-            stop once you're ready to go from "reading about agents" to actually building one.
-          </p>
-          <div class="spotlight__actions">
-            <a class="btn btn-primary" href="https://aka.ms/agent-academy" target="_blank" rel="noopener noreferrer">
-              Visit Agent Academy<span class="visually-hidden"> (opens in a new tab)</span> &rarr;
+              <img src="assets/img/copilot-compass-cover.jpg" width="903" height="1356" loading="lazy" decoding="async" alt="Book cover for The Copilot Compass: Navigating Copilot and Agents in Microsoft 365 by April Dunnam.">
             </a>
           </div>
         </div>
@@ -235,6 +296,7 @@
         <div class="update-grid" data-feed="videos" data-feed-limit="3" aria-live="polite">
           <p class="update-empty">Loading latest videos&hellip;</p>
         </div>
+        <noscript><p class="update-empty">JavaScript is unavailable. <a href="https://www.youtube.com/@AprilDunnam">Visit April's YouTube channel</a> for the latest videos.</p></noscript>
       </div>
     </section>
   </main>

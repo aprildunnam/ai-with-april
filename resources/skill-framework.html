@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add("js");</script>
   <title>The S.K.I.L.L. Framework | AI with April</title>
   <meta name="description" content="Five rules for writing agent skills that actually fire, plus working examples for M365 Copilot, Copilot Studio, Cowork, and Power Platform.">
 
@@ -10,9 +11,27 @@
   <meta property="og:type" content="article">
   <meta property="og:title" content="The S.K.I.L.L. Framework | AI with April">
   <meta property="og:description" content="Five rules for writing agent skills that actually fire, plus working examples.">
-  <meta property="og:image" content="../assets/img/skill-framework.png">
+  <meta property="og:image" content="https://aprildunnam.github.io/ai-with-april/assets/img/skill-framework.png">
+  <meta property="og:image:alt" content="The S.K.I.L.L. framework for building reliable agent skills">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="820">
   <meta property="og:url" content="https://aprildunnam.github.io/ai-with-april/resources/skill-framework.html">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@aprildunnam">
+  <meta name="twitter:image" content="https://aprildunnam.github.io/ai-with-april/assets/img/skill-framework.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "The S.K.I.L.L. Framework",
+    "description": "Five rules for writing agent skills that activate reliably, with working examples.",
+    "url": "https://aprildunnam.github.io/ai-with-april/resources/skill-framework.html",
+    "learningResourceType": ["Guide", "Slide deck"],
+    "dateModified": "2026-09-21",
+    "author": { "@type": "Person", "name": "April Dunnam" }
+  }
+  </script>
 
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,11 +74,31 @@
           M365&nbsp;Copilot, Copilot&nbsp;Studio, Cowork, and Power&nbsp;Platform.
         </p>
         <div class="featured__actions" style="margin-bottom: var(--space-4);">
-          <a class="btn btn-primary" href="../assets/downloads/skills-explained-deck.pptx">Download the companion deck (.pptx)</a>
+          <a class="btn btn-primary" href="../assets/downloads/skills-explained-deck.pptx">Download the companion deck (.pptx, 0.6 MB)</a>
           <a class="btn btn-secondary" href="#framework">Jump to the framework</a>
         </div>
 
-        <img src="../assets/img/skill-framework.png" alt="The S.K.I.L.L. framework: Scope it to one job, Keywords in the description, Instructions not explanations, Lean body, Live test and iterate." style="border-radius: var(--radius-lg); border: 1px solid var(--color-border); box-shadow: var(--shadow-card); margin-bottom: var(--space-4);">
+        <div class="guide-overview" aria-label="Guide details">
+          <dl>
+            <div><dt>Reading time</dt><dd>About 12 minutes</dd></div>
+            <div><dt>Best for</dt><dd>Skill authors and agent builders</dd></div>
+            <div><dt>Prerequisites</dt><dd>None</dd></div>
+            <div><dt>Last reviewed</dt><dd>September 21, 2026</dd></div>
+          </dl>
+        </div>
+
+        <nav class="page-toc" aria-labelledby="skill-toc-title">
+          <h2 id="skill-toc-title">On this page</h2>
+          <ul>
+            <li><a href="#framework">The framework</a></li>
+            <li><a href="#skill-anatomy">Skill anatomy</a></li>
+            <li><a href="#skill-levels">Four levels</a></li>
+            <li><a href="#skill-surfaces">Where skills run</a></li>
+            <li><a href="#skill-security">Safety review</a></li>
+          </ul>
+        </nav>
+
+        <img src="../assets/img/skill-framework.png" width="1200" height="820" loading="lazy" decoding="async" alt="The S.K.I.L.L. framework: Scope it to one job, Keywords in the description, Instructions not explanations, Lean body, Live test and iterate." style="border-radius: var(--radius-lg); border: 1px solid var(--color-border); box-shadow: var(--shadow-card); margin-bottom: var(--space-4);">
 
         <h2 style="margin-top:0;">Why this, why now</h2>
         <p class="prose">
@@ -98,7 +137,7 @@
       </div>
     </section>
 
-    <section class="section--tight prose">
+    <section class="section--tight">
       <div class="wrap prose">
         <h2>A prompt is something you say. A skill is something you decide.</h2>
         <p>
@@ -179,9 +218,9 @@
           </p>
         </div>
 
-        <h2>What's actually in a skill</h2>
+        <h2 id="skill-anatomy">What's actually in a skill</h2>
         <p>Only <code>SKILL.md</code> is required. The other three folders are optional, and that's where the leverage is.</p>
-        <pre><code>client-qbr/
+        <pre class="code-tree"><code>client-qbr/
 ├── SKILL.md
 ├── references/
 │   ├── account-health-definitions.md
@@ -204,7 +243,7 @@
           </tbody>
         </table>
 
-        <h2>How much do you actually need?</h2>
+        <h2 id="skill-levels">How much do you actually need?</h2>
         <p>Start at level 1. Climb only when the job forces you to.</p>
         <table>
           <thead><tr><th>Level</th><th>Adds</th><th>When</th></tr></thead>
@@ -221,13 +260,15 @@
           confidently following a stale policy.
         </p>
 
-        <h2>Where skills run</h2>
+        <h2 id="skill-surfaces">Where skills run</h2>
         <p>
           Skills are an open standard. The format came out of Anthropic and is published at
           <a href="https://agentskills.io" target="_blank" rel="noopener">agentskills.io</a>. The
-          same folder runs unchanged across Microsoft&nbsp;365 Copilot, Copilot Studio, Copilot
-          Cowork, Copilot in the Office apps, SharePoint, GitHub Copilot, VS Code, Claude, Cursor,
-          and 20-odd other agents. What differs is <strong>scope</strong>:
+          core <code>SKILL.md</code> structure is portable across compatible products including
+          Microsoft&nbsp;365 Copilot experiences, Copilot Studio, Copilot Cowork, GitHub Copilot,
+          VS Code, Claude, and Cursor. Installation paths, scope, supported metadata, scripts, and
+          asset handling can differ, so test each target product rather than assuming every folder
+          runs identically. One of the biggest differences is <strong>scope</strong>:
         </p>
         <table>
           <thead><tr><th>Surface</th><th>Scope</th></tr></thead>
@@ -239,7 +280,10 @@
             <tr><td>GitHub Copilot, VS Code</td><td>Repo or personal</td></tr>
           </tbody>
         </table>
-        <p><em>Exact paths and limits move. Check current docs.</em></p>
+        <p>
+          <em>Product support, paths, packaging requirements, and limits change. Check the
+          product-specific documentation before distributing a skill.</em>
+        </p>
         <div class="callout-box">
           <p>
             Building agents in Copilot Studio specifically? <a href="https://aka.ms/agent-academy" target="_blank" rel="noopener">Agent Academy</a>
@@ -259,7 +303,7 @@
           </tbody>
         </table>
 
-        <h2>Before you install someone else's</h2>
+        <h2 id="skill-security">Before you install someone else's</h2>
         <p>A skill is a dependency. Treat it like one:</p>
         <ul>
           <li><strong>Review before use:</strong> read the <code>SKILL.md</code>, the scripts, and the resources. Confirm the script does what it says.</li>
@@ -276,9 +320,10 @@
         </p>
 
         <div class="featured__actions">
-          <a class="btn btn-primary" href="../assets/downloads/skills-explained-deck.pptx">Download the companion deck (.pptx)</a>
+          <a class="btn btn-primary" href="../assets/downloads/skills-explained-deck.pptx">Download the companion deck (.pptx, 0.6 MB)</a>
           <a class="btn btn-secondary" href="cowork-masterclass.html">Read the Cowork Masterclass</a>
         </div>
+        <p class="back-to-top"><a href="#main">Back to top &uarr;</a></p>
 
         <hr>
         <p style="color: var(--color-text-faint); font-size: 0.9rem;">

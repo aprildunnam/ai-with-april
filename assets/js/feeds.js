@@ -17,11 +17,13 @@
     videos: {
       url: "assets/data/youtube-videos.json",
       empty: "New videos will appear here once the daily sync runs.",
+      error: 'The video feed could not be loaded. <a href="https://www.youtube.com/@AprilDunnam">Visit April on YouTube</a>.',
       render: renderVideoCard
     },
     posts: {
       url: "assets/data/blog-posts.json",
       empty: "New posts will appear here once the daily sync runs.",
+      error: 'The blog feed could not be loaded. <a href="https://aprildunnam.com/blog/">Read the blog on aprildunnam.com</a>.',
       render: renderPostCard
     }
   };
@@ -100,8 +102,14 @@
     var notes = document.querySelectorAll('[data-feed-updated="' + kind + '"]');
     if (!notes.length || !generatedAt) return;
     var formatted = formatDate(generatedAt);
+    var generatedDate = new Date(generatedAt);
+    var age = Date.now() - generatedDate.getTime();
+    var isStale = !isNaN(age) && age > 3 * 24 * 60 * 60 * 1000;
     notes.forEach(function (el) {
-      el.textContent = formatted ? "Last synced " + formatted + "." : "";
+      el.textContent = formatted
+        ? "Last synced " + formatted + "." + (isStale ? " This feed may be out of date." : "")
+        : "";
+      el.classList.toggle("is-stale", isStale);
     });
   }
 
@@ -109,6 +117,9 @@
     var containers = document.querySelectorAll('[data-feed="' + kind + '"]');
     if (!containers.length) return;
     var settings = CONFIG[kind];
+    containers.forEach(function (container) {
+      container.setAttribute("aria-busy", "true");
+    });
 
     fetch(settings.url)
       .then(function (res) {
@@ -134,11 +145,13 @@
           toRender.forEach(function (item) {
             container.appendChild(settings.render(item));
           });
+          container.setAttribute("aria-busy", "false");
         });
       })
       .catch(function () {
         containers.forEach(function (container) {
-          container.innerHTML = '<p class="update-empty">' + settings.empty + "</p>";
+          container.innerHTML = '<p class="update-empty">' + settings.error + "</p>";
+          container.setAttribute("aria-busy", "false");
         });
       });
   }
