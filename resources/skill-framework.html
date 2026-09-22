@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The S.K.I.L.L. Framework — AI with April</title>
+  <title>The S.K.I.L.L. Framework | AI with April</title>
   <meta name="description" content="Five rules for writing agent skills that actually fire, plus working examples for M365 Copilot, Copilot Studio, Cowork, and Power Platform.">
 
   <link rel="canonical" href="https://aprildunnam.github.io/ai-with-april/resources/skill-framework.html">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="The S.K.I.L.L. Framework — AI with April">
+  <meta property="og:title" content="The S.K.I.L.L. Framework | AI with April">
   <meta property="og:description" content="Five rules for writing agent skills that actually fire, plus working examples.">
   <meta property="og:image" content="../assets/img/skill-framework.png">
   <meta property="og:url" content="https://aprildunnam.github.io/ai-with-april/resources/skill-framework.html">
@@ -89,8 +89,8 @@
           <div class="role-callout" id="for-builders">
             <h3><span class="role-callout__dot" aria-hidden="true"></span>If you're a Technical Builder</h3>
             <p>
-              Skills are an open standard (see "Where skills run" below). The mental model —
-              instructions vs. knowledge vs. tools vs. skills — generalizes past any one vendor's
+              Skills are an open standard (see "Where skills run" below). The mental model of
+              instructions, knowledge, tools, and skills generalizes past any one vendor's
               implementation.
             </p>
           </div>
@@ -138,7 +138,7 @@
               <h3>Instructions, not explanations</h3>
               <p>
                 Write a runbook, not an essay. The agent is not being persuaded, it is being told.
-                Count the hedges in your draft — every "generally," "usually," and "use your
+                Count the hedges in your draft. Every "generally," "usually," and "use your
                 judgment" is a decision you pushed back onto the model.
               </p>
             </div>
@@ -148,10 +148,11 @@
             <div>
               <h3>Lean body</h3>
               <p>
-                Under about 500 lines, roughly 5,000 tokens — the whole body loads when the skill
+                Keep it under about 500 lines, or roughly 5,000 tokens. The whole body loads when the skill
                 activates. Anything longer goes in <code>references/</code> (background it might
                 look up), <code>assets/</code> (templates it builds from), or <code>scripts/</code>
-                (the same answer every time). Cheap to have, expensive to load — bias toward the
+                (the same answer every time). Those files are cheap to have but expensive to load,
+                so bias toward the
                 subfolders.
               </p>
             </div>
@@ -161,7 +162,7 @@
             <div>
               <h3>Live test and iterate</h3>
               <p>
-                Skills are rarely one and done. Test the trigger before you test the output — ask
+                Skills are rarely one and done. Test the trigger before you test the output. Ask
                 for the thing five different ways and confirm it actually activates each time.
                 Half of all skill debugging is discovering it never fired at all.
               </p>
@@ -172,7 +173,7 @@
         <div class="callout-box">
           <p>
             <strong>The one that isn't a letter:</strong> the folder name must exactly match the
-            <code>name</code> in your frontmatter — kebab-case, lowercase, hyphens, max 64
+            <code>name</code> in your frontmatter: kebab-case, lowercase, hyphens, max 64
             characters. If they differ, some runtimes skip the skill silently. No error, no
             warning, nothing in the logs.
           </p>
@@ -242,7 +243,7 @@
         <div class="callout-box">
           <p>
             Building agents in Copilot Studio specifically? <a href="https://aka.ms/agent-academy" target="_blank" rel="noopener">Agent Academy</a>
-            has free, hands-on labs for getting started there — including the new GitHub Copilot
+            has free, hands-on labs for getting started there, including the new GitHub Copilot
             harness.
           </p>
         </div>
@@ -251,7 +252,7 @@
         <table>
           <thead><tr><th>If it&hellip;</th><th>It's actually a&hellip;</th></tr></thead>
           <tbody>
-            <tr><td>Needs to call a system</td><td>Tool. Skills are instructions — they can't hit your API.</td></tr>
+            <tr><td>Needs to call a system</td><td>Tool. Skills are instructions, so they can't hit your API.</td></tr>
             <tr><td>Is a one-off request</td><td>Prompt. The whole value of a skill is repetition.</td></tr>
             <tr><td>Is reference material</td><td>Knowledge. A skill is a procedure, not a product catalog.</td></tr>
             <tr><td>Defines who the agent is</td><td>Instructions. Tone and persona belong in the always-on box.</td></tr>
@@ -261,10 +262,10 @@
         <h2>Before you install someone else's</h2>
         <p>A skill is a dependency. Treat it like one:</p>
         <ul>
-          <li><strong>Review before use</strong> — read the <code>SKILL.md</code>, the scripts, and the resources. Confirm the script does what it says.</li>
-          <li><strong>Trust the source</strong> — skill instructions go straight into the agent's context. Watch for typosquatted names.</li>
-          <li><strong>Sandbox execution</strong> — anything with <code>scripts/</code> should run isolated, with filesystem and network limits.</li>
-          <li><strong>Log what loaded</strong> — which skills, which resources, which scripts. That's your audit trail.</li>
+          <li><strong>Review before use:</strong> read the <code>SKILL.md</code>, the scripts, and the resources. Confirm the script does what it says.</li>
+          <li><strong>Trust the source:</strong> skill instructions go straight into the agent's context. Watch for typosquatted names.</li>
+          <li><strong>Sandbox execution:</strong> anything with <code>scripts/</code> should run isolated, with filesystem and network limits.</li>
+          <li><strong>Log what loaded:</strong> which skills, which resources, which scripts. That's your audit trail.</li>
         </ul>
 
         <h2>The takeaway</h2>
