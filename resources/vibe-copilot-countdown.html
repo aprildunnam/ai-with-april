@@ -18,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Bricolage+Grotesque:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-<body>
+<body class="session-resource-page">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="site-header__inner">
@@ -37,8 +37,8 @@
     </div>
   </header>
   <main id="main">
-    <section class="section--tight">
-      <div class="wrap">
+    <section class="section--tight session-resource-hero">
+      <div class="wrap session-content">
         <p class="eyebrow">Vibe session &middot; Microsoft 365 Copilot</p>
         <h1>I Didn't Know Copilot Could Do That</h1>
         <p class="hero__lede">
@@ -47,26 +47,60 @@
           from this page. Every demo happens inside April's Analog, a fictional record shop
           preparing for a three-night music festival.
         </p>
+        <a class="event-provenance" href="https://partnerin.io/vibe" target="_blank" rel="noopener noreferrer">
+          <strong>Presented at Vibe 2.0</strong>
+          <span>September 21&ndash;23, 2026 &middot; Salt Lake City Area, Utah</span>
+          <span aria-hidden="true">&nearr;</span>
+        </a>
         <div class="featured__actions" style="margin-bottom: var(--space-4);">
           <a class="btn btn-primary" href="../assets/downloads/i-didnt-know-copilot-could-do-that.pptx">Download the slide deck (.pptx)</a>
           <a class="btn btn-secondary" href="../assets/downloads/vibe-copilot-countdown-demo-pack.zip">Download the demo pack (.zip)</a>
-          <a class="btn btn-secondary" href="../assets/downloads/vibe-copilot-countdown/setup-guide.docx">Download the setup guide (.docx)</a>
         </div>
         <img class="resource-cover" src="../assets/img/vibe-copilot-countdown.svg" alt="I Didn't Know Copilot Could Do That session cover">
         <div class="callout-box">
           <p>
-            <strong>Want everything at once?</strong> The 1.6 MB demo pack contains the setup
-            guide, Excel and Word samples, SharePoint and Teams files, skills, seeded Outlook
-            messages, the April's Analog brand kit, and stage props. You can also download only
-            the files needed for each demo below. The large demo recordings remain available
-            through
+            <strong>Want everything at once?</strong> The compact demo pack contains only the
+            reference files used by the runbook below: Excel and Word samples, skill packages,
+            synthetic Outlook messages, the brand-kit guide, and stage props. You can also
+            download only the files needed for each demo. The large demo recordings remain
+            available through
             <a href="https://github.com/aprildunnam/ai-with-april/releases">GitHub Releases</a>.
+          </p>
+        </div>
+        <div class="skills-showcase">
+          <p class="eyebrow">Skills are the through-line</p>
+          <h2>Three skills you can reuse immediately</h2>
+          <p>
+            The session does not just talk about skills. It includes working packages for
+            PowerPoint, Excel, and Agent Builder, using the same open <code>SKILL.md</code> format.
+          </p>
+          <div class="skill-mini-grid">
+            <a class="skill-mini-card" href="../assets/downloads/vibe-copilot-countdown/analog-event-recap-skill.zip">
+              <strong>analog-event-recap</strong><span>PowerPoint recap deck</span>
+            </a>
+            <a class="skill-mini-card" href="../assets/downloads/vibe-copilot-countdown/weekly-sales-review-skill.zip">
+              <strong>weekly-sales-review</strong><span>Excel sales analysis</span>
+            </a>
+            <a class="skill-mini-card" href="../assets/downloads/vibe-copilot-countdown/sound-like-april.zip">
+              <strong>sound-like-april</strong><span>Agent Builder voice skill</span>
+            </a>
+          </div>
+          <p style="margin-top: var(--space-2); margin-bottom: 0;">
+            New to the format? Read the <a href="skill-framework.html">S.K.I.L.L. framework guide</a>.
           </p>
         </div>
       </div>
     </section>
     <section class="section--tight prose">
-      <div class="wrap prose">
+      <div class="wrap prose session-content">
+        <div class="callout-box">
+          <p>
+            <strong>Safe demo setup:</strong> all included names and messages are synthetic, and
+            every email address uses the reserved <code>.example</code> domain. Import the EML
+            files into a disposable demo tenant; do not substitute real customer mail or record
+            colleagues without informed consent.
+          </p>
+        </div>
         <h2>The demo runbook</h2>
         <p>
           Run the demos in countdown order. Each section tells you what to prepare, what to open,
@@ -181,6 +215,7 @@
             <h4>Demo flow</h4>
             <ol>
               <li>Create a Copilot Notebook named <strong>Analog Fest</strong>.</li>
+              <li>Import the synthetic EML files into a disposable demo mailbox.</li>
               <li>Add the festival plan, last recap, Sound + permits email thread, and transcribed planning meeting.</li>
               <li>Generate an audio overview before the session if you want to show it.</li>
               <li>Paste the run-of-show prompt, convert the answer to a Page, then add the staffing table.</li>
@@ -200,6 +235,7 @@
             </ul>
             <h4>Demo flow</h4>
             <ol>
+              <li>Import the synthetic EML files into a disposable demo mailbox.</li>
               <li>Start in temporary chat and ask Copilot to draft the confirmation email.</li>
               <li>Return to a normal chat, save the band-deal memory, and ask for the email again.</li>
               <li>Compare the results, then show where saved memories can be viewed or deleted.</li>

@@ -18,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Bricolage+Grotesque:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-<body>
+<body class="session-resource-page">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="site-header__inner">
@@ -37,8 +37,8 @@
     </div>
   </header>
   <main id="main">
-    <section class="section--tight">
-      <div class="wrap">
+    <section class="section--tight session-resource-hero">
+      <div class="wrap session-content">
         <p class="eyebrow">Vibe session &middot; Copilot Cowork</p>
         <h1>Delegating Real Work to Copilot Cowork</h1>
         <p class="hero__lede">
@@ -46,25 +46,60 @@
           reference file, and copy every prompt directly from this page. The session shows how
           to turn one successful Cowork task into an app, automation, skill, or plugin.
         </p>
+        <a class="event-provenance" href="https://partnerin.io/vibe" target="_blank" rel="noopener noreferrer">
+          <strong>Presented at Vibe 2.0</strong>
+          <span>September 21&ndash;23, 2026 &middot; Salt Lake City Area, Utah</span>
+          <span aria-hidden="true">&nearr;</span>
+        </a>
         <div class="featured__actions" style="margin-bottom: var(--space-4);">
           <a class="btn btn-primary" href="../assets/downloads/delegating-real-work-to-copilot-cowork.pptx">Download the slide deck (.pptx)</a>
           <a class="btn btn-secondary" href="../assets/downloads/vibe-cowork-demo-pack.zip">Download the demo pack (.zip)</a>
-          <a class="btn btn-secondary" href="../assets/downloads/vibe-cowork/setup-guide.docx">Download the setup guide (.docx)</a>
         </div>
         <img class="resource-cover" src="../assets/img/vibe-cowork.svg" alt="Delegating Real Work to Copilot Cowork session cover">
         <div class="callout-box">
           <p>
-            <strong>Want everything at once?</strong> The 436 KB demo pack contains the setup
-            guide, seeded Outlook data, a Teams chat script, vendor and festival files, SharePoint
-            list CSVs, and fallback artifacts. You can also download only the files needed for
-            each demo below. The large demo recordings remain available through
+            <strong>Want everything at once?</strong> The compact demo pack contains only the
+            reference files used by the runbook below: synthetic Outlook messages, a Teams chat
+            script, vendor and festival files, SharePoint list CSVs, and fallback artifacts.
+            You can also download only the files needed for each demo. The large recordings remain available through
             <a href="https://github.com/aprildunnam/ai-with-april/releases">GitHub Releases</a>.
+          </p>
+        </div>
+        <div class="skills-showcase">
+          <p class="eyebrow">From one task to a capability</p>
+          <h2>The vendor briefing becomes a reusable skill</h2>
+          <p>
+            Demo 5 starts with the successful meeting brief from Demo 2, asks Cowork to capture
+            the process, and then tests the generated skill with a completely different vendor.
+          </p>
+          <div class="skill-mini-grid">
+            <a class="skill-mini-card" href="#cowork-demo-2">
+              <strong>Do the task</strong><span>Create a briefing that works</span>
+            </a>
+            <a class="skill-mini-card" href="#cowork-demo-5">
+              <strong>Save as a skill</strong><span>Generalize the repeatable process</span>
+            </a>
+            <a class="skill-mini-card" href="../assets/downloads/vibe-cowork/vendor-brief-skill.zip">
+              <strong>vendor-brief</strong><span>Download the fallback package</span>
+            </a>
+          </div>
+          <p style="margin-top: var(--space-2); margin-bottom: 0;">
+            The format is shared with PowerPoint, Excel, and Agent Builder. See the
+            <a href="skill-framework.html">S.K.I.L.L. framework</a>.
           </p>
         </div>
       </div>
     </section>
     <section class="section--tight prose">
-      <div class="wrap prose">
+      <div class="wrap prose session-content">
+        <div class="callout-box">
+          <p>
+            <strong>Safe demo setup:</strong> all included names, orders, volunteer records, and
+            messages are synthetic. Every email address uses a reserved <code>.example</code>
+            domain. Import the EML files into a disposable demo tenant rather than granting an
+            unsigned script write access to a real mailbox.
+          </p>
+        </div>
         <h2>The demo runbook</h2>
         <p>Work through these in order. Each demo includes its setup, reference files, exact prompt, and expected outcome.</p>
 
@@ -77,11 +112,10 @@
             <h4>Reference files</h4>
             <ul class="reference-files">
               <li><a href="../assets/downloads/vibe-cowork/outlook-demo-mail.zip">Complete Outlook demo mail</a></li>
-              <li><a href="../assets/downloads/vibe-cowork/seed-mailbox.ps1">Seed-Mailbox.ps1</a></li>
             </ul>
             <h4>Demo flow</h4>
             <ol>
-              <li>Run the mailbox seed script as the demo user at least once during setup.</li>
+              <li>Download the Outlook demo mail ZIP and import the EML files into a disposable demo mailbox.</li>
               <li>Keep the 15 festival messages unread and dated within the current week.</li>
               <li>Open Cowork, leave the model on Auto, and paste the prompt.</li>
               <li>Show the visible plan and let Cowork separate urgent work, quick replies, and noise.</li>
@@ -105,7 +139,7 @@
             </ul>
             <h4>Demo flow</h4>
             <ol>
-              <li>Seed the Crate &amp; Needle email thread and post the supplied messages in a Teams chat.</li>
+              <li>Import the synthetic Crate &amp; Needle EML thread and post the supplied messages in a Teams chat.</li>
               <li>Upload Vendor_Pipeline.xlsx to OneDrive and create <strong>Analog Fest/Meetings</strong>.</li>
               <li>Create a 10:00 AM calendar meeting with Crate &amp; Needle for the following day.</li>
               <li>Paste the prompt and watch Cowork gather context across the three sources.</li>

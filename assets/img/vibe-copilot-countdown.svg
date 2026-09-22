@@ -1,16 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
   <title id="title">I Didn't Know Copilot Could Do That session cover</title>
-  <desc id="desc">A blue and pink session cover with a ten-to-one countdown motif.</desc>
-  <rect width="1200" height="675" rx="36" fill="#f0f8ff"/>
-  <circle cx="1040" cy="120" r="220" fill="#fff0f5"/>
-  <circle cx="1080" cy="560" r="250" fill="#dceeff"/>
-  <g font-family="Arial, sans-serif" font-weight="700">
-    <text x="90" y="105" font-size="34" fill="#185fa5" letter-spacing="3">VIBE SESSION</text>
-    <text x="90" y="220" font-size="68" fill="#111111">I Didn't Know</text>
-    <text x="90" y="300" font-size="68" fill="#111111">Copilot Could Do That</text>
-    <text x="90" y="370" font-size="28" fill="#444444">10 Microsoft 365 Copilot features, demos, and files</text>
-    <text x="90" y="565" font-size="30" fill="#993556">AI with April</text>
-    <text x="880" y="390" font-size="230" fill="#185fa5">10</text>
-    <text x="980" y="510" font-size="150" fill="#e8327a">1</text>
+  <desc id="desc">A polished blue and pink Vibe 2.0 session cover.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f0f8ff"/>
+      <stop offset="1" stop-color="#fff0f5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" rx="40" fill="url(#bg)"/>
+  <circle cx="110" cy="105" r="140" fill="#29abe2" opacity=".12"/>
+  <circle cx="1090" cy="585" r="190" fill="#e8327a" opacity=".10"/>
+  <rect x="450" y="62" width="300" height="52" rx="26" fill="#ffffff" stroke="#b5d4f4" stroke-width="2"/>
+  <text x="600" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#185fa5" letter-spacing="3">VIBE 2.0 · 2026</text>
+  <g text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" fill="#111111">
+    <text x="600" y="230" font-size="66">I Didn't Know</text>
+    <text x="600" y="312" font-size="66">Copilot Could</text>
+    <text x="600" y="394" font-size="66">Do That</text>
   </g>
+  <text x="600" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#444444">Nine reusable Microsoft 365 Copilot demos</text>
+  <g font-family="Arial, sans-serif" font-size="22" font-weight="700">
+    <rect x="287" y="510" width="170" height="52" rx="26" fill="#ffffff" stroke="#b5d4f4" stroke-width="2"/>
+    <text x="372" y="543" text-anchor="middle" fill="#185fa5">SKILLS</text>
+    <rect x="475" y="510" width="250" height="52" rx="26" fill="#ffffff" stroke="#f4c0d1" stroke-width="2"/>
+    <text x="600" y="543" text-anchor="middle" fill="#993556">AGENT MODE</text>
+    <rect x="743" y="510" width="170" height="52" rx="26" fill="#ffffff" stroke="#b5d4f4" stroke-width="2"/>
+    <text x="828" y="543" text-anchor="middle" fill="#185fa5">VISION</text>
+  </g>
+  <text x="600" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#993556">AI WITH APRIL</text>
 </svg>
