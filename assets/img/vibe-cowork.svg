@@ -1,20 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
   <title id="title">Delegating Real Work to Copilot Cowork session cover</title>
-  <desc id="desc">A pink and blue session cover with connected task cards.</desc>
-  <rect width="1200" height="675" rx="36" fill="#fff0f5"/>
-  <circle cx="1060" cy="90" r="210" fill="#f0f8ff"/>
-  <circle cx="1100" cy="610" r="250" fill="#ffffff"/>
-  <g font-family="Arial, sans-serif" font-weight="700">
-    <text x="90" y="105" font-size="34" fill="#993556" letter-spacing="3">VIBE SESSION</text>
-    <text x="90" y="220" font-size="66" fill="#111111">Delegating Real Work</text>
-    <text x="90" y="300" font-size="66" fill="#111111">to Copilot Cowork</text>
-    <text x="90" y="370" font-size="28" fill="#444444">Stop prompting. Start handing off.</text>
-    <text x="90" y="565" font-size="30" fill="#185fa5">AI with April</text>
+  <desc id="desc">A polished pink and blue Vibe 2.0 session cover.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff0f5"/>
+      <stop offset="1" stop-color="#f0f8ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" rx="40" fill="url(#bg)"/>
+  <circle cx="1080" cy="100" r="155" fill="#29abe2" opacity=".11"/>
+  <circle cx="100" cy="590" r="185" fill="#e8327a" opacity=".10"/>
+  <rect x="450" y="62" width="300" height="52" rx="26" fill="#ffffff" stroke="#f4c0d1" stroke-width="2"/>
+  <text x="600" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#993556" letter-spacing="3">VIBE 2.0 · 2026</text>
+  <g text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" fill="#111111">
+    <text x="600" y="245" font-size="66">Delegating Real Work</text>
+    <text x="600" y="327" font-size="66">to Copilot Cowork</text>
   </g>
-  <g fill="#ffffff" stroke-width="5">
-    <rect x="825" y="180" width="250" height="82" rx="18" stroke="#185fa5"/>
-    <rect x="885" y="310" width="250" height="82" rx="18" stroke="#e8327a"/>
-    <rect x="790" y="440" width="250" height="82" rx="18" stroke="#185fa5"/>
-    <path d="M950 262v48M1010 392v48" fill="none" stroke="#949494" stroke-linecap="round"/>
+  <text x="600" y="402" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" fill="#444444">Stop prompting. Start handing off.</text>
+  <g font-family="Arial, sans-serif" font-size="22" font-weight="700">
+    <rect x="225" y="490" width="210" height="52" rx="26" fill="#ffffff" stroke="#f4c0d1" stroke-width="2"/>
+    <text x="330" y="523" text-anchor="middle" fill="#993556">AUTOMATIONS</text>
+    <rect x="455" y="490" width="140" height="52" rx="26" fill="#ffffff" stroke="#b5d4f4" stroke-width="2"/>
+    <text x="525" y="523" text-anchor="middle" fill="#185fa5">APPS</text>
+    <rect x="615" y="490" width="150" height="52" rx="26" fill="#ffffff" stroke="#f4c0d1" stroke-width="2"/>
+    <text x="690" y="523" text-anchor="middle" fill="#993556">SKILLS</text>
+    <rect x="785" y="490" width="190" height="52" rx="26" fill="#ffffff" stroke="#b5d4f4" stroke-width="2"/>
+    <text x="880" y="523" text-anchor="middle" fill="#185fa5">PLUGINS</text>
   </g>
+  <text x="600" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#185fa5">AI WITH APRIL</text>
 </svg>

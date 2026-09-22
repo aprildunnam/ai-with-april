@@ -144,19 +144,27 @@ connector line/numbering), per the reasoning in `PRODUCT.md`'s v2 framing note.
 ## Conference sessions (v5)
 
 `sessions.html` is a small index for stage-session companions rather than a return of the old
-filterable resource library. Each session has a real, complete page under `resources/`, and the
-homepage shows the same two session cards.
+resource library. It has lightweight client-side text search and topic chips so the catalog can
+scale as real sessions are added, without bringing back a separate data taxonomy. Each session
+has a real, complete page under `resources/`, and the homepage shows the same session cards.
 
 The session pages use:
 
 - `.session-grid` / `.session-card` for the two-session index and homepage teaser.
+- `[data-session-search]` / `[data-session-filter]` for catalog search and topic filtering.
 - `.demo-grid` / `.demo-card` for the numbered live-demo sequence.
-- A lightweight ZIP under `assets/downloads/` containing setup guides, prompts, skills, sample
-  documents, and seeded data.
+- `.demo-runbook` / `.demo-step` for detailed flows, `.reference-files` for per-demo downloads,
+  and `.prompt-block` for copyable prompts.
+- A lightweight ZIP under `assets/downloads/` containing only the skills, sample files, synthetic
+  demo data, and fallback artifacts referenced by the runbook. Prompts remain copyable on the page.
 - Optimized PowerPoint decks under `assets/downloads/` for direct download.
 - GitHub Release assets for MP4 recordings that exceed GitHub's normal 100 MB file limit.
   `scripts/publish-vibe-release-assets.sh` publishes those recordings without putting them in
   repository history.
+
+Session companions use a centered content column and centered hero/action area, while the detailed
+runbook cards remain left-aligned inside that centered column for readable steps and code blocks.
+Every session identifies its source event and date near the title.
 
 ## Component conventions
 

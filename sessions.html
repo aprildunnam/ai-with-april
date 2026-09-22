@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Conference sessions — AI with April</title>
-  <meta name="description" content="Slides, prompts, setup guides, and demo files from April Dunnam's practical AI and Microsoft Copilot sessions.">
+  <meta name="description" content="Slides, reusable skills, copyable prompts, and synthetic demo files from April Dunnam's practical AI and Microsoft Copilot sessions.">
   <link rel="canonical" href="https://aprildunnam.github.io/ai-with-april/sessions.html">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Conference sessions — AI with April">
-  <meta property="og:description" content="Slides, prompts, setup guides, and demo files from April Dunnam's practical AI and Microsoft Copilot sessions.">
+  <meta property="og:description" content="Slides, reusable skills, copyable prompts, and synthetic demo files from April Dunnam's practical AI and Microsoft Copilot sessions.">
   <meta property="og:image" content="assets/img/og-cover.png">
   <meta property="og:url" content="https://aprildunnam.github.io/ai-with-april/sessions.html">
   <meta name="twitter:card" content="summary_large_image">
@@ -37,49 +37,78 @@
     </div>
   </header>
   <main id="main">
-    <section class="section--tight">
-      <div class="wrap">
+    <section class="section--tight session-page-hero">
+      <div class="wrap session-content">
         <p class="eyebrow">Take the session home</p>
         <h1>Conference sessions &amp; demo packs</h1>
         <p class="hero__lede">
-          The practical materials behind April's live sessions: copy-paste prompts, setup guides,
-          skills, sample files, seeded demo data, and fallback assets. Pick a session to see the
-          full walkthrough and download its lightweight demo pack.
+          The practical materials behind April's live sessions: copy-paste prompts, reusable
+          skills, sample files, synthetic demo data, and fallback assets. Search by tool or topic,
+          then open a session for the full walkthrough and only the files each demo needs.
         </p>
+        <a class="event-provenance" href="https://partnerin.io/vibe" target="_blank" rel="noopener noreferrer">
+          <strong>From Vibe 2.0</strong>
+          <span>September 21&ndash;23, 2026 &middot; Salt Lake City Area, Utah</span>
+          <span aria-hidden="true">&nearr;</span>
+        </a>
       </div>
     </section>
-    <section class="section">
+    <section class="section session-catalog">
       <div class="wrap">
+        <div class="session-toolbar" aria-label="Filter conference sessions">
+          <label class="session-search">
+            <span class="visually-hidden">Search sessions</span>
+            <input type="search" placeholder="Search sessions, tools, or topics" data-session-search>
+          </label>
+          <div class="session-filters" aria-label="Filter by topic">
+            <button class="session-filter is-active" type="button" data-session-filter="all">All</button>
+            <button class="session-filter" type="button" data-session-filter="skills">Skills</button>
+            <button class="session-filter" type="button" data-session-filter="copilot">M365 Copilot</button>
+            <button class="session-filter" type="button" data-session-filter="cowork">Cowork</button>
+            <button class="session-filter" type="button" data-session-filter="agents">Agents &amp; automation</button>
+            <button class="session-filter" type="button" data-session-filter="office">Word, Excel &amp; PowerPoint</button>
+          </div>
+          <p class="session-results" data-session-results aria-live="polite">Showing 2 sessions</p>
+        </div>
         <div class="session-grid">
-          <article class="session-card">
+          <article class="session-card" data-session-card data-session-topics="skills copilot agents apps office excel powerpoint vision notebooks memory researcher" data-session-search-text="I Didn't Know Copilot Could Do That Microsoft 365 Copilot skills Agent Builder Agent Mode Excel PivotTable PowerPoint Word Vision Notebooks memory Model Council">
             <a class="session-card__media" href="resources/vibe-copilot-countdown.html">
               <img src="assets/img/vibe-copilot-countdown.svg" alt="I Didn't Know Copilot Could Do That session cover">
             </a>
             <div class="session-card__body">
-              <p class="session-meta">42 slides &middot; 10 demos &middot; Microsoft 365 Copilot</p>
+              <p class="session-meta">Vibe 2.0 &middot; September 2026</p>
               <h2><a href="resources/vibe-copilot-countdown.html">I Didn't Know Copilot Could Do That</a></h2>
               <p>
-                A ten-to-one countdown through Agent Mode, skills, Vision, Notebooks, connectors,
-                memory, voice and brand, Model Council, Agent Builder, and Excel PivotTables.
+                A countdown through Agent Mode, skills, Vision, Notebooks, memory, voice and
+                brand, Model Council, Agent Builder, and Excel PivotTables.
               </p>
+              <ul class="session-topics" aria-label="Session topics">
+                <li>Skills</li><li>M365 Copilot</li><li>Excel</li><li>Agents</li>
+              </ul>
+              <p class="session-skill-note"><strong>Skills featured:</strong> event recap, weekly sales review, and sound-like-April.</p>
               <a class="btn btn-primary" href="resources/vibe-copilot-countdown.html">Explore the session</a>
             </div>
           </article>
-          <article class="session-card session-card--pink">
+          <article class="session-card session-card--pink" data-session-card data-session-topics="skills cowork agents automation apps plugins mcp outlook teams sharepoint" data-session-search-text="Delegating Real Work to Copilot Cowork inbox vendor meeting app automation skill plugin MCP Outlook Teams SharePoint">
             <a class="session-card__media" href="resources/vibe-cowork.html">
               <img src="assets/img/vibe-cowork.svg" alt="Delegating Real Work to Copilot Cowork session cover">
             </a>
             <div class="session-card__body">
-              <p class="session-meta">45 slides &middot; 6 demos &middot; Copilot Cowork</p>
+              <p class="session-meta">Vibe 2.0 &middot; September 2026</p>
               <h2><a href="resources/vibe-cowork.html">Delegating Real Work to Copilot Cowork</a></h2>
               <p>
                 A practical guide to delegating multi-step work across inbox, meetings, files,
                 apps, automations, skills, plugins, and MCP.
               </p>
+              <ul class="session-topics" aria-label="Session topics">
+                <li>Skills</li><li>Cowork</li><li>Automation</li><li>Apps</li>
+              </ul>
+              <p class="session-skill-note"><strong>Skills featured:</strong> turn a successful vendor briefing into a reusable shared skill.</p>
               <a class="btn btn-primary" href="resources/vibe-cowork.html">Explore the session</a>
             </div>
           </article>
         </div>
+        <p class="session-empty" data-session-empty hidden>No sessions match that search and topic filter.</p>
       </div>
     </section>
   </main>
