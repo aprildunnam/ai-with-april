@@ -502,8 +502,30 @@ hr {
   justify-content: center;
 }
 
-.session-resource-hero .callout-box {
-  text-align: left;
+.session-resource-page .session-content,
+.session-resource-page .callout-box,
+.session-resource-page .demo-step,
+.session-resource-page .prompt-block pre {
+  text-align: center;
+}
+
+.session-resource-page .demo-step__head {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.session-resource-page .reference-files {
+  justify-content: center;
+}
+
+.session-resource-page .demo-step ol,
+.session-resource-page .demo-step ul:not(.reference-files) {
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+.session-resource-page .demo-step li + li {
+  margin-top: 0.5rem;
 }
 
 .event-provenance {
@@ -642,6 +664,15 @@ hr {
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+
+.session-meta a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+.session-meta a:hover {
+  color: var(--color-pink-strong);
 }
 
 .session-topics {
