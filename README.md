@@ -42,13 +42,15 @@ depth, so its links are rooted at `/ai-with-april/` intentionally.
 ## Publishing the Vibe recordings
 
 The optimized session decks and lightweight demo ZIPs live in `assets/downloads/`. The larger MP4
-demo recordings are published as GitHub Release assets:
+demo recordings are published as GitHub Release assets. Publish only reviewed, sanitized copies,
+never the original screen recordings:
 
 ```bash
-scripts/publish-vibe-release-assets.sh /path/to/Vibe
+scripts/publish-vibe-release-assets.sh /path/to/reviewed-recordings
 ```
 
-The script creates or updates the `vibe-session-assets` release and uploads every MP4 recording.
+The script creates or updates the `vibe-session-assets` release and uploads every MP4 in the
+reviewed directory. The removed Connectors demo is intentionally excluded from the public set.
 
 ## Watch & read: auto-synced videos and blog posts
 

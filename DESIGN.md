@@ -164,8 +164,9 @@ The session pages use:
   demo data, and fallback artifacts referenced by the runbook. Prompts remain copyable on the page.
 - Optimized PowerPoint decks under `assets/downloads/` for direct download.
 - GitHub Release assets for MP4 recordings that exceed GitHub's normal 100 MB file limit.
-  `scripts/publish-vibe-release-assets.sh` publishes those recordings without putting them in
-  repository history.
+  Recordings must be privacy-reviewed and sanitized before
+  `scripts/publish-vibe-release-assets.sh` publishes them without putting them in repository
+  history.
 
 Session companions use a centered content column throughout, including the hero, setup guidance,
 runbook steps, reference files, prompts, and expected results. Every session identifies its source
