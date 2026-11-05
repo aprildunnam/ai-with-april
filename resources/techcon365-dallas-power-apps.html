@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../assets/js/theme.js"></script>
+  <script>document.documentElement.classList.add("js");</script>
+  <title>The Power Apps Builder's Guide | AI with April</title>
+  <meta name="description" content="TechCon365 Dallas slides and a practical framework for choosing canvas apps, model-driven apps, generative pages, code apps, or apps in Copilot Studio.">
+  <link rel="canonical" href="https://aprildunnam.github.io/ai-with-april/resources/techcon365-dallas-power-apps.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="The Power Apps Builder's Guide | AI with April">
+  <meta property="og:description" content="Choose an app-building path by maintainer, user experience, and lifespan. Includes the 53-slide TechCon365 Dallas deck.">
+  <meta property="og:image" content="https://aprildunnam.github.io/ai-with-april/assets/img/techcon365-dallas-power-apps.jpg">
+  <meta property="og:image:alt" content="The Power Apps Builder's Guide for Choosing the Right Path, presented by April Dunnam">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:url" content="https://aprildunnam.github.io/ai-with-april/resources/techcon365-dallas-power-apps.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@aprildunnam">
+  <meta name="twitter:image" content="https://aprildunnam.github.io/ai-with-april/assets/img/techcon365-dallas-power-apps.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "The Power Apps Builder's Guide for Choosing the Right Path",
+    "alternateName": "The Power Apps Spellbook",
+    "description": "TechCon365 Dallas slides and an app-selection framework covering AI-assisted canvas apps, model-driven apps, generative pages, code apps, and Copilot Managed Runtime.",
+    "url": "https://aprildunnam.github.io/ai-with-april/resources/techcon365-dallas-power-apps.html",
+    "learningResourceType": ["Conference session", "Presentation"],
+    "dateModified": "2026-11-05",
+    "author": { "@type": "Person", "name": "April Dunnam" }
+  }
+  </script>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Bricolage+Grotesque:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="session-resource-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="../index.html"><img src="../assets/img/favicon.svg" alt="" width="30" height="30">AI with April</a>
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav aria-label="Primary">
+        <ul class="main-nav" id="main-nav">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../sessions.html">Talks</a></li>
+          <li><a href="../index.html#resources">Resources</a></li>
+          <li><a href="../updates.html">Watch &amp; read</a></li>
+          <li><a href="../about.html">About April</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="section--tight session-resource-hero">
+      <div class="wrap session-content">
+        <p class="eyebrow">TechCon365 Dallas &middot; Power Apps &amp; AI-assisted building</p>
+        <h1>The Power Apps Builder's Guide for Choosing the Right Path</h1>
+        <p class="hero__lede">Choose an app-building approach based on who will maintain it,
+          where people will use it, and how long it needs to last.</p>
+        <a class="event-provenance" href="https://techcon365.com/Dallas/" target="_blank" rel="noopener noreferrer">
+          <strong>TechCon365 Dallas</strong>
+          <span>November 2&ndash;6, 2026 &middot; Dallas, Texas</span>
+          <span aria-hidden="true">&nearr;</span>
+        </a>
+        <div class="featured__actions" style="margin-bottom: var(--space-4);">
+          <a class="btn btn-primary" href="../assets/downloads/techcon365-dallas-power-apps-builders-guide.pdf">Download the slides (.pdf, 1.4 MB)</a>
+          <a class="btn btn-secondary" href="#app-path-guide">Try the app-building path guide</a>
+        </div>
+        <img class="resource-cover" src="../assets/img/techcon365-dallas-power-apps.jpg" width="1200" height="675" decoding="async" alt="TechCon365 Dallas: The Power Apps Builder's Guide for Choosing the Right Path, presented by April Dunnam">
+        <div class="callout-box">
+          <p><strong>Looking for The Power Apps Spellbook?</strong> That's the supplied PDF's
+            filename. The title on the deck is <em>The Power Apps Builder's Guide for Choosing
+            the Right Path</em>. The original 53-slide PDF is included unchanged.</p>
+          <p>This guide summarizes the November 2026 talk. Feature availability, previews,
+            retirement dates, licensing, and pricing in the slides are session-era information;
+            verify current documentation before making a rollout or migration decision.
+            Demo recordings and app source files are not included.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section--tight">
+      <div class="wrap prose session-content">
+        <section class="app-guide" id="app-path-guide" aria-labelledby="app-guide-title">
+          <p class="material-label">Three questions to narrow down your options</p>
+          <h2 id="app-guide-title">Which app-building path fits?</h2>
+          <p>Answer three questions to get a suggestion based on the November 2026 talk.
+            You'll still need to check product availability, permissions, and licensing.
+            This guide doesn't generate or test an app.</p>
+          <p>The <a href="#choose-your-path">written three-question framework</a> below is always available, including without JavaScript.</p>
+          <form class="app-guide__form" id="app-guide-form" hidden>
+            <p class="app-guide__progress" id="app-guide-progress">Step 1 of 3: Maintainer</p>
+            <fieldset class="app-guide__step" data-app-guide-step>
+              <legend tabindex="-1">Who will build and maintain the app?</legend>
+              <p>Think about who will handle changes and support after the first version.</p>
+              <label class="app-guide__choice"><input type="radio" name="maintainer" value="business" required> Business user, starting from a prompt</label>
+              <label class="app-guide__choice"><input type="radio" name="maintainer" value="maker" required> Power Platform maker, using maker tools</label>
+              <label class="app-guide__choice"><input type="radio" name="maintainer" value="developer" required> Developer, working in code</label>
+            </fieldset>
+            <fieldset class="app-guide__step" data-app-guide-step>
+              <legend tabindex="-1">Where will people use it?</legend>
+              <label class="app-guide__choice"><input type="radio" name="surface" value="standalone" required> A standalone app</label>
+              <label class="app-guide__choice"><input type="radio" name="surface" value="model-driven" required> Inside an existing model-driven app</label>
+              <label class="app-guide__choice"><input type="radio" name="surface" value="copilot" required> In Microsoft 365 Copilot chat</label>
+            </fieldset>
+            <fieldset class="app-guide__step" data-app-guide-step>
+              <legend tabindex="-1">What will you use it for?</legend>
+              <p>Every app needs governance. The scope and lifespan affect what else you'll need to check.</p>
+              <label class="app-guide__choice"><input type="radio" name="needs" value="prototype" required> A prototype to test an idea</label>
+              <label class="app-guide__choice"><input type="radio" name="needs" value="team" required> A team app for regular use and ongoing changes</label>
+              <label class="app-guide__choice"><input type="radio" name="needs" value="enterprise" required> A complex enterprise app with long-term integration and support needs</label>
+            </fieldset>
+            <p class="app-guide__error" id="app-guide-error" role="alert" hidden></p>
+            <div class="app-guide__actions">
+              <button class="btn btn-secondary" id="app-guide-back" type="button">Back</button>
+              <button class="btn btn-primary" id="app-guide-next" type="submit">Next question</button>
+              <button class="btn btn-secondary" id="app-guide-reset" type="button">Start over</button>
+            </div>
+          </form>
+          <section class="app-guide__result" id="app-guide-result" aria-labelledby="app-guide-result-heading" hidden>
+            <h3 id="app-guide-result-heading" tabindex="-1">Your app-building starting point</h3>
+            <p class="app-guide__recommendation" id="app-guide-recommendation" aria-live="polite" aria-atomic="true"></p>
+            <p id="app-guide-selection"></p>
+            <dl class="app-guide__details">
+              <dt>Why this path</dt><dd id="app-guide-why"></dd>
+              <dt>Who maintains it</dt><dd id="app-guide-owner"></dd>
+              <dt>What to validate</dt><dd id="app-guide-check"></dd>
+            </dl>
+            <p><a id="app-guide-reference" href="#match-the-path">Read more about this path</a>
+              &middot; <a href="#runtime-and-governance">Check runtime and governance</a>
+              &middot; <a href="../assets/downloads/techcon365-dallas-power-apps-builders-guide.pdf">Read the original deck (.pdf, 1.4 MB)</a></p>
+          </section>
+        </section>
+
+        <h2 id="choose-your-path">Start with three questions</h2>
+        <div class="demo-runbook">
+          <article class="demo-step">
+            <div class="demo-step__head">
+              <span class="demo-step__number">1</span>
+              <div><h3>Who builds and maintains it?</h3><p>Consider who will handle the app's future changes and support.</p></div>
+            </div>
+            <p>A maker needs to be able to edit the app in maker tools. A developer can work
+              with code, reviews, and debugging. In either case, someone needs to own the
+              app after it's built.</p>
+          </article>
+          <article class="demo-step">
+            <div class="demo-step__head">
+              <span class="demo-step__number">2</span>
+              <div><h3>Where do users encounter it?</h3><p>A full-screen app, a page in an existing model-driven app, or a capability inside Copilot?</p></div>
+            </div>
+            <p>Don't build a new destination when people need a capability in the place they already work.
+              Match the surface to the task before choosing the authoring tool.</p>
+          </article>
+          <article class="demo-step">
+            <div class="demo-step__head">
+              <span class="demo-step__number">3</span>
+              <div><h3>How complex and how long-lived?</h3><p>A quick proof of concept and a long-lived enterprise app have different needs.</p></div>
+            </div>
+            <p>Plan for future changes, environments, testing, governance, and support.
+              An app that takes minutes to generate may still take time to maintain.</p>
+          </article>
+        </div>
+
+        <h2 id="match-the-path">Match the need to the path</h2>
+        <table>
+          <thead><tr><th>I need&hellip;</th><th>Consider&hellip;</th></tr></thead>
+          <tbody>
+            <tr><td>Custom UI, forms, mobile, and maker-owned editing</td><td>A canvas app; coding agents can help author it while keeping the result in Studio.</td></tr>
+            <tr><td>A data-first app with roles, rules, forms, and views</td><td>A model-driven app on Dataverse.</td></tr>
+            <tr><td>One richer page inside an existing model-driven app</td><td>A generative page.</td></tr>
+            <tr><td>A reusable field or grid control</td><td>A Power Apps component framework (PCF) component.</td></tr>
+            <tr><td>Custom, developer-owned UX governed on Power Platform</td><td>A code app.</td></tr>
+            <tr><td>A fast app from a described idea</td><td>Apps in Copilot Studio or Cowork, after checking runtime, editing, and governance constraints.</td></tr>
+            <tr><td>App data and actions in Microsoft 365 Copilot</td><td>The model-driven app's Copilot integration and MCP path described in the deck.</td></tr>
+          </tbody>
+        </table>
+        <p>Configure standard forms and views first. Reach for a generative page, PCF component,
+          or a separate code app only when the scenario needs that additional flexibility.</p>
+
+        <h2>What still needs your review</h2>
+        <p>The talk covers coding agents and the in-Studio canvas agent, generative pages,
+          PCF, code apps, and prompt-to-app experiences. A canvas app built with AI is still
+          an app someone must review and maintain. You'll need to check the requirements,
+          data model, tests, and governance before people use it.</p>
+        <p>Keep existing production apps when they meet the need. Extend a model-driven app
+          with a focused page or control rather than rebuilding by default. Check the
+          deck's migration guidance against current product documentation before acting on it.</p>
+
+        <h2 id="runtime-and-governance">Check where the app lives</h2>
+        <p>The deck distinguishes Power Platform governance from Copilot Managed Runtime.
+          Different homes can mean different admins, inventories, billing, and editing models.
+          Don't assume an app generated in Copilot can be maintained like a canvas app in Studio.</p>
+        <p>Before committing, confirm who owns the app, how changes are made, what users need
+          to run it, and which environment and application lifecycle management controls apply.</p>
+
+        <h2>Keep building</h2>
+        <ul class="reference-files">
+          <li><a href="https://aka.ms/canvas-coding-tools">Canvas AI coding tools</a></li>
+          <li><a href="https://aka.ms/genpages-docs">Generative pages</a></li>
+          <li><a href="https://aka.ms/codeapps-docs">Code apps</a></li>
+          <li><a href="https://learn.microsoft.com/microsoft-copilot-studio/apps-experience/apps-overview">Apps in Copilot Studio</a></li>
+          <li><a href="https://github.com/microsoft/power-platform-skills">Power Platform skills plugins</a></li>
+          <li><a href="https://aka.ms/agent-academy">Agent Academy</a></li>
+        </ul>
+        <p>For more on the connection layer, see <a href="techcon365-dallas-mcp.html">To MCP or Not to MCP</a>.
+          For delegation and reusable workflows, explore <a href="vibe-cowork.html">the Dallas Cowork session</a>.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p>&copy; <span data-current-year>2026</span> April Dunnam. Built for AI with April.</p>
+      <nav aria-label="Footer"><ul>
+        <li><a href="skill-framework.html">S.K.I.L.L. framework</a></li>
+        <li><a href="cowork-masterclass.html">Cowork Masterclass</a></li>
+        <li><a href="../sessions.html">Sessions</a></li>
+        <li><a href="../updates.html">Watch &amp; read</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="https://aprildunnam.com">aprildunnam.com</a></li>
+        <li><a href="https://github.com/aprildunnam/ai-with-april">GitHub</a></li>
+      </ul></nav>
+      <nav class="site-footer__socials" aria-label="Follow April"><ul>
+        <li><a href="https://www.linkedin.com/in/aprildunnam/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="https://youtube.com/@aprildunnam" target="_blank" rel="noopener noreferrer">YouTube<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="https://www.tiktok.com/@aprildunnam" target="_blank" rel="noopener noreferrer">TikTok<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      </ul></nav>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/app-path-guide.js"></script>
+</body>
+</html>

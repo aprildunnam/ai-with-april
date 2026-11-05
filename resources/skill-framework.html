@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../assets/js/theme.js"></script>
   <script>document.documentElement.classList.add("js");</script>
   <title>The S.K.I.L.L. Framework | AI with April</title>
   <meta name="description" content="Five rules for writing agent skills that actually fire, plus working examples for M365 Copilot, Copilot Studio, Cowork, and Power Platform.">
@@ -54,11 +55,10 @@
       <nav aria-label="Primary">
         <ul class="main-nav" id="main-nav">
           <li><a href="../index.html">Home</a></li>
-          <li><a href="skill-framework.html" aria-current="page">S.K.I.L.L. framework</a></li>
-          <li><a href="cowork-masterclass.html">Cowork Masterclass</a></li>
-          <li><a href="../sessions.html">Sessions</a></li>
+          <li><a href="../sessions.html">Talks</a></li>
+          <li><a href="../index.html#resources">Resources</a></li>
           <li><a href="../updates.html">Watch &amp; read</a></li>
-          <li><a href="../about.html">About</a></li>
+          <li><a href="../about.html">About April</a></li>
         </ul>
       </nav>
     </div>
@@ -100,33 +100,32 @@
 
         <img src="../assets/img/skill-framework.png" width="1200" height="820" loading="lazy" decoding="async" alt="The S.K.I.L.L. framework: Scope it to one job, Keywords in the description, Instructions not explanations, Lean body, Live test and iterate." style="border-radius: var(--radius-lg); border: 1px solid var(--color-border); box-shadow: var(--shadow-card); margin-bottom: var(--space-4);">
 
-        <h2 style="margin-top:0;">Why this, why now</h2>
+        <h2 style="margin-top:0;">Start with the description</h2>
         <p class="prose">
-          Most skills that "don't work" never actually ran. The agent reads only your
+          If a skill doesn't seem to work, check whether it ran at all. The agent reads your
           <code>name</code> and <code>description</code> before deciding whether to open the file,
-          so a perfect 4,000-word body is invisible if the description never matches. These five
-          rules are what closes that gap.
+          so the instructions in the body won't help if the description never matches.
+          These five rules cover how to write and test both.
         </p>
 
         <div class="role-callouts" aria-label="Why this matters for each role">
           <div class="role-callout" id="for-professionals">
-            <h3><span class="role-callout__dot" aria-hidden="true"></span>If you're a Curious Professional</h3>
+            <h3><span class="role-callout__dot" aria-hidden="true"></span>New to skills?</h3>
             <p>
-              You don't need to write skills yourself to benefit from this. Understanding the
-              difference between a one-off prompt and a written-down skill explains why some AI
-              tools at work feel reliable and others feel like a coin flip.
+              Start with the difference between a one-off prompt and a saved skill.
+              You don't need to write one to understand when it might help with your work.
             </p>
           </div>
           <div class="role-callout" id="for-makers">
-            <h3><span class="role-callout__dot" aria-hidden="true"></span>If you're a Microsoft Maker</h3>
+            <h3><span class="role-callout__dot" aria-hidden="true"></span>Using maker tools?</h3>
             <p>
-              This is directly applicable in Copilot Studio, Cowork, and Power Platform today.
-              The framework below is the difference between an agent that fires reliably and one
-              you keep re-explaining things to.
+              Use the framework to write instructions for the Copilot Studio, Cowork, and
+              Power Platform experiences that support skills. Test the description with
+              the kinds of requests your users will make.
             </p>
           </div>
           <div class="role-callout" id="for-builders">
-            <h3><span class="role-callout__dot" aria-hidden="true"></span>If you're a Technical Builder</h3>
+            <h3><span class="role-callout__dot" aria-hidden="true"></span>Writing your own skills?</h3>
             <p>
               Skills are an open standard (see "Where skills run" below). The mental model of
               instructions, knowledge, tools, and skills generalizes past any one vendor's
@@ -141,10 +140,9 @@
       <div class="wrap prose">
         <h2>A prompt is something you say. A skill is something you decide.</h2>
         <p>
-          A prompt lives in one conversation. It's different every time you type it, nobody else
-          has it, and there's no version or owner. A skill lives in a file, on a shelf. It's
-          identical every time it runs, shared with the whole team, versioned, and reviewable.
-          Same words, completely different thing.
+          A prompt gives instructions in a conversation. A skill saves a procedure in a file,
+          so you can version it, review changes, and share it with people who need the same
+          process. The agent loads those saved instructions when a request matches.
         </p>
 
         <h2 id="framework">The framework</h2>
@@ -201,9 +199,9 @@
             <div>
               <h3>Live test and iterate</h3>
               <p>
-                Skills are rarely one and done. Test the trigger before you test the output. Ask
-                for the thing five different ways and confirm it actually activates each time.
-                Half of all skill debugging is discovering it never fired at all.
+                Test the trigger before you test the output. Ask for the task five different
+                ways and check whether the skill activates each time. If it doesn't,
+                revise the description before changing the body.
               </p>
             </div>
           </li>
@@ -219,7 +217,7 @@
         </div>
 
         <h2 id="skill-anatomy">What's actually in a skill</h2>
-        <p>Only <code>SKILL.md</code> is required. The other three folders are optional, and that's where the leverage is.</p>
+        <p>Only <code>SKILL.md</code> is required. Add the other folders when you need reference material, templates, or scripts.</p>
         <pre class="code-tree"><code>client-qbr/
 ├── SKILL.md
 ├── references/
@@ -255,9 +253,9 @@
           </tbody>
         </table>
         <p>
-          Most skills never leave level 1. That is not a failure, that is the point. A 500-line
-          reference doc nobody updates is worse than no reference doc, because the agent is
-          confidently following a stale policy.
+          A skill can stay at level 1 if the instructions are enough. Add reference material
+          when the task needs it, and assign someone to keep it current. An outdated policy
+          can lead the agent to give the wrong answer.
         </p>
 
         <h2 id="skill-surfaces">Where skills run</h2>
@@ -312,11 +310,11 @@
           <li><strong>Log what loaded:</strong> which skills, which resources, which scripts. That's your audit trail.</li>
         </ul>
 
-        <h2>The takeaway</h2>
+        <h2>Try it on one task</h2>
         <p>
-          Stop re-prompting. Write your process down once, in a file. Picked up when it's
-          relevant, ignored when it isn't. Portable across products. Versioned like code.
-          Governed if you need it to be.
+          Pick a process you repeat, write it in a skill file, and test it with a few requests.
+          Keep the file under version control so you can review changes. If you move it
+          to another product, test it there too.
         </p>
 
         <div class="featured__actions">

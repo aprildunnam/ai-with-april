@@ -4,6 +4,37 @@ The durable design world for **AI with April**, established after v1 implementat
 before adding pages, resources, or restyling anything — it documents *why* things are the way
 they are, not just what they are.
 
+## Current direction: Copilot-first editorial portfolio (November 2026)
+
+This section supersedes earlier layout notes below. Preserve April's recognizable blue/rose
+palette and Bricolage Grotesque / IBM Plex Sans pairing while foregrounding her identity,
+Microsoft Copilot, Copilot Studio, and AI agents. Power Platform remains a supporting expertise.
+Use real portraits, deck covers, demos, the published book, and Agent Academy contribution
+as evidence; never decorate the page with fabricated metrics or logos.
+
+Homepage order: identity-led hero and visible portrait (including mobile), compact proof strip,
+GET-based talk finder, four selected presentations, practical Resources (copyable prompts,
+playable demos, and reusable downloads), speaking calendar/map, Agent Academy, latest videos,
+book, and speaking/contact. Keep presentation slides in the talk cards; Resources should
+expose usable material directly rather than repeat a directory of guide links. Full guides
+and the app chooser retain their existing URLs. The session catalog is the exhaustive
+view, with `q`, `topic`, and `event` query state. Shared header: Home / Talks / Resources /
+Watch & read / About April, plus a native theme selector.
+
+Light and dark modes use semantic `--color-*` tokens at the top of the shared stylesheet;
+dark backgrounds are ink/charcoal with lighter blue/rose text. Primary actions use
+`--color-on-accent`, never a fixed white foreground. Source slide images and diagrams retain
+their original colors rather than being filtered or inverted. `theme.js` applies the stored
+preference before CSS to avoid theme flashing; Auto follows the device.
+
+Read-mode pages use left-aligned prose and copyable prompts, with a centered short hero.
+Sticky, horizontally scrollable chapter links sit below the measured header. Mobile tables
+remain keyboard-scrollable. Progressive forms use native fieldsets/radios, visible validation,
+Back/Start over, and focus management; no modal or fake AI generation.
+
+Use restrained hover/focus feedback, one visible-by-default hero entrance, and reduced-motion
+support. Keep `[hidden]` authoritative so layout rules cannot expose inactive controls.
+
 ## Implementation approach
 
 Plain semantic HTML + CSS + vanilla JS. No framework, no bundler, no build step. This is
@@ -28,7 +59,8 @@ Sourced directly from three references, sampled/extracted rather than guessed:
   where v1's now-retired tokens came from.
 
 These were blended into the token set at the top of `assets/css/style.css`. **v2 replaced the
-entire palette** (light, not dark) — the table below reflects the current, live tokens:
+entire palette** with light editorial defaults. The table below describes those light defaults;
+the portfolio refresh adds a separate dark token set without changing the source brand identity:
 
 | Token | Value | Use |
 |---|---|---|
@@ -82,6 +114,7 @@ sans-serif fallback stack, so the site is still fully legible offline or if the 
 /sessions.html                   Conference sessions and demo-pack index
 /resources/vibe-copilot-countdown.html  "I Didn't Know Copilot Could Do That" companion
 /resources/vibe-cowork.html      "Delegating Real Work to Copilot Cowork" companion
+/resources/ppcc2026-copilot-compass.html  PPCC four-direction framework, PPTX and PDF
 /updates.html                    "Watch & read" — auto-synced YouTube videos + blog posts (v3)
 /about.html                      About April
 /404.html                        Not-found page (absolute /ai-with-april/ paths — see below)
@@ -154,7 +187,7 @@ session has a real, complete page under `resources/`, and the homepage shows the
 
 The session pages use:
 
-- `.session-grid` / `.session-card` for the two-session index and homepage teaser.
+- `.session-grid` / `.session-card` for the session index and homepage teaser.
 - `[data-session-search]` / `[data-session-filter]` for catalog search and topic filtering.
 - `.book-feature` for the homepage book promotion, including a local cover image and retailer links.
 - `.demo-grid` / `.demo-card` for the numbered live-demo sequence.
@@ -168,9 +201,38 @@ The session pages use:
   `scripts/publish-vibe-release-assets.sh` publishes them without putting them in repository
   history.
 
-Session companions use a centered content column throughout, including the hero, setup guidance,
-runbook steps, reference files, prompts, and expected results. Every session identifies its source
-event and date near the title, and each catalog card links its event name to the event site.
+Session companions use a centered content column with left-aligned body text, runbook steps,
+reference files, and prompts. Short hero headings remain centered. Every session identifies its source
+event and date near the title. Link event names to confirmed event URLs; omit links rather than
+guessing when a URL hasn't been supplied.
+
+**Speaking calendar:** `index.html#events` uses dated HTML cards as its source. Its progressive
+enhancement in `assets/js/speaking-calendar.js` supplies upcoming/past/all filters, an inclusive
+"Happening now" status, and date-based ordering. Appearances and online/onsite participation come
+from April's confirmed list. Organizer pages supply verified links, cities, and official event
+dates; Scottish Summit retains the specific workshop day rather than the whole conference.
+Without JavaScript, the complete dated list stays visible. New calendar styles use the shared
+theme tokens and native buttons, with live result counts and `aria-pressed` filter state.
+
+The companion map uses a local public-domain Natural Earth land outline, not an external map
+service. `assets/js/speaking-map.js` groups the visible HTML cards by city after the calendar's
+`speaking-calendar:render` event, preserving a single source for dates, ordering, and status.
+North America/Europe views only change the map, not the event-list filter. Selecting a city
+shows its matching events with links to the list; it doesn't hide unrelated cards.
+Every visual pin has an equivalent native city button with status text and a large touch target.
+The map is decorative to screen readers; city controls and details provide its information.
+City-level coordinates avoid suggesting precise venue directions, unverified travel routes, or
+physical attendance at an online appearance. Empty regional views and loading errors have
+explicit messages; no JavaScript or a failed map request leaves the dated list usable.
+
+**TechCon365 Dallas update (November 2026):** `resources/vibe-cowork.html` retains its URL while
+leading with the Dallas deck and six Q4-launch demos. The provided PDF and cover are local;
+owner-reviewed recordings use the separate `techcon365-dallas-cowork-assets` GitHub Release.
+`.demo-video` provides responsive native playback with local posters, no autoplay, and no
+preloading. Each recording has a direct open/download link and a written prompt and walkthrough.
+The earlier Vibe runbook stays in `.session-archive`, with its original anchors and downloads.
+Do not conflate its Analog Fest sample pack with the Dallas scenario or present session-era
+availability and illustrative costs as current guarantees.
 
 ## Component conventions
 

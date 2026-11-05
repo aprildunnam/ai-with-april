@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aprildunnam.github.io/ai-with-april/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
@@ -17,7 +17,7 @@
   </url>
   <url>
     <loc>https://aprildunnam.github.io/ai-with-april/sessions.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -27,7 +27,22 @@
   </url>
   <url>
     <loc>https://aprildunnam.github.io/ai-with-april/resources/vibe-cowork.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aprildunnam.github.io/ai-with-april/resources/techcon365-dallas-mcp.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aprildunnam.github.io/ai-with-april/resources/techcon365-dallas-power-apps.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aprildunnam.github.io/ai-with-april/resources/ppcc2026-copilot-compass.html</loc>
+    <lastmod>2026-11-05</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -37,7 +52,12 @@
   </url>
   <url>
     <loc>https://aprildunnam.github.io/ai-with-april/about.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://aprildunnam.github.io/ai-with-april/training.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.6</priority>
   </url>
 </urlset>

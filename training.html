@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="assets/js/theme.js"></script>
+  <script>document.documentElement.classList.add("js");</script>
+  <title>Training with April | AI with April</title>
+  <meta name="description" content="Inquire about practical training for your team on Microsoft 365 Copilot, Copilot Cowork, Copilot Studio, GitHub Copilot, and AI-assisted Power Platform development.">
+  <link rel="canonical" href="https://aprildunnam.github.io/ai-with-april/training.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Training with April | AI with April">
+  <meta property="og:description" content="Tell April what your team wants to learn about Copilot, agents, and Power Platform. Start a training conversation.">
+  <meta property="og:image" content="https://aprildunnam.github.io/ai-with-april/assets/img/og-cover.png">
+  <meta property="og:image:alt" content="AI with April: practical Copilot and AI learning">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://aprildunnam.github.io/ai-with-april/training.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@aprildunnam">
+  <meta name="twitter:image" content="https://aprildunnam.github.io/ai-with-april/assets/img/og-cover.png">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Bricolage+Grotesque:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html"><img src="assets/img/favicon.svg" alt="" width="30" height="30">AI with April</a>
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav aria-label="Primary">
+        <ul class="main-nav" id="main-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sessions.html">Talks</a></li>
+          <li><a href="index.html#resources">Resources</a></li>
+          <li><a href="updates.html">Watch &amp; read</a></li>
+          <li><a href="about.html">About April</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <!-- THESIS: A short training inquiry, not a generic collaboration pitch.
+      OWN-WORLD: Existing editorial blue/rose tokens, native labeled controls, both themes.
+      STORY: Share a team goal and contact details; get an honest submission result.
+      FIRST VIEWPORT: Purpose and context at left, the five-field form at right; stacked on mobile.
+      FORM: Local extension of the portfolio; no new visual world or selection seed. -->
+    <section class="section">
+      <div class="wrap training-layout">
+        <div class="training-intro">
+          <h1>Copilot training<br>for your team.</h1>
+          <p class="hero__lede">Tell me what your team wants to learn and what they've tried so far.</p>
+          <p>You can ask about Microsoft 365 Copilot and Cowork, building agents with
+            Copilot Studio, GitHub Copilot, or using AI to build Power Platform apps.</p>
+          <p>Not sure which topic fits? Choose &ldquo;Help me choose&rdquo; and describe
+            what you'd like your team to be able to do.</p>
+          <p class="training-other">For speaking or other questions,
+            <a href="https://aprildunnam.com/contact/">use my general contact page</a>.</p>
+        </div>
+        <div class="training-panel">
+          <form id="training-form" class="training-form" action="https://formspree.io/f/mnpproje" method="post" aria-label="Training inquiry">
+            <input type="hidden" name="_subject" value="AI with April: training inquiry">
+            <div hidden>
+              <label for="training-website">Leave this field empty</label>
+              <input id="training-website" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+            </div>
+            <fieldset id="training-fields" class="training-fields">
+              <legend class="visually-hidden">Your training inquiry</legend>
+              <div class="training-field">
+                <label for="training-name">Your name <span>(required)</span></label>
+                <input id="training-name" name="name" type="text" autocomplete="name" maxlength="100" required>
+              </div>
+              <div class="training-field">
+                <label for="training-email">Email <span>(required)</span></label>
+                <input id="training-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+              </div>
+              <div class="training-field">
+                <label for="training-organization">Organization <span>(optional)</span></label>
+                <input id="training-organization" name="organization" type="text" autocomplete="organization" maxlength="160">
+              </div>
+              <div class="training-field">
+                <label for="training-focus">Training focus <span>(required)</span></label>
+                <select id="training-focus" name="training_focus" required>
+                  <option value="" selected disabled>Choose a topic</option>
+                  <option>Microsoft 365 Copilot &amp; Cowork</option>
+                  <option>Copilot Studio &amp; AI agents</option>
+                  <option>GitHub Copilot</option>
+                  <option>Power Platform &amp; AI</option>
+                  <option>Help me choose</option>
+                </select>
+              </div>
+              <div class="training-field training-field--wide">
+                <label for="training-message">What would you like your team to learn? <span>(required)</span></label>
+                <p class="training-hint" id="training-message-hint">Share your goals, your team's experience,
+                  approximate group size, and any preferred dates or format (virtual or in person).</p>
+                <textarea id="training-message" name="message" rows="6" maxlength="4000" aria-describedby="training-message-hint" required></textarea>
+              </div>
+            </fieldset>
+            <p class="training-privacy">Your inquiry is sent through <a href="https://formspree.io/">Formspree</a>
+              so I can respond by email. Please don't include confidential information.</p>
+            <div id="training-error" class="training-notice training-notice--error" role="alert" tabindex="-1" hidden>
+              <p id="training-error-message"></p>
+              <p>Your details are still in the form. You can also <a href="https://aprildunnam.com/contact/">use my general contact page</a>.</p>
+            </div>
+            <button id="training-submit" class="btn btn-primary" type="submit">Send training inquiry</button>
+            <p id="training-status" class="visually-hidden" role="status"></p>
+          </form>
+          <section id="training-success" class="training-notice" aria-labelledby="training-success-title" hidden>
+            <h2 id="training-success-title" tabindex="-1">Your training inquiry was submitted.</h2>
+            <p>Thanks for sharing what your team needs. I'll reply using the email address you provided.</p>
+            <button id="training-again" class="btn btn-secondary" type="button">Send another inquiry</button>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p>&copy; <span data-current-year>2026</span> April Dunnam. Built for AI with April.</p>
+      <nav aria-label="Footer"><ul>
+        <li><a href="resources/skill-framework.html">S.K.I.L.L. framework</a></li>
+        <li><a href="resources/cowork-masterclass.html">Cowork Masterclass</a></li>
+        <li><a href="sessions.html">Sessions</a></li>
+        <li><a href="updates.html">Watch &amp; read</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="training.html" aria-current="page">Training</a></li>
+        <li><a href="https://aprildunnam.com">aprildunnam.com</a></li>
+        <li><a href="https://github.com/aprildunnam/ai-with-april">GitHub</a></li>
+      </ul></nav>
+      <nav class="site-footer__socials" aria-label="Follow April"><ul>
+        <li><a href="https://www.linkedin.com/in/aprildunnam/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="https://youtube.com/@aprildunnam" target="_blank" rel="noopener noreferrer">YouTube<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="https://www.tiktok.com/@aprildunnam" target="_blank" rel="noopener noreferrer">TikTok<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      </ul></nav>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/training-form.js"></script>
+</body>
+</html>

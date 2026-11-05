@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="assets/js/theme.js"></script>
   <script>document.documentElement.classList.add("js");</script>
   <title>Conference sessions | AI with April</title>
   <meta name="description" content="Slides, reusable skills, copyable prompts, and synthetic demo files from April Dunnam's practical AI and Microsoft Copilot sessions.">
@@ -43,11 +44,10 @@
       <nav aria-label="Primary">
         <ul class="main-nav" id="main-nav">
           <li><a href="index.html">Home</a></li>
-          <li><a href="resources/skill-framework.html">S.K.I.L.L. framework</a></li>
-          <li><a href="resources/cowork-masterclass.html">Cowork Masterclass</a></li>
-          <li><a href="sessions.html" aria-current="page">Sessions</a></li>
+          <li><a href="sessions.html" aria-current="page">Talks</a></li>
+          <li><a href="index.html#resources">Resources</a></li>
           <li><a href="updates.html">Watch &amp; read</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="about.html">About April</a></li>
         </ul>
       </nav>
     </div>
@@ -58,31 +58,87 @@
         <p class="eyebrow">Take the session home</p>
         <h1>Conference sessions &amp; demo packs</h1>
         <p class="hero__lede">
-          The practical materials behind April's live sessions: copy-paste prompts, reusable
-          skills, sample files, synthetic demo data, and fallback assets. Open a session for the
-          full walkthrough and only the files each demo needs.
+          Find the slides, demos, and prompts from a talk.
+          Search by session name, event, or topic.
         </p>
       </div>
     </section>
     <section class="section session-catalog">
       <div class="wrap">
-        <div class="session-toolbar" aria-label="Filter conference sessions" hidden>
+        <form class="session-toolbar" role="search" aria-label="Find conference sessions" data-session-toolbar hidden>
           <label class="session-search">
-            <span class="visually-hidden">Search sessions</span>
-            <input type="search" placeholder="Search sessions, tools, or topics" data-session-search>
+            <span class="visually-hidden">Search by session title, event, or topic</span>
+            <input type="search" name="q" placeholder="Search titles, events, or topics" aria-controls="session-grid" data-session-search>
           </label>
-          <div class="session-filters" aria-label="Filter by topic">
-            <button class="session-filter is-active" type="button" data-session-filter="all">All</button>
-            <button class="session-filter" type="button" data-session-filter="skills">Skills</button>
-            <button class="session-filter" type="button" data-session-filter="copilot">M365 Copilot</button>
-            <button class="session-filter" type="button" data-session-filter="cowork">Cowork</button>
-            <button class="session-filter" type="button" data-session-filter="agents">Agents &amp; automation</button>
-            <button class="session-filter" type="button" data-session-filter="office">Word, Excel &amp; PowerPoint</button>
+          <label class="session-event">
+            <span>Event</span>
+            <select name="event" aria-controls="session-grid" data-session-event-filter>
+              <option value="all">All events</option>
+              <option value="ppcc-2026">Power Platform Community Conference 2026</option>
+              <option value="techcon365-dallas-2026">TechCon365 Dallas 2026</option>
+              <option value="vibe-2-2026">Vibe 2.0</option>
+            </select>
+          </label>
+          <div class="session-filters" role="group" aria-label="Filter by topic">
+            <button class="session-filter is-active" type="button" aria-pressed="true" data-session-filter="all">All topics</button>
+            <button class="session-filter" type="button" aria-pressed="false" data-session-filter="skills">Skills</button>
+            <button class="session-filter" type="button" aria-pressed="false" data-session-filter="copilot">Copilot &amp; Copilot Studio</button>
+            <button class="session-filter" type="button" aria-pressed="false" data-session-filter="cowork">Cowork</button>
+            <button class="session-filter" type="button" aria-pressed="false" data-session-filter="power-apps">Power Apps</button>
+            <button class="session-filter" type="button" aria-pressed="false" data-session-filter="mcp">MCP &amp; connectors</button>
+            <button class="session-filter" type="button" aria-pressed="false" data-session-filter="agents">Agents &amp; automation</button>
+            <button class="session-filter" type="button" aria-pressed="false" data-session-filter="office">Word, Excel &amp; PowerPoint</button>
           </div>
-          <p class="session-results" data-session-results aria-live="polite">Showing 2 sessions</p>
-        </div>
-        <div class="session-grid">
-          <article class="session-card" data-session-card data-session-topics="skills copilot agents apps office excel powerpoint vision notebooks memory researcher" data-session-search-text="I Didn't Know Copilot Could Do That Microsoft 365 Copilot skills Agent Builder Agent Mode Excel PivotTable PowerPoint Word Vision Notebooks memory Model Council">
+          <button class="btn btn-secondary" type="button" data-session-reset>Clear all filters</button>
+          <p class="session-results" data-session-results role="status" aria-live="polite" aria-atomic="true">Showing 5 sessions</p>
+        </form>
+        <div class="session-grid" id="session-grid">
+          <article class="session-card" data-session-card data-session-event="ppcc-2026" data-session-topics="copilot cowork agents office" data-session-search-text="The Copilot Compass Finding True North Across Copilot Cowork Scout and Agents PPCC PPCC2026 Power Platform Conference Power Platform Community Conference 2026 April Dunnam Bryan Wofford sharpen monitor delegate scale Chat Autopilot Code Agent Builder Copilot Studio Word Excel PowerPoint">
+            <a class="session-card__media" href="resources/ppcc2026-copilot-compass.html">
+              <img src="assets/img/ppcc2026-copilot-compass.jpg" width="1200" height="675" loading="lazy" decoding="async" alt="The Copilot Compass by April Dunnam and Bryan Wofford at Power Platform Community Conference 2026">
+            </a>
+            <div class="session-card__body">
+              <p class="session-meta">Power Platform Community Conference &middot; October 2026</p>
+              <h2><a href="resources/ppcc2026-copilot-compass.html">The Copilot Compass</a></h2>
+              <p>Choose how to work with Copilot using four directions: sharpen, monitor, delegate, and scale. Presented with Bryan Wofford. Includes the 42-slide deck and a guide to the framework.</p>
+              <ul class="session-topics" aria-label="Session topics">
+                <li>Microsoft Copilot</li><li>Cowork</li><li>Agents</li><li>Copilot Studio</li>
+              </ul>
+              <p class="session-skill-note session-availability"><strong>Available:</strong> PowerPoint, PDF &amp; session guide</p>
+              <a class="btn btn-primary" href="resources/ppcc2026-copilot-compass.html">Get the slides &amp; guide</a>
+            </div>
+          </article>
+          <article class="session-card session-card--pink" data-session-card data-session-event="techcon365-dallas-2026" data-session-topics="power-apps copilot agents" data-session-search-text="The Power Apps Builder's Guide for Choosing the Right Path Spellbook TechCon365 Dallas November 2026 canvas model-driven generative pages PCF code apps Copilot Studio AI coding agents governance">
+            <a class="session-card__media" href="resources/techcon365-dallas-power-apps.html">
+              <img src="assets/img/techcon365-dallas-power-apps.jpg" width="1200" height="675" loading="lazy" decoding="async" alt="The Power Apps Builder's Guide for Choosing the Right Path at TechCon365 Dallas">
+            </a>
+            <div class="session-card__body">
+              <p class="session-meta"><a href="https://techcon365.com/Dallas/" target="_blank" rel="noopener noreferrer">TechCon365 Dallas</a> &middot; November 2026</p>
+              <h2><a href="resources/techcon365-dallas-power-apps.html">The Power Apps Builder's Guide for Choosing the Right Path</a></h2>
+              <p>Compare the app-building options based on who maintains the app, where people use it, and how long it needs to last. Includes the 53-slide deck supplied as The Power Apps Spellbook.</p>
+              <ul class="session-topics" aria-label="Session topics">
+                <li>Power Apps</li><li>AI-assisted building</li><li>Copilot Studio</li><li>Governance</li>
+              </ul>
+              <p class="session-skill-note session-availability"><strong>Available:</strong> Slides &amp; session guide</p>
+              <a class="btn btn-primary" href="resources/techcon365-dallas-power-apps.html">Explore the session</a>
+            </div>
+          </article>
+          <article class="session-card" data-session-card data-session-event="techcon365-dallas-2026" data-session-topics="mcp agents copilot cowork connectors" data-session-search-text="To MCP or Not to MCP What is MCP Model Context Protocol basics fundamentals kitchen restaurant analogy host client server tools resources prompts local remote stdio Streamable HTTP connectors Copilot Studio Copilot Cowork TechCon365 Dallas November 2026 VS Code GitHub Copilot CLI">
+            <a class="session-card__media" href="resources/techcon365-dallas-mcp.html">
+              <img src="assets/img/techcon365-dallas-mcp.jpg" width="1200" height="675" loading="lazy" decoding="async" alt="To MCP or Not to MCP at TechCon365 Dallas">
+            </a>
+            <div class="session-card__body">
+              <p class="session-meta"><a href="https://techcon365.com/Dallas/" target="_blank" rel="noopener noreferrer">TechCon365 Dallas</a> &middot; November 2026</p>
+              <h2><a href="resources/techcon365-dallas-mcp.html">To MCP or Not to MCP</a></h2>
+              <p>Follow the kitchen analogy to understand MCP hosts, clients, servers, and tools. See where they fit in Copilot Studio, Cowork, and GitHub Copilot. Includes the 46-slide deck.</p>
+              <ul class="session-topics" aria-label="Session topics">
+                <li>MCP</li><li>Copilot Studio</li><li>Cowork</li><li>GitHub Copilot</li>
+              </ul>
+              <p class="session-skill-note session-availability"><strong>Available:</strong> Slides &amp; session guide</p>
+              <a class="btn btn-primary" href="resources/techcon365-dallas-mcp.html">Explore the session</a>
+            </div>
+          </article>
+          <article class="session-card" data-session-card data-session-event="vibe-2-2026" data-session-topics="skills copilot agents apps office excel powerpoint vision notebooks memory researcher" data-session-search-text="I Didn't Know Copilot Could Do That Microsoft 365 Copilot skills Agent Builder Agent Mode Excel PivotTable PowerPoint Word Vision Notebooks memory Model Council Vibe 2.0 September 2026">
             <a class="session-card__media" href="resources/vibe-copilot-countdown.html">
               <img src="assets/img/vibe-copilot-countdown.svg" width="1200" height="675" loading="lazy" decoding="async" alt="I Didn't Know Copilot Could Do That session cover">
             </a>
@@ -97,29 +153,34 @@
                 <li>Skills</li><li>M365 Copilot</li><li>Excel</li><li>Agents</li>
               </ul>
               <p class="session-skill-note"><strong>Skills featured:</strong> event recap, weekly sales review, and sound-like-April.</p>
+              <p class="session-skill-note session-availability"><strong>Available:</strong> Slides, prompts &amp; sample files</p>
               <a class="btn btn-primary" href="resources/vibe-copilot-countdown.html">Explore the session</a>
             </div>
           </article>
-          <article class="session-card session-card--pink" data-session-card data-session-topics="skills cowork agents automation apps plugins mcp outlook teams sharepoint" data-session-search-text="Delegating Real Work to Copilot Cowork inbox vendor meeting app automation skill plugin MCP Outlook Teams SharePoint">
+          <article class="session-card session-card--pink" data-session-card data-session-event="techcon365-dallas-2026" data-session-topics="skills copilot cowork agents automation projects plugins mcp outlook teams miro browser" data-session-search-text="Delegating Real Work to Copilot Cowork TechCon365 Dallas November 2026 Q4 launch meeting inbox triage automation skill Project plugin Miro browser governance Vibe Analog Fest">
             <a class="session-card__media" href="resources/vibe-cowork.html">
-              <img src="assets/img/vibe-cowork.svg" width="1200" height="675" loading="lazy" decoding="async" alt="Delegating Real Work to Copilot Cowork session cover">
+              <img src="assets/img/techcon365-dallas-cowork.jpg" width="1200" height="675" loading="lazy" decoding="async" alt="Delegating Real Work to Copilot Cowork at TechCon365 Dallas">
             </a>
             <div class="session-card__body">
-              <p class="session-meta"><a href="https://partnerin.io/vibe" target="_blank" rel="noopener noreferrer">Vibe 2.0</a> &middot; September 2026</p>
+              <p class="session-meta"><a href="https://techcon365.com/Dallas/" target="_blank" rel="noopener noreferrer">TechCon365 Dallas</a> &middot; November 2026</p>
               <h2><a href="resources/vibe-cowork.html">Delegating Real Work to Copilot Cowork</a></h2>
               <p>
-                A practical guide to delegating multi-step work across inbox, meetings, files,
-                apps, automations, skills, plugins, and MCP.
+                Six recorded demos, slides, and copyable prompts: meeting prep, inbox triage,
+                skills, automations, Projects, Miro plugins, and browser use.
               </p>
               <ul class="session-topics" aria-label="Session topics">
-                <li>Skills</li><li>Cowork</li><li>Automation</li><li>Apps</li>
+                <li>Skills</li><li>Cowork</li><li>Automation</li><li>Projects</li>
               </ul>
-              <p class="session-skill-note"><strong>Skills featured:</strong> turn a successful vendor briefing into a reusable shared skill.</p>
+              <p class="session-skill-note"><strong>Skills featured:</strong> capture inbox triage as a reusable skill, then schedule a weekday brief. Earlier Vibe materials are also included.</p>
+              <p class="session-skill-note session-availability"><strong>Available:</strong> Slides, 6 demo videos, prompts &amp; Vibe sample files</p>
               <a class="btn btn-primary" href="resources/vibe-cowork.html">Explore the session</a>
             </div>
           </article>
         </div>
-        <p class="session-empty" data-session-empty hidden>No sessions match that search and topic filter.</p>
+        <div class="session-empty" data-session-empty hidden>
+          <p>No sessions match your search, topic, and event. Try fewer search words or clear the filters.</p>
+          <button class="btn btn-secondary" type="button" data-session-reset>Clear all filters and show every session</button>
+        </div>
       </div>
     </section>
   </main>
@@ -147,5 +208,6 @@
     </div>
   </footer>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/sessions.js"></script>
 </body>
 </html>

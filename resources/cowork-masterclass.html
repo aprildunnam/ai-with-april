@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../assets/js/theme.js"></script>
   <script>document.documentElement.classList.add("js");</script>
   <title>Copilot Cowork Masterclass | AI with April</title>
   <meta name="description" content="A practical Copilot Cowork guide with a prompt bank, 7 hands-on labs, reusable skills, a printable cheat sheet, and companion slides.">
@@ -54,11 +55,10 @@
       <nav aria-label="Primary">
         <ul class="main-nav" id="main-nav">
           <li><a href="../index.html">Home</a></li>
-          <li><a href="skill-framework.html">S.K.I.L.L. framework</a></li>
-          <li><a href="cowork-masterclass.html" aria-current="page">Cowork Masterclass</a></li>
-          <li><a href="../sessions.html">Sessions</a></li>
+          <li><a href="../sessions.html">Talks</a></li>
+          <li><a href="../index.html#resources">Resources</a></li>
           <li><a href="../updates.html">Watch &amp; read</a></li>
-          <li><a href="../about.html">About</a></li>
+          <li><a href="../about.html">About April</a></li>
         </ul>
       </nav>
     </div>
@@ -70,10 +70,9 @@
         <p class="eyebrow">Flagship resource &middot; Guide, prompt bank &amp; labs</p>
         <h1>Copilot Cowork Masterclass</h1>
         <p class="hero__lede">
-          The slides are the textbook, the recording is the lecture, and this page is the lab
-          manual. Everything from the live Copilot Cowork Masterclass session, in one place:
-          what Cowork actually is, a copy-paste prompt bank, 7 self-paced labs and challenges,
-          a skills starter kit, and a one-page cheat sheet worth pinning.
+          Work through seven labs and challenges from the Copilot Cowork Masterclass.
+          You'll also find a prompt bank, a skills starter kit, the slides, and a
+          printable cheat sheet.
         </p>
         <div class="featured__actions" style="margin-bottom: var(--space-4);">
           <a class="btn btn-primary" href="../assets/downloads/cowork-masterclass-slides.pdf">Download the slide deck (.pdf, 1.6 MB)</a>
@@ -106,26 +105,26 @@
         <h2>Who this guide is for</h2>
         <div class="role-callouts" aria-label="Why this matters for each role">
           <div class="role-callout" id="for-professionals">
-            <h3><span class="role-callout__dot" aria-hidden="true"></span>If you're a Curious Professional</h3>
+            <h3><span class="role-callout__dot" aria-hidden="true"></span>New to Cowork?</h3>
             <p>
-              Cowork is the closest thing to an actual AI coworker. Describe an outcome, not a
-              step, and it plans and works across your inbox, calendar, and files. Start with
-              the <a href="#challenges">first challenge</a>, no setup required.
+              Describe the outcome you want, and Cowork plans work across your inbox,
+              calendar, and files. The <a href="#challenges">first challenge</a> uses
+              your existing inbox and calendar.
             </p>
             <p class="back-to-top"><a href="#main">Back to top &uarr;</a></p>
           </div>
           <div class="role-callout" id="for-makers">
-            <h3><span class="role-callout__dot" aria-hidden="true"></span>If you're a Microsoft Maker</h3>
+            <h3><span class="role-callout__dot" aria-hidden="true"></span>Building for a team?</h3>
             <p>
               The delegation habits here (goal, context, sources, and format) carry directly into
               Copilot Studio and Power Automate, where you're building the same kind of workflow
-              for other people instead of running it yourself. Ready to actually build in Copilot
-              Studio? <a href="https://aka.ms/agent-academy" target="_blank" rel="noopener">Agent Academy</a>
-              has free labs to get you started, including the new GitHub Copilot harness.
+              for other people instead of running it yourself.
+              <a href="https://aka.ms/agent-academy" target="_blank" rel="noopener">Agent Academy</a>
+              has free Copilot Studio labs, including the GitHub Copilot harness.
             </p>
           </div>
           <div class="role-callout" id="for-builders">
-            <h3><span class="role-callout__dot" aria-hidden="true"></span>If you're a Technical Builder</h3>
+            <h3><span class="role-callout__dot" aria-hidden="true"></span>Working with skills?</h3>
             <p>
               The <a href="#skills-starter-kit">Skills Starter Kit</a> below is the same
               <code>SKILL.md</code> format covered in the
@@ -143,10 +142,9 @@
         <p>
           <strong>Microsoft Copilot</strong> is the AI assistant built into Word, Excel,
           PowerPoint, Outlook, and Teams, grounded in your organization's own data through the
-          Microsoft Graph. <strong>Copilot Cowork</strong> is the collaborative, delegated way of
-          working that sits on top of it: instead of prompting one app at a time, you describe a
-          whole outcome and Cowork plans and acts across apps, previewing anything it wants to
-          send, post, or schedule before it happens.
+          Microsoft Graph. In <strong>Copilot Cowork</strong>, you describe a task that may
+          involve several apps. Cowork makes a plan and works through it, showing previews
+          of actions such as sending, posting, or scheduling so you can review them.
         </p>
 
         <h3>Three ways to get AI help and when to use each</h3>
@@ -167,13 +165,13 @@
         <h3>Key concepts</h3>
         <dl>
           <dt><strong>Grounding</strong></dt>
-          <dd>Cowork's answers are based on your actual emails, documents, meetings, and chats via the Microsoft Graph, not just general internet knowledge.</dd>
+          <dd>Cowork can use emails, documents, meetings, and chats you have access to through the Microsoft Graph as sources for its answers.</dd>
           <dt><strong>A good prompt</strong></dt>
           <dd>Has a <strong>goal</strong> (the outcome), <strong>context</strong> (who/why), <strong>sources</strong> (which files or people), and a <strong>format</strong> (brief, table, email). "Prep me for my 2pm" beats "help with my meeting."</dd>
           <dt><strong>Iteration</strong></dt>
           <dd>Treat the first response as a draft. Refine it in the same thread rather than starting over.</dd>
           <dt><strong>Skill</strong></dt>
-          <dd>A saved, reusable playbook Cowork loads on demand, so you stop re-prompting and cut credits. See the <a href="#skills-starter-kit">Skills Starter Kit</a>.</dd>
+          <dd>Saved instructions Cowork can load when you need to repeat a task. See the <a href="#skills-starter-kit">Skills Starter Kit</a>.</dd>
           <dt><strong>Credits</strong></dt>
           <dd>
             Cowork uses usage-based Copilot Credits. Microsoft's current pay-as-you-go price is
@@ -271,8 +269,8 @@
       <div class="wrap prose">
         <h2>Labs &amp; challenges</h2>
         <p>
-          Self-paced and step-by-step. Do them in order or jump to what you need. Every prompt is
-          copy-paste ready. Before any exercise: open Copilot Cowork, leave the model on
+          Work through these in order or choose an exercise that fits your task. You can
+          copy each prompt. Before you start, open Copilot Cowork and leave the model on
           <strong>Auto</strong>.
         </p>
 
@@ -305,7 +303,7 @@
 
         <details>
           <summary><strong>Challenge 3: Build Your Own Skill</strong> (~12 min)</summary>
-          <p><strong>Goal:</strong> turn a task you repeat into a reusable Skill, so you stop re-prompting and cut credits.</p>
+          <p><strong>Goal:</strong> save a repeatable task as a skill and test it in a new conversation.</p>
           <ol>
             <li>Pick a task you do often (weekly report, meeting prep, a standard email).</li>
             <li>Get a good result the manual way first.</li>
@@ -328,7 +326,7 @@
 
         <details>
           <summary><strong>Lab A: The New Project Kickoff</strong></summary>
-          <p><strong>Scenario:</strong> you've just been handed a new cross-functional project. Go from a pile of context to organized and ready to lead.</p>
+          <p><strong>Scenario:</strong> you've been handed a new project. Use its brief and kickoff email to prepare a summary, agenda, and invitation.</p>
           <ol>
             <li>Upload the project brief and kickoff email.</li>
             <li><code>Read the brief and kickoff email. Give me a one-page summary: objective, scope (in/out), timeline, team, and the top 3 risks.</code></li>
@@ -352,7 +350,7 @@
 
         <details>
           <summary><strong>Lab C: The Inbox Zero Sprint</strong></summary>
-          <p><strong>Scenario:</strong> your inbox is out of control. Regain order, and draft your way back to zero.</p>
+          <p><strong>Scenario:</strong> sort your inbox into messages that need a response and messages you can set aside. Draft replies for the items that need action.</p>
           <ol>
             <li><code>Triage these emails by priority. Separate "needs action from me" from newsletters/noise, and tell me what's time-sensitive.</code></li>
             <li><code>Draft short, appropriate replies to the action-needed items. Flag anything that needs a decision rather than a reply.</code></li>
@@ -369,9 +367,8 @@
       <div class="wrap prose">
         <h2>Skills starter kit</h2>
         <p>
-          A skill is a saved playbook with plain-language instructions Cowork loads on demand, so you
-          stop re-prompting and cut credits. Fastest way to make one: get a great result manually,
-          then say <code>Save this as a skill called "[name]". Trigger it when I say "[phrase]".</code>
+          A skill saves instructions you want Cowork to reuse. Start by getting a result
+          you're happy with, then say <code>Save this as a skill called "[name]". Trigger it when I say "[phrase]".</code>
           Or author the file yourself from the template below and drop it in
           <strong>OneDrive &#9656; Documents &#9656; Cowork &#9656; skills &#9656; your-skill-name &#9656; SKILL.md</strong>.
         </p>

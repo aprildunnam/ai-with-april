@@ -13,6 +13,29 @@ invented — every claim here was confirmed before build.
 - **Owner/voice:** April Dunnam — Principal Cloud Advocate at Microsoft. The site speaks in her
   direct, practical, human teaching voice. It is not a faceless product marketing site.
 
+## Current positioning (November 2026)
+
+The site is April's expert portfolio and the single destination to share after her talks.
+Lead with **Microsoft Copilot, Copilot Studio, and AI agents**; retain Power Platform as
+an important part of her building expertise, not the primary headline. This ordering was
+explicitly chosen by April during the portfolio refresh.
+
+The homepage must establish April's identity and substantiated expertise immediately, then
+make talk materials easy to find. Conference attendees, first-time learners, and event
+organizers should each have a direct path: talks, practical resources, or training inquiries.
+Keep existing resources, downloads, URLs, and earlier session editions accessible.
+
+The training call to action leads to a short inquiry form, with submissions and recipient
+notifications handled by April's chosen Formspree form. Speaking and other inquiries retain
+the existing general-contact route.
+
+Approved enhancements include System/Light/Dark preferences, shareable event/topic/search
+filters, selected work rather than an exhaustive homepage catalog, chapter navigation on
+long guides, and a rule-based app-selection guide. Interactivity serves retrieval and
+learning; no autoplay, scroll hijacking, invented testimonials, or vanity metrics.
+
+This supersedes the older learning-library-first homepage framing described below.
+
 ## Who it's for
 
 Primary audience is a broad mix, addressed with distinct entrances rather than one generic
