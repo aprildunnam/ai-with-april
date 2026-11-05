@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../assets/js/theme.js"></script>
+  <script>document.documentElement.classList.add("js");</script>
+  <title>To MCP or Not to MCP | AI with April</title>
+  <meta name="description" content="Understand Model Context Protocol with April Dunnam's kitchen analogy: hosts, clients, servers, tools, and where to use MCP across Copilot experiences. Includes the TechCon365 Dallas deck.">
+  <link rel="canonical" href="https://aprildunnam.github.io/ai-with-april/resources/techcon365-dallas-mcp.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="To MCP or Not to MCP | AI with April">
+  <meta property="og:description" content="What is MCP? Follow an order from the AI app to the kitchen, then explore where MCP fits in Copilot Studio, Cowork, and GitHub Copilot.">
+  <meta property="og:image" content="https://aprildunnam.github.io/ai-with-april/assets/img/techcon365-dallas-mcp.jpg">
+  <meta property="og:image:alt" content="To MCP or Not to MCP, presented by April Dunnam at TechCon365 Dallas">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:url" content="https://aprildunnam.github.io/ai-with-april/resources/techcon365-dallas-mcp.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@aprildunnam">
+  <meta name="twitter:image" content="https://aprildunnam.github.io/ai-with-april/assets/img/techcon365-dallas-mcp.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "To MCP or Not to MCP",
+    "description": "Learn what Model Context Protocol is through a kitchen analogy, a tool-call walkthrough, and examples across Copilot Studio, Copilot Cowork, and GitHub Copilot. Includes the TechCon365 Dallas slides.",
+    "url": "https://aprildunnam.github.io/ai-with-april/resources/techcon365-dallas-mcp.html",
+    "learningResourceType": ["Conference session", "Presentation"],
+    "dateModified": "2026-11-05",
+    "author": { "@type": "Person", "name": "April Dunnam" }
+  }
+  </script>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Bricolage+Grotesque:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="session-resource-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="../index.html"><img src="../assets/img/favicon.svg" alt="" width="30" height="30">AI with April</a>
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav aria-label="Primary">
+        <ul class="main-nav" id="main-nav">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../sessions.html">Talks</a></li>
+          <li><a href="../index.html#resources">Resources</a></li>
+          <li><a href="../updates.html">Watch &amp; read</a></li>
+          <li><a href="../about.html">About April</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="section--tight session-resource-hero">
+      <div class="wrap session-content">
+        <p class="eyebrow">TechCon365 Dallas &middot; Model Context Protocol</p>
+        <h1>To MCP or Not to MCP</h1>
+        <p class="hero__lede">What is MCP, how does it work, and where would you use it?
+          The kitchen analogy explains the pieces, followed by examples in
+          the Copilot tools you use.</p>
+        <a class="event-provenance" href="https://techcon365.com/Dallas/" target="_blank" rel="noopener noreferrer">
+          <strong>TechCon365 Dallas</strong>
+          <span>November 2&ndash;6, 2026 &middot; Dallas, Texas</span>
+          <span aria-hidden="true">&nearr;</span>
+        </a>
+        <div class="featured__actions" style="margin-bottom: var(--space-4);">
+          <a class="btn btn-primary" href="../assets/downloads/techcon365-dallas-mcp-or-not.pdf">Download the slides (.pdf, 2.3 MB)</a>
+          <a class="btn btn-secondary" href="#kitchen-analogy">Explore the kitchen analogy</a>
+        </div>
+        <img class="resource-cover" src="../assets/img/techcon365-dallas-mcp.jpg" width="1200" height="675" decoding="async" alt="TechCon365 Dallas: To MCP or Not to MCP, presented by April Dunnam">
+        <div class="callout-box">
+          <p><strong>Session materials:</strong> the full 46-slide PDF is available above.
+            The guide below summarizes the talk; demo recordings and server source code are
+            not included. Host capabilities, preview features, and UI details reflect the
+            November 2026 session and may change.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section--tight">
+      <div class="wrap prose session-content">
+        <h2 id="what-is-mcp">What is MCP?</h2>
+        <p><strong>Model Context Protocol (MCP) is an open standard that lets AI applications
+          connect to tools, data, and other systems.</strong> Instead of building a different
+          integration for every AI app, a system can expose capabilities through an MCP server
+          that compatible apps can use.</p>
+        <p>Think about the difference between asking Copilot to draft an email and asking it
+          to find open opportunities in your CRM. The first uses the model's language skills.
+          The second needs a connection to a system the model cannot reach on its own.</p>
+        <p>Giving the model sources to read, such as web results and files, is called <strong>grounding</strong>.
+          MCP-connected tools can let it reach into a system to read a record, create an issue,
+          or update something.</p>
+        <div class="callout-box">
+          <p><strong>The model is the brain. Search and files are its eyes. Tools are its hands.</strong>
+            MCP is the standard connection, not a new model or automatic access to all your data.</p>
+        </div>
+
+        <h2 id="kitchen-analogy">Think of MCP as a restaurant</h2>
+        <p>You sit down, ask for something, and get a result without walking into the kitchen
+          yourself. The deck uses that familiar interaction to explain the pieces of MCP.</p>
+        <img class="resource-cover" src="../assets/img/techcon365-dallas-mcp-kitchen.jpg"
+          width="1800" height="1013" loading="lazy" decoding="async"
+          alt="Restaurant analogy: the AI app is the host, the waiter is the MCP client, and the kitchen is the MCP server. Orders go to the kitchen and results return to the diner.">
+        <p class="material-label"><a href="../assets/downloads/techcon365-dallas-mcp-or-not.pdf#page=10">View the kitchen analogy in the deck (slide 10)</a></p>
+        <dl>
+          <dt>The restaurant = the host</dt>
+          <dd>The AI application you're using, such as Copilot Studio or VS Code.
+            It's where you ask for help and see the answer.</dd>
+          <dt>The waiter = the MCP client</dt>
+          <dd>The part inside the host that communicates with the server.
+            It carries requests to the kitchen and brings results back.</dd>
+          <dt>The kitchen = the MCP server</dt>
+          <dd>The component that exposes a system's capabilities, such as GitHub or your own API.
+            It publishes what's available and handles the requests.</dd>
+          <dt>A dish on the menu = a tool</dt>
+          <dd>A specific action, such as creating an issue or querying a table.
+            Its definition tells the model what it does and which inputs it needs.</dd>
+        </dl>
+        <p><strong>MCP is the shared order slip.</strong> A compatible client and server speak
+          the same language. That's why the deck also calls it &ldquo;USB-C for AI&rdquo;:
+          a common connection instead of custom wiring for every app-and-tool pairing.</p>
+
+        <h2 id="follow-an-order">Follow one order</h2>
+        <p>Say you ask: <strong>&ldquo;Create an issue for the login bug.&rdquo;</strong>
+          Here's the breakdown from the deck:</p>
+        <ol>
+          <li><strong>Discover: read the menu.</strong> The client gets the available tool
+            definitions, including <code>create_issue</code> and the details it requires.</li>
+          <li><strong>Choose: pick a dish.</strong> The model selects the tool and fills
+            in inputs such as the repository and issue title. The client sends the request.</li>
+          <li><strong>Authorize: check the ID.</strong> The server checks the identity
+            and permissions before carrying out the action. Sign-in and approval behavior
+            depend on the host and server.</li>
+          <li><strong>Execute: cook and plate.</strong> The server calls the underlying
+            system, such as GitHub's API. A result or clear error comes back through the
+            client to your conversation.</li>
+        </ol>
+        <p>The model chooses what to request; the server and underlying system do the actual work.
+          MCP standardizes the conversation between them.</p>
+
+        <h2 id="on-the-menu">What's on the menu?</h2>
+        <p>The &ldquo;context&rdquo; in Model Context Protocol includes more than actions.
+          The deck breaks it into three core pieces:</p>
+        <ul>
+          <li><strong>Tools are the dishes.</strong> What the model can ask to do,
+            such as create an issue or query a table.</li>
+          <li><strong>Resources are the recipe book.</strong> Data and context the
+            application can read, such as files and documentation.</li>
+          <li><strong>Prompts are the combo meals.</strong> Ready-made request templates
+            offered by a server, such as a starting point for summarizing a pull request.</li>
+        </ul>
+        <details>
+          <summary>What about elicitation, MCP Apps, and tasks?</summary>
+          <p>The deck also introduces some kitchen extras: <strong>elicitation</strong> lets
+            the server ask for more input during a task (&ldquo;Which of these repositories?&rdquo;);
+            <strong>MCP Apps</strong> bring interactive screens into the conversation; and
+            <strong>tasks</strong> support work that continues in the background.</p>
+          <p>Not every server offers every feature, and not every host supports the whole menu.
+            Check the combination you're using rather than assuming MCP support means feature parity.</p>
+        </details>
+
+        <h2 id="local-or-remote">Where is the kitchen?</h2>
+        <p>An MCP server isn't necessarily a separate machine. It can run locally or remotely.
+          The connection route is called the <strong>transport</strong>.</p>
+        <ul>
+          <li><strong>Local, on your computer.</strong> The server runs as a process
+            on your computer. A common transport is <code>stdio</code> (standard input/output):
+            the client communicates directly with that process.</li>
+          <li><strong>Remote, over the network.</strong> The client reaches a server
+            over the network using <strong>Streamable HTTP</strong>. A hosted server can
+            serve multiple clients.</li>
+        </ul>
+        <p>The Copilot Studio examples in the deck use remote servers. Developer tools can
+          offer local and remote options; the host determines which connections it supports.</p>
+
+        <h2 id="where-to-use-mcp">Where would I use MCP?</h2>
+        <p>Start with the place you're already working and the system you need to reach.
+          The deck shows the same idea across several experiences:</p>
+        <dl>
+          <dt>Copilot Studio: give an agent tools</dt>
+          <dd>Connect a remote MCP server so an agent can work with another system.
+            The session's Dataverse example reads and writes data through agent tools.</dd>
+          <dt>Copilot Cowork: use a plugin</dt>
+          <dd>A plugin can package skills with a connection to an MCP server. You use the
+            plugin's capabilities without configuring every tool yourself.
+            <a href="vibe-cowork.html#dallas-demo-5">Watch the Miro plugin example</a>
+            from the Cowork session.</dd>
+          <dt>GitHub Copilot in VS Code: bring tools into development</dt>
+          <dd>Connect a server in your coding environment so the conversation can use
+            capabilities beyond the code in your workspace.</dd>
+          <dt>GitHub Copilot CLI: work from the terminal</dt>
+          <dd>Use an MCP server in a terminal-based workflow. The deck shows the same
+            Dataverse endpoint used from different hosts, each with its own client configuration.</dd>
+          <dt>Microsoft 365 Copilot: extend a declarative agent</dt>
+          <dd>The deck's declarative-agent example connects a remote server through an MCP
+            plugin manifest. That is a specific extension model, not automatic MCP access
+            in every Copilot conversation.</dd>
+        </dl>
+        <p>You can connect the same server to more than one host. Check the setup, sign-in,
+          permissions, and supported features in each one.</p>
+
+        <h2 id="mcp-or-connector">So, MCP or a connector?</h2>
+        <p>MCP is useful when you want to reuse a server's capabilities across compatible AI
+          hosts, a vendor already offers a server, or the available tool set evolves.
+          A connector can be the better fit when you need Power Automate, Power Apps, or
+          Logic Apps integration, or want to configure individual actions explicitly.</p>
+        <details>
+          <summary>Why does Copilot Studio mention both?</summary>
+          <p>In the standard-harness onboarding flow shown in the deck, Copilot Studio creates
+            a custom connector with an <code>InvokeServer</code> action. That connector is the
+            delivery window; the MCP server supplies the tools behind it.</p>
+          <p>That's a Copilot Studio integration detail, not the definition of MCP.
+            Other hosts connect to MCP servers without Power Platform connectors.</p>
+        </details>
+        <p>MCP doesn't replace permissions or make a server trustworthy by itself.
+          Use trusted servers and only the access the task needs. The full deck has
+          additional guidance on controls and production readiness.</p>
+
+        <h2>Keep learning</h2>
+        <ul class="reference-files">
+          <li><a href="https://microsoft.github.io/agent-academy/special-ops/">Agent Academy Special Ops</a></li>
+          <li><a href="vibe-cowork.html#dallas-demo-5">Watch a Cowork plugin in action</a></li>
+          <li><a href="skill-framework.html">Write reliable skills</a></li>
+          <li><a href="../sessions.html">All conference sessions</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p>&copy; <span data-current-year>2026</span> April Dunnam. Built for AI with April.</p>
+      <nav aria-label="Footer"><ul>
+        <li><a href="skill-framework.html">S.K.I.L.L. framework</a></li>
+        <li><a href="cowork-masterclass.html">Cowork Masterclass</a></li>
+        <li><a href="../sessions.html">Sessions</a></li>
+        <li><a href="../updates.html">Watch &amp; read</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="https://aprildunnam.com">aprildunnam.com</a></li>
+        <li><a href="https://github.com/aprildunnam/ai-with-april">GitHub</a></li>
+      </ul></nav>
+      <nav class="site-footer__socials" aria-label="Follow April"><ul>
+        <li><a href="https://www.linkedin.com/in/aprildunnam/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="https://youtube.com/@aprildunnam" target="_blank" rel="noopener noreferrer">YouTube<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="https://www.tiktok.com/@aprildunnam" target="_blank" rel="noopener noreferrer">TikTok<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      </ul></nav>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

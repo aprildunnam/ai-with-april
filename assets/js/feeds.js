@@ -135,6 +135,7 @@
           var toRender = limit > 0 ? items.slice(0, limit) : items;
 
           container.innerHTML = "";
+          container.setAttribute("aria-busy", "false");
           if (!toRender.length) {
             var empty = document.createElement("p");
             empty.className = "update-empty";

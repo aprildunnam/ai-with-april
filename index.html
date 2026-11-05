@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="assets/js/theme.js"></script>
   <script>document.documentElement.classList.add("js");</script>
-  <title>AI with April | Practical AI, Copilot &amp; Power Platform learning</title>
-  <meta name="description" content="A practical learning hub from April Dunnam: guides, labs, videos, and posts on AI, Copilot, Copilot Studio, Cowork, and Power Platform.">
+  <title>April Dunnam | Copilot, Copilot Studio &amp; AI</title>
+  <meta name="description" content="April Dunnam, Microsoft Principal Cloud Advocate and author. Conference talks, demos, and practical resources for Copilot, Copilot Studio, AI, and Power Platform.">
 
   <link rel="canonical" href="https://aprildunnam.github.io/ai-with-april/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="AI with April | Practical AI, Copilot &amp; Power Platform learning">
-  <meta property="og:description" content="Practical guides, labs, videos, and posts on AI, Microsoft Copilot, Copilot Studio, Cowork, and Power Platform.">
+  <meta property="og:title" content="April Dunnam | Copilot, Copilot Studio &amp; AI">
+  <meta property="og:description" content="Practical expertise. Real demos. Take April's conference talks home and build with Copilot, Copilot Studio, and Power Platform.">
   <meta property="og:image" content="https://aprildunnam.github.io/ai-with-april/assets/img/og-cover.png">
   <meta property="og:image:alt" content="AI with April: practical AI, Copilot, and Power Platform learning">
   <meta property="og:image:width" content="1200">
@@ -65,7 +66,7 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Bricolage+Grotesque:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="portfolio-home">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
@@ -80,104 +81,69 @@
       <nav aria-label="Primary">
         <ul class="main-nav" id="main-nav">
           <li><a href="index.html" aria-current="page">Home</a></li>
-          <li><a href="resources/skill-framework.html">S.K.I.L.L. framework</a></li>
-          <li><a href="resources/cowork-masterclass.html">Cowork Masterclass</a></li>
-          <li><a href="sessions.html">Sessions</a></li>
+          <li><a href="sessions.html">Talks</a></li>
+          <li><a href="#resources">Resources</a></li>
           <li><a href="updates.html">Watch &amp; read</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="about.html">About April</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
+  <!-- THESIS: An expert's working portfolio, not an anonymous AI resource directory.
+       OWN-WORLD: Ink, blue and rose; bold editorial type, real decks and a visible author.
+       STORY: Meet April, find a talk, then put the material to work.
+       FIRST VIEWPORT: Identity and primary talk action beside April's portrait; proof directly below.
+       FORM: Approved editorial portfolio with a compact event finder and selected work. -->
   <main id="main">
     <section class="hero hero--home">
       <div class="wrap hero__layout">
         <div class="hero__content">
-          <p class="eyebrow">Practical AI for real work</p>
-          <h1>Make AI, Copilot &amp; Power Platform make sense for real work.</h1>
+          <p class="author-intro">April Dunnam <span>Principal Cloud Advocate at Microsoft</span></p>
+          <h1>Put <span>Copilot</span><br>to work.</h1>
           <p class="hero__lede">
-            I'm April Dunnam, a Microsoft Principal Cloud Advocate, author of
-            <em>The Copilot Compass</em>, and longtime Power Platform builder. I share practical
-            guides and labs for using AI and Microsoft Copilot with confidence.
+            I teach people how to use Microsoft Copilot and build agents with Copilot Studio.
+            Here you'll find my demos, guides, and lessons from 10+ years working with
+            SharePoint, Microsoft 365, and Power Platform.
           </p>
           <div class="hero__actions">
-            <a class="btn btn-primary" href="#resources">Explore the resources</a>
-            <a class="btn btn-secondary" href="about.html">About April</a>
+            <a class="btn btn-primary" href="sessions.html">Find my talk materials <span aria-hidden="true">&rarr;</span></a>
+            <a class="btn btn-secondary" href="#resources">Explore practical guides</a>
           </div>
+          <p><a href="#events">See where I'll be speaking &darr;</a></p>
         </div>
-        <div class="hero__portrait" role="img" aria-label="April Dunnam"></div>
+        <figure class="portfolio-portrait">
+          <picture>
+            <source srcset="assets/img/april-dunnam-hero.avif" type="image/avif">
+            <img src="assets/img/april-dunnam-hero.png" width="1122" height="1402" fetchpriority="high" alt="April Dunnam">
+          </picture>
+          <figcaption>I build with Copilot and share what I learn.</figcaption>
+        </figure>
       </div>
     </section>
 
-    <section class="quick-start" aria-labelledby="quick-start-title">
-      <div class="wrap quick-start__inner">
-        <h2 id="quick-start-title">Start with what you need today</h2>
-        <ul>
-          <li>
-            <a href="#resources">Build a reliable skill</a>
-            <p>Use the S.K.I.L.L. framework and working examples.</p>
-          </li>
-          <li>
-            <a href="sessions.html">Recreate a live demo</a>
-            <p>Get prompts, runbooks, decks, and synthetic files.</p>
-          </li>
-          <li>
-            <a href="https://aka.ms/agent-academy" target="_blank" rel="noopener noreferrer">Build an agent</a>
-            <p>Start with free, hands-on Copilot Studio labs.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section" id="resources">
+    <div class="proof-strip">
       <div class="wrap">
-        <p class="eyebrow">Launch resource</p>
-        <h2>The S.K.I.L.L. framework</h2>
-        <div class="featured">
-          <div class="featured__body">
-            <span class="badge">Guide &amp; slide deck</span>
-            <h3 style="margin-top: 0.6rem;">Five rules for skills that actually fire</h3>
-            <p>
-              Most agent skills that "don't work" never actually ran. The framework uses five
-              practical rules: Scope, Keywords, Instructions, Lean body, and Live test. Together,
-              they close that gap with working examples for M365 Copilot, Copilot Studio, Cowork,
-              and Power Platform.
-            </p>
-            <div class="featured__actions">
-              <a class="btn btn-primary" href="resources/skill-framework.html">Read the guide</a>
-              <a class="btn btn-secondary" href="assets/downloads/skills-explained-deck.pptx">Download the deck (.pptx, 0.6 MB)</a>
-            </div>
-          </div>
-          <div class="featured__media">
-            <img src="assets/img/skill-framework.png" width="1200" height="820" loading="lazy" decoding="async" alt="Diagram of the S.K.I.L.L. framework: Scope it to one job, Keywords in the description, Instructions not explanations, Lean body, Live test and iterate.">
-          </div>
-        </div>
+        <span>Principal Cloud Advocate <strong>Microsoft</strong></span>
+        <a href="#book">Author <strong>The Copilot Compass</strong></a>
+        <a href="https://aka.ms/agent-academy">Hands-on learning <strong>Agent Academy contributor</strong></a>
       </div>
-    </section>
+    </div>
 
-    <section class="section">
-      <div class="wrap">
-        <p class="eyebrow">Flagship resource</p>
-        <h2>Copilot Cowork Masterclass</h2>
-        <div class="featured featured--pink">
-          <div class="featured__body">
-            <span class="badge badge--pink">Guide, prompt bank &amp; labs</span>
-            <h3 style="margin-top: 0.6rem;">Your lab manual for Copilot Cowork</h3>
-            <p>
-              Get the complete live Cowork Masterclass in one place: a copy-paste prompt bank,
-              seven hands-on labs and challenges, a skills starter kit, and a printable cheat
-              sheet.
-            </p>
-            <div class="featured__actions">
-              <a class="btn btn-primary" href="resources/cowork-masterclass.html">Read the guide</a>
-              <a class="btn btn-secondary" href="assets/downloads/cowork-masterclass-slides.pdf">Download the deck (.pdf, 1.6 MB)</a>
-            </div>
-          </div>
-          <div class="featured__media">
-            <img src="assets/img/cowork-cheat-sheet.png" width="2112" height="1000" loading="lazy" decoding="async" alt="Copilot Cowork cheat sheet: which tool to use, model and cost guidance, the four parts of a great prompt, and steal-these prompts.">
-          </div>
+    <section class="talk-finder" aria-labelledby="talk-finder-title">
+      <div class="wrap talk-finder__layout">
+        <div>
+          <h2 id="talk-finder-title">Were you at a talk?</h2>
+          <p>Slides, demos, and the details that didn't fit on stage.</p>
         </div>
+        <form action="sessions.html" method="get" class="talk-finder__form" role="search" aria-label="Find talk materials">
+          <label for="talk-query">Find your session</label>
+          <div>
+            <input id="talk-query" type="search" name="q" placeholder="Try Compass, Dallas, or MCP">
+            <button type="submit" class="btn btn-primary">Find materials</button>
+          </div>
+          <a href="sessions.html?event=techcon365-dallas-2026">TechCon365 Dallas 2026 &rarr;</a>
+        </form>
       </div>
     </section>
 
@@ -185,52 +151,303 @@
       <div class="wrap">
         <div class="update-section-head">
           <div>
-            <p class="eyebrow">From the stage to your tenant</p>
-            <h2>Conference sessions &amp; demo packs</h2>
+            <h2>Presentations</h2>
           </div>
           <a class="btn-ghost" href="sessions.html">See all session materials &rarr;</a>
         </div>
         <p class="hero__lede" style="margin-bottom: var(--space-3);">
-          Recreate the demos with copyable prompts, reusable skills, focused sample files, and
-          synthetic data from April's live sessions.
+          Slides, demos, and notes from my recent Copilot sessions.
         </p>
         <div class="session-grid">
           <article class="session-card">
-            <a class="session-card__media" href="resources/vibe-copilot-countdown.html">
-              <img src="assets/img/vibe-copilot-countdown.svg" width="1200" height="675" loading="lazy" decoding="async" alt="I Didn't Know Copilot Could Do That session cover">
+            <a class="session-card__media" href="resources/ppcc2026-copilot-compass.html">
+              <img src="assets/img/ppcc2026-copilot-compass.jpg" width="1200" height="675" loading="lazy" decoding="async" alt="The Copilot Compass by April Dunnam and Bryan Wofford at Power Platform Community Conference 2026">
             </a>
             <div class="session-card__body">
-              <p class="session-meta">9 live demos &middot; Microsoft 365 Copilot</p>
-              <h3><a href="resources/vibe-copilot-countdown.html">I Didn't Know Copilot Could Do That</a></h3>
-              <p>A countdown through underused Copilot features, from PivotTables to Agent Builder skills.</p>
-              <a class="btn btn-secondary" href="resources/vibe-copilot-countdown.html">Get the materials</a>
+              <p class="session-meta">Power Platform Community Conference &middot; October 2026</p>
+              <h3><a href="resources/ppcc2026-copilot-compass.html">The Copilot Compass</a></h3>
+              <p>A four-direction framework for choosing between Chat, Cowork, monitoring, and building with Code or agents. Presented with Bryan Wofford.</p>
+              <p class="material-label">PowerPoint &middot; PDF &middot; Session guide</p>
+              <a class="btn btn-secondary" href="resources/ppcc2026-copilot-compass.html">Get the slides &amp; guide</a>
+            </div>
+          </article>
+          <article class="session-card">
+            <a class="session-card__media" href="resources/techcon365-dallas-mcp.html">
+              <img src="assets/img/techcon365-dallas-mcp.jpg" width="1200" height="675" loading="lazy" decoding="async" alt="To MCP or Not to MCP at TechCon365 Dallas">
+            </a>
+            <div class="session-card__body">
+              <p class="session-meta"><a href="https://techcon365.com/Dallas/" target="_blank" rel="noopener noreferrer">TechCon365 Dallas</a> &middot; November 2026</p>
+              <h3><a href="resources/techcon365-dallas-mcp.html">To MCP or Not to MCP</a></h3>
+              <p>Learn what MCP is through a kitchen analogy, with examples in Copilot Studio, Cowork, and GitHub Copilot.</p>
+              <p class="material-label">Slides &middot; Practical guide</p>
+              <a class="btn btn-secondary" href="resources/techcon365-dallas-mcp.html">Get the slides &amp; guide</a>
             </div>
           </article>
           <article class="session-card session-card--pink">
             <a class="session-card__media" href="resources/vibe-cowork.html">
-              <img src="assets/img/vibe-cowork.svg" width="1200" height="675" loading="lazy" decoding="async" alt="Delegating Real Work to Copilot Cowork session cover">
+              <img src="assets/img/techcon365-dallas-cowork.jpg" width="1200" height="675" loading="lazy" decoding="async" alt="Delegating Real Work to Copilot Cowork at TechCon365 Dallas">
             </a>
             <div class="session-card__body">
-              <p class="session-meta">6 demos &middot; Copilot Cowork</p>
+              <p class="session-meta"><a href="https://techcon365.com/Dallas/" target="_blank" rel="noopener noreferrer">TechCon365 Dallas</a> &middot; November 2026 &middot; 6 demo videos</p>
               <h3><a href="resources/vibe-cowork.html">Delegating Real Work to Copilot Cowork</a></h3>
-              <p>Hand off inbox, meeting, app, automation, skill, and plugin work across Microsoft 365.</p>
+              <p>Watch the Dallas demos: meeting prep, inbox triage, skills, automations, Projects, Miro, and browser use. Includes slides and copyable prompts.</p>
+              <p class="material-label">Slides &middot; 6 demo videos &middot; Copyable prompts</p>
               <a class="btn btn-secondary" href="resources/vibe-cowork.html">Get the materials</a>
+            </div>
+          </article>
+          <article class="session-card session-card--pink">
+            <a class="session-card__media" href="resources/techcon365-dallas-power-apps.html">
+              <img src="assets/img/techcon365-dallas-power-apps.jpg" width="1200" height="675" loading="lazy" decoding="async" alt="The Power Apps Builder's Guide for Choosing the Right Path at TechCon365 Dallas">
+            </a>
+            <div class="session-card__body">
+              <p class="session-meta">TechCon365 Dallas &middot; November 2026</p>
+              <h3><a href="resources/techcon365-dallas-power-apps.html">The Power Apps Builder's Guide</a></h3>
+              <p>Compare canvas, model-driven, generative pages, code apps, and apps in Copilot. Try the three-question guide to narrow down your options.</p>
+              <p class="material-label">Slides &middot; Interactive guide</p>
+              <a class="btn btn-secondary" href="resources/techcon365-dallas-power-apps.html">Get the slides &amp; guide</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section--tight">
+    <section class="section resource-section" id="resources" aria-labelledby="resources-title">
+      <div class="wrap">
+        <div class="section-intro">
+          <h2 id="resources-title">Resources</h2>
+          <p>Copy a prompt, watch a demo, or download something for your own work.</p>
+        </div>
+        <div class="resource-workbench">
+          <article class="resource-panel" aria-labelledby="resource-prompts-title">
+            <span class="material-label">Copilot Cowork</span>
+            <h3 id="resource-prompts-title">Sample prompts</h3>
+            <p class="resource-panel__intro">Use your connected work data, replace the bracketed details, and review the results before sharing.</p>
+            <div class="resource-prompt">
+              <h4>Prepare for a meeting</h4>
+              <div class="prompt-block">
+                <button class="prompt-copy" type="button" data-copy-prompt aria-live="polite" hidden>Copy meeting prompt</button>
+                <pre><code>Prep me for my [time] meeting: check the invite, pull attendee context, find related emails and docs, and give me a briefing.</code></pre>
+              </div>
+            </div>
+            <div class="resource-prompt">
+              <h4>Turn a transcript into follow-ups</h4>
+              <div class="prompt-block">
+                <button class="prompt-copy" type="button" data-copy-prompt aria-live="polite" hidden>Copy recap prompt</button>
+                <pre><code>Turn this meeting transcript into decisions, action items with owners, and follow-up emails.</code></pre>
+              </div>
+            </div>
+            <div class="resource-prompt">
+              <h4>Repurpose a document</h4>
+              <div class="prompt-block">
+                <button class="prompt-copy" type="button" data-copy-prompt aria-live="polite" hidden>Copy document prompt</button>
+                <pre><code>Take [document/deck] and turn the key points into a [1-pager / email / FAQ].</code></pre>
+              </div>
+            </div>
+          </article>
+          <article class="resource-panel" aria-labelledby="resource-demos-title">
+            <span class="material-label">Copilot Cowork</span>
+            <h3 id="resource-demos-title">Short demos</h3>
+            <p class="resource-panel__intro">Silent screen recordings, with written walkthroughs and prompts.</p>
+            <h4 id="resource-briefing-title">Meeting prep &amp; a follow-up draft <span class="resource-duration">0:58</span></h4>
+            <video class="demo-video" controls playsinline preload="none" width="1920" height="1080" poster="assets/img/cowork-dallas-demo-1.jpg" aria-labelledby="resource-briefing-title" aria-describedby="resource-briefing-notes">
+              <source src="https://github.com/aprildunnam/ai-with-april/releases/download/techcon365-dallas-cowork-assets/Cowork_Demo1.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the recording link below.
+            </video>
+            <p class="resource-demo-notes" id="resource-briefing-notes">Watch Cowork build a briefing from work context, save a Word document, and ask for approval before sending.</p>
+            <div class="resource-demo-links">
+              <a href="resources/vibe-cowork.html#dallas-demo-1">Walkthrough &amp; prompt &rarr;</a>
+              <a href="https://github.com/aprildunnam/ai-with-april/releases/download/techcon365-dallas-cowork-assets/Cowork_Demo1.mp4">Open recording</a>
+            </div>
+            <details class="resource-extra-demo">
+              <summary>Inbox triage &amp; approvals <span class="resource-duration">1:29</span></summary>
+              <video class="demo-video" controls playsinline preload="none" width="1920" height="1080" poster="assets/img/cowork-dallas-demo-2.jpg" aria-label="Copilot Cowork inbox triage and approvals demo" aria-describedby="resource-triage-notes">
+                <source src="https://github.com/aprildunnam/ai-with-april/releases/download/techcon365-dallas-cowork-assets/Cowork_Demo2.mp4" type="video/mp4">
+                  Your browser does not support embedded video. Use the recording link below.
+              </video>
+              <p class="resource-demo-notes" id="resource-triage-notes">Watch approval cards, a mid-task change, and updates to an existing Excel tracker.</p>
+              <div class="resource-demo-links">
+                <a href="resources/vibe-cowork.html#dallas-demo-2">Walkthrough &amp; prompt &rarr;</a>
+                <a href="https://github.com/aprildunnam/ai-with-april/releases/download/techcon365-dallas-cowork-assets/Cowork_Demo2.mp4">Open recording</a>
+              </div>
+            </details>
+            <a class="resource-more-demos" href="resources/vibe-cowork.html#dallas-demos">All 6 Cowork demos &amp; prompts &rarr;</a>
+          </article>
+        </div>
+        <h3 class="resource-downloads-title">Reusable files</h3>
+        <div class="resource-downloads">
+          <a class="resource-download" href="assets/downloads/skills/meeting-prep/SKILL.md" download="SKILL.md">
+            <span class="material-label">Download Markdown &darr;</span>
+            <strong>Meeting prep skill</strong>
+            <span>A worked SKILL.md example. Adapt the steps and briefing format for your meetings.</span>
+          </a>
+          <a class="resource-download" href="assets/downloads/cowork-cheat-sheet.pdf" download>
+            <span class="material-label">Download PDF &darr;</span>
+            <strong>Cowork cheat sheet</strong>
+            <span>A quick reference from the Copilot Cowork Masterclass.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section speaking-calendar" id="events" aria-labelledby="events-title">
+      <div class="wrap">
+        <div class="section-intro">
+          <p class="eyebrow">Talks, demos &amp; workshops</p>
+          <h2 id="events-title">Where I'll be</h2>
+          <p>See where I'm speaking next, or browse earlier events.</p>
+        </div>
+        <div class="speaking-filters" role="group" aria-label="Show speaking dates" data-speaking-filters hidden>
+          <button class="session-filter is-active" type="button" aria-pressed="true" aria-controls="speaking-events speaking-map" data-speaking-filter="upcoming">Upcoming &amp; now</button>
+          <button class="session-filter" type="button" aria-pressed="false" aria-controls="speaking-events speaking-map" data-speaking-filter="past">Past events</button>
+          <button class="session-filter" type="button" aria-pressed="false" aria-controls="speaking-events speaking-map" data-speaking-filter="all">All events</button>
+        </div>
+        <p class="session-results" role="status" aria-live="polite" aria-atomic="true" data-speaking-count>14 events in 2026</p>
+        <p class="speaking-map-status" role="status" data-speaking-map-status hidden></p>
+        <section class="speaking-map" id="speaking-map" aria-labelledby="speaking-map-title" data-speaking-map hidden>
+          <div class="speaking-map__header">
+            <div>
+              <p class="eyebrow">In person</p>
+              <h3 id="speaking-map-title">On the road</h3>
+            </div>
+            <label class="speaking-map__view" for="speaking-map-region">Map view
+              <select id="speaking-map-region" data-speaking-map-region>
+                <option value="all">North America &amp; Europe</option>
+                <option value="north-america">North America</option>
+                <option value="europe">Europe</option>
+              </select>
+            </label>
+          </div>
+          <div class="speaking-map__body">
+            <figure class="speaking-map__figure">
+              <svg class="speaking-map__canvas" data-speaking-map-svg viewBox="100 45 540 240" aria-hidden="true" focusable="false">
+                <g class="speaking-map__land" data-speaking-map-land></g>
+                <g data-speaking-map-pins></g>
+              </svg>
+              <figcaption>
+                <span data-speaking-map-count></span>
+                <a href="https://www.naturalearthdata.com/about/terms-of-use/" target="_blank" rel="noopener noreferrer">Made with Natural Earth<span class="visually-hidden"> (opens in a new tab)</span></a>
+              </figcaption>
+            </figure>
+            <div class="speaking-map__explore">
+              <p class="speaking-map__hint">Select a pin or city to see its events.</p>
+              <div class="speaking-map__cities" role="group" aria-label="Explore speaking cities" data-speaking-map-cities></div>
+              <div class="speaking-map__details" id="speaking-map-details" aria-live="polite" aria-atomic="true" data-speaking-map-details></div>
+            </div>
+          </div>
+          <div class="speaking-map__footer">
+            <div class="speaking-map__key" aria-label="Pin colors">
+              <span data-status="past">Past</span>
+              <span data-status="current">Happening now</span>
+              <span data-status="upcoming">Upcoming</span>
+            </div>
+            <p>City-level pins, not venue directions. Online appearances are listed below, not mapped.</p>
+          </div>
+        </section>
+        <p data-speaking-empty hidden>No upcoming dates are listed. Choose Past events to see earlier appearances.</p>
+        <ul class="speaking-events" id="speaking-events">
+          <li class="speaking-event" id="event-july-community-call" tabindex="-1" data-speaking-event data-start="2026-07-15" data-end="2026-07-15">
+            <p class="speaking-event__meta"><span>Online</span><span data-speaking-status hidden></span></p>
+            <p class="speaking-event__date"><time datetime="2026-07-15">July 15, 2026</time></p>
+            <h3>Power Platform Community Call</h3>
+            <p>Copilot Studio demo</p>
+            <a href="https://techcommunity.microsoft.com/event/sharepoint-events/microsoft-power-platform-community-call---july-2026/4535993" target="_blank" rel="noopener noreferrer">Event details<span class="visually-hidden"> (opens in a new tab)</span> &nearr;</a>
+          </li>
+          <li class="speaking-event" id="event-dug24" tabindex="-1" data-speaking-event data-start="2026-07-21" data-end="2026-07-22">
+            <p class="speaking-event__meta"><span>Online</span><span data-speaking-status hidden></span></p>
+            <p class="speaking-event__date"><time datetime="2026-07-21">July 21</time>&ndash;<time datetime="2026-07-22">22, 2026</time></p>
+            <h3>DUG24</h3>
+            <p>Copilots, Autopilots, Apps &amp; Agents</p>
+            <a href="https://dug24.com/2026" target="_blank" rel="noopener noreferrer">2026 agenda<span class="visually-hidden"> (opens in a new tab)</span> &nearr;</a>
+          </li>
+          <li class="speaking-event" id="event-copilot-collective-oc" tabindex="-1" data-speaking-event data-start="2026-07-23" data-end="2026-07-23">
+            <p class="speaking-event__meta"><span>Online</span><span data-speaking-status hidden></span></p>
+            <p class="speaking-event__date"><time datetime="2026-07-23">July 23, 2026</time></p>
+            <h3>Copilot Collective OC</h3>
+            <p>Copilot Studio session</p>
+            <a href="https://www.linkedin.com/posts/copilot-collective-oc_copilotcollectiveoc-copilotstudio-microsoftcopilot-activity-7486114165108027392-Hidb" target="_blank" rel="noopener noreferrer">Organizer announcement<span class="visually-hidden"> (opens in a new tab)</span> &nearr;</a>
+          </li>
+          <li class="speaking-event" id="event-august-community-call" tabindex="-1" data-speaking-event data-start="2026-08-19" data-end="2026-08-19">
+            <p class="speaking-event__meta"><span>Online</span><span data-speaking-status hidden></span></p>
+            <p class="speaking-event__date"><time datetime="2026-08-19">August 19, 2026</time></p>
+            <h3>Power Platform Community Call</h3>
+            <a href="https://techcommunity.microsoft.com/event/sharepoint-events/microsoft-power-platform-community-call---august-2026/4546755" target="_blank" rel="noopener noreferrer">Event details<span class="visually-hidden"> (opens in a new tab)</span> &nearr;</a>
+          </li>
+          <li class="speaking-event" id="event-future-of-work" tabindex="-1" data-speaking-event data-start="2026-09-14" data-end="2026-09-14" data-city="Redmond" data-country="United States" data-region="north-america" data-lat="47.67" data-lon="-122.12">
+            <p class="speaking-event__meta"><span>Onsite &middot; Redmond</span><span data-speaking-status hidden></span></p>
+            <p class="speaking-event__date"><time datetime="2026-09-14">September 14, 2026</time></p>
+            <h3>The New Future of Work Summit</h3>
+            <a href="https://globalai.community/e/9j3q97d1" target="_blank" rel="noopener noreferrer">Event details<span class="visually-hidden"> (opens in a new tab)</span> &nearr;</a>
+          </li>
+          <li class="speaking-event" id="event-fly-with-copilot" tabindex="-1" data-speaking-event data-start="2026-09-16" data-end="2026-09-16" data-city="Redmond" data-country="United States" data-region="north-america" data-lat="47.67" data-lon="-122.12">
+            <p class="speaking-event__meta"><span>Onsite &middot; Redmond</span><span data-speaking-status hidden></span></p>
+            <p class="speaking-event__date"><time datetime="2026-09-16">September 16, 2026</time></p>
+            <h3>Fly with Copilot</h3>
+            <a href="https://globalai.community/e/kv8l7kpw" target="_blank" rel="noopener noreferrer">Event details<span class="visually-hidden"> (opens in a new tab)</span> &nearr;</a>
+          </li>
+          <li class="speaking-event" id="event-partner-vibe" tabindex="-1" data-speaking-event data-start="2026-09-21" data-end="2026-09-23" data-city="Provo" data-country="United States" data-region="north-america" data-lat="40.23" data-lon="-111.66">
+            <p class="speaking-event__meta"><span>Onsite &middot; Provo</span><span data-speaking-status hidden></span></p>
+            <p class="speaking-event__date"><time datetime="2026-09-21">September 21</time>&ndash;<time datetime="2026-09-23">23, 2026</time></p>
+            <h3>Partner Vibe 2.0</h3>
+            <a href="https://www.communitydays.org/event/2026-09-21/partner-vibe-20" target="_blank" rel="noopener noreferrer">Event details<span class="visually-hidden"> (opens in a new tab)</span> &nearr;</a>
+          </li>
+          <li class="speaking-event" id="event-scottish-summit" tabindex="-1" data-speaking-event data-start="2026-10-02" data-end="2026-10-02" data-city="Edinburgh" data-country="United Kingdom" data-region="europe" data-lat="55.95" data-lon="-3.19">
+            <p class="speaking-event__meta"><span>Onsite &middot; Edinburgh</span><span data-speaking-status hidden></span></p>
+            <p class="speaking-event__date"><time datetime="2026-10-02">October 2, 2026</time></p>
+            <h3>Scottish Summit</h3>
+            <p>Agent Academy Live Workshop</p>
+            <a href="https://scottishsummit.com/2026-workshop" target="_blank" rel="noopener noreferrer">Workshop details<span class="visually-hidden"> (opens in a new tab)</span> &nearr;</a>
+          </li>
+          <li class="speaking-event" id="event-reactor-copilot-studio" tabindex="-1" data-speaking-event data-start="2026-10-08" data-end="2026-10-08">
+            <p class="speaking-event__meta"><span>Online</span><span data-speaking-status hidden></span></p>
+            <p class="speaking-event__date"><time datetime="2026-10-08">October 8, 2026</time></p>
+            <h3>Skill up on Microsoft Copilot Studio</h3>
+            <p>Livestream with Jack Rowbotham</p>
+            <a href="https://developer.microsoft.com/en-us/reactor/events/27597/" target="_blank" rel="noopener noreferrer">Livestream details<span class="visually-hidden"> (opens in a new tab)</span> &nearr;</a>
+          </li>
+          <li class="speaking-event" id="event-summit-na" tabindex="-1" data-speaking-event data-start="2026-10-11" data-end="2026-10-15" data-city="Nashville" data-country="United States" data-region="north-america" data-lat="36.16" data-lon="-86.78">
+            <p class="speaking-event__meta"><span>Onsite &middot; Nashville</span><span data-speaking-status hidden></span></p>
+            <p class="speaking-event__date"><time datetime="2026-10-11">October 11</time>&ndash;<time datetime="2026-10-15">15, 2026</time></p>
+            <h3>Community Summit North America</h3>
+            <a href="https://www.summitna.com/faq/" target="_blank" rel="noopener noreferrer">2026 event details<span class="visually-hidden"> (opens in a new tab)</span> &nearr;</a>
+          </li>
+          <li class="speaking-event" id="event-ppcc" tabindex="-1" data-speaking-event data-start="2026-10-27" data-end="2026-10-29" data-city="Las Vegas" data-country="United States" data-region="north-america" data-lat="36.17" data-lon="-115.14">
+            <p class="speaking-event__meta"><span>Onsite &middot; Las Vegas</span><span data-speaking-status hidden></span></p>
+            <p class="speaking-event__date"><time datetime="2026-10-27">October 27</time>&ndash;<time datetime="2026-10-29">29, 2026</time></p>
+            <h3>Power Platform Community Conference</h3>
+            <a href="resources/ppcc2026-copilot-compass.html">The Copilot Compass slides &amp; guide &rarr;</a>
+            <a href="https://powerplatformconf.com/" target="_blank" rel="noopener noreferrer">Conference details<span class="visually-hidden"> (opens in a new tab)</span> &nearr;</a>
+          </li>
+          <li class="speaking-event" id="event-techcon-dallas" tabindex="-1" data-speaking-event data-start="2026-11-02" data-end="2026-11-06" data-city="Dallas" data-country="United States" data-region="north-america" data-lat="32.78" data-lon="-96.80">
+            <p class="speaking-event__meta"><span>Onsite &middot; Dallas</span><span data-speaking-status hidden></span></p>
+            <p class="speaking-event__date"><time datetime="2026-11-02">November 2</time>&ndash;<time datetime="2026-11-06">6, 2026</time></p>
+            <h3>TechCon365 Dallas</h3>
+            <a href="sessions.html?event=techcon365-dallas-2026">Dallas session materials &rarr;</a>
+            <a href="https://techcon365.com/Dallas/" target="_blank" rel="noopener noreferrer">Conference details<span class="visually-hidden"> (opens in a new tab)</span> &nearr;</a>
+          </li>
+          <li class="speaking-event" id="event-ignite" tabindex="-1" data-speaking-event data-start="2026-11-17" data-end="2026-11-20" data-city="San Francisco" data-country="United States" data-region="north-america" data-lat="37.77" data-lon="-122.42">
+            <p class="speaking-event__meta"><span>Onsite &middot; San Francisco</span><span data-speaking-status hidden></span></p>
+            <p class="speaking-event__date"><time datetime="2026-11-17">November 17</time>&ndash;<time datetime="2026-11-20">20, 2026</time></p>
+            <h3>Microsoft Ignite</h3>
+            <a href="https://ignite.microsoft.com/" target="_blank" rel="noopener noreferrer">Conference details<span class="visually-hidden"> (opens in a new tab)</span> &nearr;</a>
+          </li>
+          <li class="speaking-event" id="event-espc" tabindex="-1" data-speaking-event data-start="2026-11-30" data-end="2026-12-03" data-city="Amsterdam" data-country="Netherlands" data-region="europe" data-lat="52.37" data-lon="4.90">
+            <p class="speaking-event__meta"><span>Onsite &middot; Amsterdam</span><span data-speaking-status hidden></span></p>
+            <p class="speaking-event__date"><time datetime="2026-11-30">November 30</time>&ndash;<time datetime="2026-12-03">December 3, 2026</time></p>
+            <h3>ESPC Microsoft 365 &amp; AI</h3>
+            <a href="https://espc.tech/conference/espc-2026/" target="_blank" rel="noopener noreferrer">Conference details<span class="visually-hidden"> (opens in a new tab)</span> &nearr;</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--tight academy-section">
       <div class="wrap">
         <div class="spotlight">
           <div class="spotlight__content">
-            <p class="eyebrow">Building with Copilot Studio?</p>
-            <h2>Start with Agent Academy</h2>
+            <h2>Learn to build an agent</h2>
             <p>
-              Free, hands-on labs for building agents in Copilot Studio, including the new
-              GitHub Copilot harness. April helps build and maintain it, so it's a natural next
-              stop once you're ready to go from "reading about agents" to actually building one.
+              I help build and maintain Agent Academy: free, hands-on labs for Copilot Studio,
+              including the GitHub Copilot harness. You can follow the labs at your own pace.
             </p>
             <div class="spotlight__actions">
               <a class="btn btn-primary" href="https://aka.ms/agent-academy" target="_blank" rel="noopener noreferrer">
@@ -245,19 +462,32 @@
       </div>
     </section>
 
-    <section class="section book-section">
+    <section class="section">
       <div class="wrap">
-        <p class="eyebrow">The book</p>
+        <div class="update-section-head">
+          <div><h2>Latest videos</h2></div>
+          <a class="btn-ghost" href="updates.html">All videos &amp; writing &rarr;</a>
+        </div>
+        <p>Watch me work through Copilot features, agent builds, and Power Platform examples.</p>
+        <div class="update-grid" data-feed="videos" data-feed-limit="3" aria-live="polite">
+          <p class="update-empty">Loading latest videos&hellip;</p>
+        </div>
+        <p class="update-synced" data-feed-updated="videos"></p>
+        <noscript><p><a href="https://www.youtube.com/@AprilDunnam">Visit April's YouTube channel</a> for the latest videos.</p></noscript>
+      </div>
+    </section>
+
+    <section class="section book-section" id="book">
+      <div class="wrap">
         <h2>The Copilot Compass</h2>
         <div class="book-feature">
           <div class="book-feature__body">
             <span class="badge">Published by Apress</span>
             <h3>Navigating Copilot and Agents in Microsoft 365</h3>
             <p>
-              Cut through the AI noise and confidently choose the right Copilot, agent, bot, or
-              workflow for the job. The book explains the Microsoft 365 Copilot ecosystem in
-              plain language, with practical guidance for business users, developers, and Power
-              Platform makers.
+              I wrote this book to help you choose a Copilot, agent, bot, or workflow for the
+              task you have in mind. It explains the Microsoft 365 Copilot options for
+              business users, developers, and Power Platform makers.
             </p>
             <ul class="book-highlights">
               <li>Choose the right Copilot or agent for real business scenarios.</li>
@@ -288,22 +518,18 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="wrap">
-        <div class="update-section-head">
-          <div>
-            <p class="eyebrow">Fresh from April</p>
-            <h2>Latest videos &amp; posts</h2>
-          </div>
-          <a class="btn-ghost" href="updates.html">See everything &rarr;</a>
+    <section class="section speaking-section" aria-labelledby="speaking-title">
+      <div class="wrap speaking-layout">
+        <div>
+          <h2 id="speaking-title">Practical Copilot training<br>for your team.</h2>
+          <p>Microsoft 365 Copilot and Cowork, Copilot Studio, GitHub Copilot,
+            and Power Platform. Tell me what your team wants to learn.</p>
         </div>
-        <p class="hero__lede" style="margin-bottom: var(--space-3);">
-          This live feed syncs daily and shows the newest videos and posts April has published.
-        </p>
-        <div class="update-grid" data-feed="videos" data-feed-limit="3" aria-live="polite">
-          <p class="update-empty">Loading latest videos&hellip;</p>
+        <div class="speaking-actions">
+          <a class="btn btn-primary" href="training.html">Inquire about training</a>
+          <a href="about.html">More about April &rarr;</a>
+          <a href="https://www.linkedin.com/in/aprildunnam/">Connect on LinkedIn &nearr;</a>
         </div>
-        <noscript><p class="update-empty">JavaScript is unavailable. <a href="https://www.youtube.com/@AprilDunnam">Visit April's YouTube channel</a> for the latest videos.</p></noscript>
       </div>
     </section>
   </main>
@@ -316,8 +542,10 @@
           <li><a href="resources/skill-framework.html">S.K.I.L.L. framework</a></li>
           <li><a href="resources/cowork-masterclass.html">Cowork Masterclass</a></li>
           <li><a href="sessions.html">Sessions</a></li>
+          <li><a href="#events">Speaking dates</a></li>
           <li><a href="updates.html">Watch &amp; read</a></li>
           <li><a href="about.html">About</a></li>
+          <li><a href="training.html">Training</a></li>
           <li><a href="https://aprildunnam.com">aprildunnam.com</a></li>
           <li><a href="https://github.com/aprildunnam/ai-with-april">GitHub</a></li>
         </ul>
@@ -334,5 +562,7 @@
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/feeds.js"></script>
+  <script src="assets/js/speaking-calendar.js"></script>
+  <script src="assets/js/speaking-map.js"></script>
 </body>
 </html>
